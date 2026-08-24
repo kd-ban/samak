@@ -2,68 +2,44 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-
-<meta name="viewport"
-content="width=device-width,initial-scale=1,viewport-fit=cover">
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#087fdb">
-
 <title>صيد اليوم</title>
 
 <style>
-
 :root{
-  --bg:#f3f7fb;
+  --bg:#f4f8fb;
   --card:#ffffff;
   --text:#122332;
-  --muted:#72818e;
+  --muted:#71818e;
   --blue:#087fdb;
   --blue2:#28a7f5;
+  --line:#e1eaf1;
   --green:#119463;
   --red:#d94c4c;
-  --yellow:#f2b735;
-  --line:#e1eaf1;
+  --orange:#f59e0b;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-
-  font-family:
-  -apple-system,
-  BlinkMacSystemFont,
-  "SF Arabic",
-  "Segoe UI",
-  Tahoma,
-  Arial,
-  sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Arabic","Segoe UI",Tahoma,Arial,sans-serif;
 }
 
 .app{
-  max-width:800px;
+  max-width:700px;
   margin:auto;
-  padding-bottom:105px;
+  padding-bottom:110px;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* الرأس */
 
 header{
   padding:24px 18px 20px;
-
-  background:
-  linear-gradient(
-  145deg,
-  #e5f4ff,
-  #f9fcff
-  );
+  background:linear-gradient(145deg,#e5f4ff,#f9fcff);
 }
 
 .brand{
@@ -74,26 +50,14 @@ header{
 }
 
 .logo{
-  width:68px;
-  height:68px;
-
+  width:65px;
+  height:65px;
+  border-radius:20px;
   display:grid;
   place-items:center;
-
-  border-radius:21px;
-
-  background:
-  linear-gradient(
-  145deg,
-  var(--blue),
-  var(--blue2)
-  );
-
-  font-size:35px;
-
-  box-shadow:
-  0 12px 28px
-  rgba(8,127,219,.25);
+  background:linear-gradient(145deg,var(--blue),var(--blue2));
+  font-size:34px;
+  box-shadow:0 12px 26px rgba(8,127,219,.25);
 }
 
 h1{
@@ -102,68 +66,44 @@ h1{
 }
 
 .subtitle{
-  margin-top:5px;
   color:var(--muted);
+  margin-top:5px;
   font-size:14px;
 }
 
-
-/* =========================
-   GENERAL
-========================= */
+/* الصفحات */
 
 .page{
   display:none;
-  padding:15px 16px 28px;
+  padding:15px 16px 25px;
 }
 
-.page.active{
-  display:block;
-}
+.page.active{display:block}
+
+/* الكروت */
 
 .card{
   background:var(--card);
-
-  border:
-  1px solid
-  var(--line);
-
+  border:1px solid var(--line);
   border-radius:20px;
-
   padding:15px;
-
   margin-bottom:14px;
-
-  box-shadow:
-  0 8px 22px
-  rgba(20,50,70,.06);
+  box-shadow:0 8px 22px rgba(20,50,70,.06);
 }
 
 .sectionTitle{
   font-size:21px;
   font-weight:900;
-
-  margin:
-  15px 3px
-  12px;
+  margin:13px 3px 12px;
 }
 
-.small{
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.7;
+.subTitle{
+  font-weight:900;
+  font-size:16px;
+  margin-bottom:10px;
 }
 
-.empty{
-  text-align:center;
-  color:var(--muted);
-  padding:28px 15px;
-}
-
-
-/* =========================
-   INPUTS
-========================= */
+/* الحقول */
 
 label{
   display:block;
@@ -175,20 +115,13 @@ input,
 select,
 textarea{
   width:100%;
-
-  border:
-  1px solid
-  #d8e3ec;
-
+  border:1px solid #d8e3ec;
   border-radius:14px;
-
   padding:13px;
-
-  background:white;
-
   font-size:16px;
-
+  background:white;
   outline:none;
+  font-family:inherit;
 }
 
 textarea{
@@ -200,10 +133,7 @@ input:focus,
 select:focus,
 textarea:focus{
   border-color:#6dbaf0;
-
-  box-shadow:
-  0 0 0 3px
-  rgba(8,127,219,.08);
+  box-shadow:0 0 0 3px rgba(8,127,219,.08);
 }
 
 .row{
@@ -212,28 +142,17 @@ textarea:focus{
   gap:10px;
 }
 
+/* الأزرار */
 
-/* =========================
-   BUTTONS
-========================= */
-
-button{
-  font-family:inherit;
-}
+button{font-family:inherit}
 
 .btn{
   width:100%;
-
   border:none;
-
   border-radius:15px;
-
   padding:14px;
-
   font-size:16px;
-
   font-weight:900;
-
   cursor:pointer;
 }
 
@@ -247,9 +166,9 @@ button{
   color:#076bbd;
 }
 
-.green{
-  background:#e8f8f1;
-  color:#08714c;
+.success{
+  background:#eaf8f2;
+  color:#08714d;
 }
 
 .danger{
@@ -257,84 +176,29 @@ button{
   color:var(--red);
 }
 
-
-/* =========================
-   TODAY HERO
-========================= */
-
-.todayHero{
-  background:
-  linear-gradient(
-  145deg,
-  #087fdb,
-  #25a8f5
-  );
-
-  color:white;
-
-  border-radius:22px;
-
-  padding:20px;
-
-  margin-bottom:15px;
-
-  box-shadow:
-  0 13px 30px
-  rgba(8,127,219,.22);
-}
-
-.todayHero h2{
-  margin:0;
-  font-size:25px;
-}
-
-.todayHero p{
-  margin:
-  6px 0 0;
-
-  opacity:.9;
-}
-
-
-/* =========================
-   CATEGORIES
-========================= */
+/* أنواع السمك */
 
 .categories{
   display:grid;
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:11px;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
 
 .category{
-  border:
-  1px solid
-  var(--line);
-
+  border:1px solid var(--line);
   border-radius:19px;
-
   background:white;
-
   padding:16px;
-
   text-align:right;
-
-  box-shadow:
-  0 7px 18px
-  rgba(20,50,70,.05);
-
   cursor:pointer;
+  box-shadow:0 7px 18px rgba(20,50,70,.05);
 }
 
-.categoryEmoji{
-  font-size:31px;
-}
+.categoryEmoji{font-size:32px}
 
 .categoryName{
-  font-size:19px;
   font-weight:900;
+  font-size:19px;
   margin-top:8px;
 }
 
@@ -344,10 +208,7 @@ button{
   margin-top:5px;
 }
 
-
-/* =========================
-   CHIPS
-========================= */
+/* الفلاتر */
 
 .chips{
   display:flex;
@@ -357,77 +218,70 @@ button{
 }
 
 .chip{
-  border:
-  1px solid
-  var(--line);
-
-  border-radius:999px;
-
-  padding:
-  9px 14px;
-
+  border:1px solid var(--line);
   background:white;
-
-  white-space:nowrap;
-
   color:#435563;
-
+  border-radius:999px;
+  padding:9px 14px;
+  white-space:nowrap;
   font-weight:800;
 }
 
 .chip.active{
-  color:white;
   background:var(--blue);
+  color:white;
   border-color:var(--blue);
 }
 
+/* صيد اليوم */
 
-/* =========================
-   PRICE STATS
-========================= */
+.todayBox{
+  background:linear-gradient(135deg,#087fdb,#28a7f5);
+  color:white;
+  border-radius:20px;
+  padding:17px;
+  margin-bottom:14px;
+}
+
+.todayTitle{
+  font-size:23px;
+  font-weight:1000;
+}
+
+.todayText{
+  opacity:.9;
+  margin-top:5px;
+  font-size:13px;
+}
+
+/* مقارنة السعر */
 
 .priceStats{
   display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:8px;
-
-  margin-bottom:13px;
+  margin-bottom:14px;
 }
 
 .stat{
   background:white;
-
-  border:
-  1px solid
-  var(--line);
-
-  border-radius:16px;
-
-  padding:13px;
-
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:12px 7px;
   text-align:center;
 }
 
 .stat strong{
   display:block;
-
   color:var(--blue);
-
-  font-size:19px;
+  font-size:18px;
 }
 
-.stat span{
-  font-size:11px;
+.stat small{
   color:var(--muted);
 }
 
-
-/* =========================
-   LISTING
-========================= */
+/* عروض */
 
 .listings{
   display:grid;
@@ -436,36 +290,21 @@ button{
 
 .listing{
   background:white;
-
-  border:
-  1px solid
-  var(--line);
-
+  border:1px solid var(--line);
   border-radius:21px;
-
   overflow:hidden;
-
-  box-shadow:
-  0 8px 20px
-  rgba(20,50,70,.06);
+  box-shadow:0 8px 20px rgba(20,50,70,.06);
 }
 
 .listingImage{
-  position:relative;
-
   width:100%;
-
-  aspect-ratio:
-  16 / 9;
-
-  overflow:hidden;
-
+  aspect-ratio:16/10;
+  background:#e8f6ff;
   display:grid;
   place-items:center;
-
-  background:#e8f6ff;
-
   font-size:55px;
+  overflow:hidden;
+  position:relative;
 }
 
 .listingImage img{
@@ -478,33 +317,30 @@ button{
   position:absolute;
   top:10px;
   right:10px;
-
-  background:#119463;
-
+  background:var(--green);
   color:white;
-
   border-radius:999px;
-
-  padding:
-  7px 11px;
-
+  padding:7px 11px;
   font-size:12px;
-
   font-weight:900;
 }
 
-.listingBody{
-  padding:14px;
+.verifiedBadge{
+  display:inline-block;
+  color:var(--green);
+  background:#eaf8f2;
+  border-radius:999px;
+  padding:4px 8px;
+  font-size:11px;
+  margin-top:5px;
 }
 
-.listingTop{
+.listingBody{padding:14px}
+
+.listingHeader{
   display:flex;
-
-  justify-content:
-  space-between;
-
+  justify-content:space-between;
   gap:12px;
-
   align-items:flex-start;
 }
 
@@ -513,33 +349,10 @@ button{
   font-weight:1000;
 }
 
-.seller{
-  margin-top:5px;
-  font-weight:800;
-  color:#435563;
-}
-
-.verified{
-  display:inline-block;
-
-  margin-right:4px;
-
-  padding:
-  3px 7px;
-
-  background:#e8f8f1;
-
-  color:#08714c;
-
-  border-radius:999px;
-
-  font-size:11px;
-}
-
-.rating{
+.sellerName{
   margin-top:4px;
-  color:#d99c00;
-  font-size:13px;
+  font-weight:800;
+  color:#425463;
 }
 
 .price{
@@ -548,135 +361,62 @@ button{
   font-weight:1000;
 }
 
-.metaGrid{
+.location{
+  margin-top:8px;
+  color:#425463;
+  font-weight:800;
+}
+
+.catchInfo{
+  margin-top:6px;
+  color:var(--green);
+  font-weight:800;
+  font-size:14px;
+}
+
+.infoGrid{
   display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
+  grid-template-columns:1fr 1fr;
   gap:8px;
-
   margin-top:13px;
 }
 
-.meta{
+.info{
   background:#f6f9fb;
-
   border-radius:12px;
-
   padding:10px;
 }
 
-.meta strong{
+.info strong{
   display:block;
-  font-size:15px;
+  font-size:16px;
 }
 
-.meta span{
-  color:var(--muted);
-  font-size:11px;
-}
-
-.fresh{
-  color:var(--green);
-}
+.info small{color:var(--muted)}
 
 .notes{
   margin-top:10px;
   color:#556775;
-  font-size:13px;
+  font-size:14px;
 }
 
-.actions{
+.rating{
+  margin-top:10px;
+  font-weight:900;
+}
+
+.listingActions{
   display:grid;
-
-  grid-template-columns:
-  1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:8px;
-
   margin-top:13px;
 }
 
-
-/* =========================
-   TABLE
-========================= */
-
-.tableWrap{
-  overflow:auto;
-}
-
-table{
-  width:100%;
-  min-width:650px;
-
-  border-collapse:
-  separate;
-
-  border-spacing:0 7px;
-}
-
-th{
-  font-size:12px;
-  color:var(--muted);
-  text-align:right;
-}
-
-td{
-  padding:11px;
-  background:white;
-}
-
-td:first-child{
-  border-radius:
-  0 12px 12px 0;
-}
-
-td:last-child{
-  border-radius:
-  12px 0 0 12px;
-}
-
-
-/* =========================
-   SELLER
-========================= */
-
-.step{
-  display:inline-grid;
-  place-items:center;
-
-  width:28px;
-  height:28px;
-
-  border-radius:50%;
-
-  color:white;
-  background:var(--blue);
-
-  font-weight:900;
-
-  margin-left:6px;
-}
-
-.rangeBox{
-  padding:12px;
-
-  border-radius:13px;
-
-  background:#eaf5ff;
-
-  color:#076bbd;
-
-  margin-bottom:12px;
-
-  font-weight:800;
-}
+/* البائع */
 
 .preview{
+  margin-top:12px;
   text-align:center;
-  margin-top:11px;
 }
 
 .preview img{
@@ -685,66 +425,122 @@ td:last-child{
   border-radius:18px;
 }
 
+.myOffer{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:10px;
+  background:#f7fafc;
+  border-radius:14px;
+  padding:12px;
+  margin-bottom:8px;
+}
 
-/* =========================
-   NAV
-========================= */
+.deleteButton{
+  border:none;
+  border-radius:12px;
+  background:#fff0f0;
+  color:var(--red);
+  padding:10px 13px;
+  font-weight:900;
+}
+
+/* الحاسبة */
+
+.total{
+  margin-top:14px;
+  background:#eaf8f2;
+  color:#08714d;
+  border-radius:16px;
+  padding:16px;
+  font-size:23px;
+  font-weight:1000;
+}
+
+/* الفاتورة */
+
+.invoice{
+  margin-top:15px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:19px;
+}
+
+.invoiceTitle{
+  text-align:center;
+  color:var(--blue);
+  font-size:28px;
+  font-weight:1000;
+}
+
+.invoiceSubtitle{
+  text-align:center;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.invoiceRows{
+  display:grid;
+  gap:8px;
+  margin-top:18px;
+}
+
+.invoiceRow{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  background:#f6f9fb;
+  border-radius:12px;
+  padding:11px;
+}
+
+.invoiceTotal{
+  background:#eaf8f2;
+  color:#08714d;
+  font-size:19px;
+  font-weight:1000;
+}
+
+.small{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+.empty{
+  text-align:center;
+  color:var(--muted);
+  padding:28px 15px;
+}
+
+/* القائمة السفلية */
 
 .bottomNav{
   position:fixed;
-
   bottom:0;
   left:50%;
-
-  transform:
-  translateX(-50%);
-
-  width:min(
-  800px,
-  100%
-  );
-
+  transform:translateX(-50%);
+  width:min(700px,100%);
   display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
-  background:
-  rgba(255,255,255,.97);
-
-  backdrop-filter:
-  blur(15px);
-
-  border-top:
-  1px solid
-  var(--line);
-
-  padding:
-  8px 8px
-  calc(
-  8px +
-  env(safe-area-inset-bottom)
-  );
-
+  grid-template-columns:repeat(3,1fr);
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(15px);
+  border-top:1px solid var(--line);
+  padding:8px 8px calc(8px + env(safe-area-inset-bottom));
   z-index:100;
 }
 
 .bottomNav button{
   border:none;
   background:transparent;
-
   color:#788896;
-
   font-size:12px;
-
   font-weight:800;
-
   padding:5px;
 }
 
-.bottomNav button.active{
-  color:var(--blue);
-}
+.bottomNav button.active{color:var(--blue)}
 
 .navIcon{
   display:block;
@@ -752,4033 +548,2324 @@ td:last-child{
   margin-bottom:3px;
 }
 
-
-@media(max-width:450px){
-
-  .row,
-  .actions{
-    grid-template-columns:1fr;
-  }
-
-  .priceStats{
-    grid-template-columns:
-    repeat(3,1fr);
-  }
-
+@media(max-width:430px){
+  .row{grid-template-columns:1fr}
 }
 
-</style>
+@media print{
+  header,
+  .bottomNav,
+  .noPrint,
+  .page:not(#calculator){
+    display:none !important;
+  }
 
+  #calculator{
+    display:block !important;
+    padding:0;
+  }
+
+  .invoice{
+    display:block !important;
+    border:none;
+    margin:0;
+    padding:25px;
+  }
+
+  body{background:white}
+
+  .app{
+    max-width:none;
+    padding:0;
+  }
+}
+</style>
 </head>
 
 <body>
 
-
 <div class="app">
 
-
 <header>
+  <div class="brand">
+    <div>
+      <h1>صيد اليوم</h1>
+      <div class="subtitle">
+        سوق السمك الطازج من الصياد إلى المشتري
+      </div>
+    </div>
 
-<div class="brand">
-
-<div>
-
-<h1>
-صيد اليوم
-</h1>
-
-<div class="subtitle">
-سوق السمك الطازج من الصياد إلى المستهلك
-</div>
-
-</div>
-
-
-<div class="logo">
-🎣
-</div>
-
-</div>
-
+    <div class="logo">🎣</div>
+  </div>
 </header>
 
+<!-- السوق -->
 
+<section id="market" class="page active">
 
-<!-- ======================
-     MARKET
-====================== -->
+  <div class="todayBox">
+    <div class="todayTitle">🐟 صيد اليوم</div>
+    <div class="todayText">
+      شاهد أحدث الأسماك التي تم صيدها اليوم
+    </div>
+  </div>
 
-<section
-id="market"
-class="page active"
->
+  <div class="card">
+    <label>ابحث عن نوع السمك</label>
 
+    <input
+      id="marketSearch"
+      placeholder="مثال: ناجل أو هامور"
+      autocomplete="off"
+    >
 
-<div class="todayHero">
+    <br><br>
 
-<h2>
-🐟 صيد اليوم
-</h2>
+    <div class="row">
 
-<p>
-أحدث الأسماك المصطادة اليوم
-</p>
+      <div>
+        <label>📍 المدينة</label>
+        <select id="marketCity"></select>
+      </div>
 
-</div>
+      <div>
+        <label>ترتيب العروض</label>
 
+        <select id="marketSort">
+          <option value="newest">الأحدث صيدًا</option>
+          <option value="price">الأقل سعرًا</option>
+          <option value="nearest">الأقرب لمدينتي</option>
+          <option value="weight">الأكثر وزنًا</option>
+          <option value="rating">الأعلى تقييمًا</option>
+        </select>
+      </div>
 
-<div
-id="todayListings"
-class="listings">
-</div>
+    </div>
 
+    <br>
 
+    <label>مدينتي — لمعرفة الأقرب</label>
+    <select id="buyerCity"></select>
 
-<div class="sectionTitle">
-الأسماك
-</div>
+  </div>
 
+  <div class="sectionTitle">
+    اختر نوع السمك
+  </div>
 
-<div
-id="categories"
-class="categories">
-</div>
+  <div id="categoryGrid" class="categories"></div>
 
+  <div id="offersTitle" class="sectionTitle">
+    جميع العروض
+  </div>
 
+  <div id="chips" class="chips"></div>
 
-<div class="sectionTitle">
-البحث والمقارنة
-</div>
+  <div id="priceComparison"></div>
 
-
-<div class="card">
-
-
-<label>
-نوع السمك
-</label>
-
-
-<select
-id="buyerFishType">
-</select>
-
-
-<br><br>
-
-
-<div class="row">
-
-
-<div>
-
-<label>
-مدينة المشتري
-</label>
-
-<select
-id="buyerCity">
-</select>
-
-</div>
-
-
-<div>
-
-<label>
-ترتيب النتائج
-</label>
-
-<select
-id="sortOffers">
-
-<option value="new">
-الأحدث صيدًا
-</option>
-
-<option value="price">
-الأقل سعرًا
-</option>
-
-<option value="near">
-الأقرب
-</option>
-
-<option value="weight">
-الأعلى وزنًا
-</option>
-
-<option value="rating">
-الأعلى تقييمًا
-</option>
-
-</select>
-
-</div>
-
-
-</div>
-
-
-<br>
-
-
-<label>
-بحث
-</label>
-
-<input
-id="searchInput"
-placeholder="اسم السمك أو البائع أو المدينة"
->
-
-
-</div>
-
-
-
-<div
-id="priceStats"
-class="priceStats">
-</div>
-
-
-<div
-id="comparisonTable"
-class="tableWrap">
-</div>
-
-
-<div
-id="allListings"
-class="listings">
-</div>
-
-
-
-<div class="sectionTitle">
-🔔 تنبيه سعر
-</div>
-
-
-<div class="card">
-
-<div class="row">
-
-
-<div>
-
-<label>
-نوع السمك
-</label>
-
-<select
-id="alertFish">
-</select>
-
-</div>
-
-
-<div>
-
-<label>
-نبهني إذا السعر أقل من
-</label>
-
-<input
-id="alertPrice"
-type="number"
-placeholder="مثال 90"
->
-
-</div>
-
-
-</div>
-
-
-<br>
-
-
-<button
-class="btn secondary"
-onclick="savePriceAlert()"
->
-
-حفظ التنبيه
-
-</button>
-
-
-<div
-id="alertStatus"
-class="small"
-style="margin-top:10px">
-</div>
-
-
-</div>
-
+  <div id="listingGrid" class="listings"></div>
 
 </section>
 
+<!-- البائع -->
 
+<section id="seller" class="page">
 
-<!-- ======================
-     SELLER
-====================== -->
+  <div class="sectionTitle">
+    بائع السمك
+  </div>
 
-<section
-id="sellerPage"
-class="page"
->
+  <div class="card">
 
+    <div class="small">
+      أدخل بيانات السمك الذي تريد عرضه.
+      سعر الكيلو يجب أن يكون من 50 إلى 120 ريال.
+    </div>
 
-<div class="sectionTitle">
-👨‍🌾 بائع السمك / الصياد
-</div>
+    <br>
 
+    <label>اسم الصياد / البائع</label>
 
-<div class="card">
+    <input
+      id="sellerName"
+      placeholder="مثال: محمد"
+    >
 
+    <br><br>
 
-<div class="sectionTitle">
-<span class="step">1</span>
-اختيار السمك
-</div>
+    <div class="row">
 
+      <div>
+        <label>رقم التواصل</label>
 
-<label>
-نوع السمك
-</label>
+        <input
+          id="sellerPhone"
+          inputmode="tel"
+          placeholder="05xxxxxxxx"
+        >
+      </div>
 
+      <div>
+        <label>نوع السمك</label>
+        <select id="fishType"></select>
+      </div>
 
-<select
-id="sellerFish"
-onchange="updatePriceRange()">
-</select>
+    </div>
 
+    <br>
 
-<br>
+    <!-- المدينة -->
 
+    <div class="row">
 
-<div
-id="priceRange"
-class="rangeBox">
-</div>
+      <div>
+        <label>📍 مدينة البائع</label>
+        <select id="sellerCity"></select>
+      </div>
 
+      <div>
+        <label>مكان الصيد بشكل عام</label>
 
+        <input
+          id="catchLocation"
+          placeholder="مثال: ساحل الوجه"
+        >
+      </div>
 
-<div class="sectionTitle">
-<span class="step">2</span>
-بيانات السمكة
-</div>
+    </div>
 
+    <br>
 
-<label>
-صورة السمكة
-</label>
+    <div class="row">
 
+      <div>
+        <label>الوزن المتوفر بالكيلو</label>
 
-<input
-id="fishImage"
-type="file"
-accept="image/*"
->
+        <input
+          id="fishWeight"
+          type="number"
+          inputmode="decimal"
+          step="0.1"
+          min="0.1"
+          placeholder="مثال: 15"
+        >
+      </div>
 
+      <div>
+        <label>تاريخ الصيد</label>
 
-<div
-id="preview"
-class="preview">
-</div>
+        <input
+          id="catchDate"
+          type="date"
+        >
+      </div>
 
+    </div>
 
-<br>
+    <br>
 
+    <!-- وقت الصيد والحالة -->
 
-<div class="row">
+    <div class="row">
 
+      <div>
+        <label>⏰ وقت الصيد</label>
+        <input id="catchTime" type="time">
+      </div>
 
-<div>
+      <div>
+        <label>حالة السمك</label>
 
-<label>
-الوزن الإجمالي
-</label>
+        <select id="fishCondition">
+          <option value="طازجة">طازجة</option>
+          <option value="مبردة">مبردة</option>
+        </select>
+      </div>
 
-<input
-id="fishWeight"
-type="number"
-step="0.1"
-placeholder="مثال 7.5"
->
+    </div>
 
-</div>
+    <br>
 
+    <div class="row">
 
-<div>
+      <div>
+        <label>سعر الكيلو</label>
 
-<label>
-الكمية المتوفرة
-</label>
+        <input
+          id="priceKg"
+          type="number"
+          inputmode="decimal"
+          min="50"
+          max="120"
+          placeholder="من 50 إلى 120"
+        >
+      </div>
 
-<input
-id="fishQuantity"
-type="number"
-step="0.1"
-placeholder="مثال 7.5"
->
+      <div>
+        <label>طريقة البيع</label>
 
-</div>
+        <select id="saleType">
+          <option value="بالكيلو">بيع بالكيلو</option>
+          <option value="كاملة">بيع السمكة كاملة</option>
+        </select>
+      </div>
 
+    </div>
 
-</div>
+    <br>
 
+    <label>صورة السمك</label>
 
-<br>
+    <input
+      id="fishPhoto"
+      type="file"
+      accept="image/*"
+    >
 
+    <div id="photoPreview" class="preview"></div>
 
-<div class="row">
+    <br>
 
+    <label>ملاحظات</label>
 
-<div>
+    <textarea
+      id="fishNotes"
+      placeholder="مثال: صيد اليوم وطازج"
+    ></textarea>
 
-<label>
-تاريخ الصيد
-</label>
+    <br>
 
-<input
-id="catchDate"
-type="date"
->
+    <button
+      class="btn primary"
+      onclick="addListing()"
+    >
+      نشر العرض
+    </button>
 
-</div>
+  </div>
 
+  <div class="sectionTitle">
+    العروض المضافة
+  </div>
 
-<div>
-
-<label>
-وقت الصيد
-</label>
-
-<input
-id="catchTime"
-type="time"
->
-
-</div>
-
-
-</div>
-
-
-<br>
-
-
-<div class="row">
-
-
-<div>
-
-<label>
-المدينة
-</label>
-
-<select
-id="sellerCity">
-</select>
-
-</div>
-
-
-<div>
-
-<label>
-مكان الصيد بشكل عام
-</label>
-
-<input
-id="fishingArea"
-placeholder="مثال: شاطئ الوجه"
->
-
-</div>
-
-
-</div>
-
-
-<br>
-
-
-<div class="row">
-
-
-<div>
-
-<label>
-حالة السمك
-</label>
-
-<select id="fishCondition">
-
-<option value="طازجة">
-طازجة
-</option>
-
-<option value="مبردة">
-مبردة
-</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label>
-طريقة البيع
-</label>
-
-<select id="saleMode">
-
-<option value="kg">
-بالكيلو
-</option>
-
-<option value="whole">
-السمكة كاملة
-</option>
-
-</select>
-
-</div>
-
-
-</div>
-
-
-
-<div class="sectionTitle">
-<span class="step">3</span>
-السعر
-</div>
-
-
-<label>
-سعر الكيلو
-</label>
-
-<input
-id="sellerPrice"
-type="number"
-placeholder="حدد السعر"
->
-
-
-<br><br>
-
-
-<div class="row">
-
-
-<div>
-
-<label>
-اسم البائع
-</label>
-
-<input
-id="sellerName"
-placeholder="مثال: صياد محمد"
->
-
-</div>
-
-
-<div>
-
-<label>
-رقم الجوال
-</label>
-
-<input
-id="sellerPhone"
-inputmode="tel"
-placeholder="05xxxxxxxx"
->
-
-</div>
-
-
-</div>
-
-
-<br>
-
-
-<label>
-حالة التوثيق
-</label>
-
-<select
-id="sellerVerified">
-
-<option value="false">
-غير موثق
-</option>
-
-<option value="true">
-✓ موثق - تجريبي
-</option>
-
-</select>
-
-
-<div class="small">
-التوثيق الحقيقي لاحقًا يكون من لوحة الإدارة بعد التحقق من الهوية ورقم الجوال.
-</div>
-
-
-<br>
-
-
-<label>
-ملاحظات
-</label>
-
-<textarea
-id="sellerNotes"
-placeholder="مثال: صيد صباح اليوم، نظيف وجاهز">
-</textarea>
-
-
-<br>
-
-
-<button
-class="btn primary"
-onclick="addOffer()"
->
-
-عرض السمك
-
-</button>
-
-
-</div>
-
-
-
-<div class="sectionTitle">
-عروضي
-</div>
-
-
-<div
-id="sellerOffers">
-</div>
-
+  <div class="card">
+    <div id="myOffers"></div>
+  </div>
 
 </section>
 
+<!-- الحاسبة -->
 
+<section id="calculator" class="page">
 
-<!-- ======================
-     RESERVATIONS
-====================== -->
+  <div class="noPrint">
 
-<section
-id="ordersPage"
-class="page"
->
+    <div class="sectionTitle">
+      حاسبة الشراء
+    </div>
 
+    <div class="card">
 
-<div class="sectionTitle">
-🛒 الحجوزات
-</div>
+      <label>اختر عرض السمك</label>
+      <select id="calculatorListing"></select>
 
+      <br><br>
 
-<div
-id="reservations">
-</div>
+      <div class="row">
 
+        <div>
+          <label>الكمية المطلوبة بالكيلو</label>
 
-<div class="sectionTitle">
-⭐ تقييم بائع
-</div>
+          <input
+            id="buyWeight"
+            type="number"
+            inputmode="decimal"
+            step="0.1"
+            min="0.1"
+            placeholder="مثال: 3"
+          >
+        </div>
 
+        <div>
+          <label>اسم المشتري</label>
 
-<div class="card">
+          <input
+            id="buyerName"
+            placeholder="اختياري"
+          >
+        </div>
 
+      </div>
 
-<label>
-اسم البائع
-</label>
+      <div
+        id="calculatorInfo"
+        class="small"
+        style="margin-top:12px"
+      ></div>
 
-<select
-id="ratingSeller">
-</select>
+      <div id="calculatorTotal" class="total">
+        الإجمالي: 0 ريال
+      </div>
 
+      <br>
 
-<br><br>
+      <button
+        class="btn success"
+        onclick="reserveFish()"
+      >
+        احجز الكمية
+      </button>
 
+    </div>
 
-<label>
-التقييم
-</label>
+    <button
+      class="btn primary"
+      onclick="printInvoice()"
+    >
+      إنشاء PDF / طباعة
+    </button>
 
-<select
-id="ratingValue">
+  </div>
 
-<option value="5">
-⭐⭐⭐⭐⭐ 5
-</option>
+  <div id="invoice" class="invoice">
 
-<option value="4">
-⭐⭐⭐⭐ 4
-</option>
+    <div class="invoiceTitle">
+      صيد اليوم
+    </div>
 
-<option value="3">
-⭐⭐⭐ 3
-</option>
+    <div class="invoiceSubtitle">
+      حساب شراء السمك
+    </div>
 
-<option value="2">
-⭐⭐ 2
-</option>
+    <div class="invoiceRows">
 
-<option value="1">
-⭐ 1
-</option>
+      <div class="invoiceRow">
+        <span>التاريخ</span>
+        <b id="invoiceDate">—</b>
+      </div>
 
-</select>
+      <div class="invoiceRow">
+        <span>المشتري</span>
+        <b id="invoiceBuyer">—</b>
+      </div>
 
+      <div class="invoiceRow">
+        <span>الصياد</span>
+        <b id="invoiceSeller">—</b>
+      </div>
 
-<br><br>
+      <div class="invoiceRow">
+        <span>مدينة البائع</span>
+        <b id="invoiceCity">—</b>
+      </div>
 
+      <div class="invoiceRow">
+        <span>نوع السمك</span>
+        <b id="invoiceFish">—</b>
+      </div>
 
-<button
-class="btn secondary"
-onclick="rateSeller()"
->
+      <div class="invoiceRow">
+        <span>سعر الكيلو</span>
+        <b id="invoicePrice">—</b>
+      </div>
 
-إرسال التقييم
+      <div class="invoiceRow">
+        <span>الكمية</span>
+        <b id="invoiceWeight">—</b>
+      </div>
 
-</button>
+      <div class="invoiceRow invoiceTotal">
+        <span>الإجمالي</span>
+        <b id="invoiceTotal">—</b>
+      </div>
 
+    </div>
 
-</div>
-
+  </div>
 
 </section>
 
-
 </div>
 
-
+<!-- نفس القائمة الأصلية -->
 
 <nav class="bottomNav">
 
+  <button
+    class="active"
+    onclick="openPage('market',this)"
+  >
+    <span class="navIcon">🐟</span>
+    السوق
+  </button>
 
-<button
-class="active"
-onclick="openPage('market',this)"
->
+  <button
+    onclick="openPage('seller',this)"
+  >
+    <span class="navIcon">🎣</span>
+    بائع السمك
+  </button>
 
-<span class="navIcon">
-🐟
-</span>
-
-السوق
-
-</button>
-
-
-<button
-onclick="openPage('sellerPage',this)"
->
-
-<span class="navIcon">
-🎣
-</span>
-
-البائع
-
-</button>
-
-
-<button
-onclick="openPage('ordersPage',this)"
->
-
-<span class="navIcon">
-🛒
-</span>
-
-الحجوزات
-
-</button>
-
+  <button
+    onclick="openPage('calculator',this)"
+  >
+    <span class="navIcon">🧮</span>
+    الحاسبة
+  </button>
 
 </nav>
 
-
-
 <script>
 
-/* =====================================
-   أنواع السمك + نطاق السعر التجريبي
-===================================== */
+/* =========================
+   أنواع السمك
+========================= */
 
 const fishTypes = [
-
-{
-name:"ناجل",
-min:50,
-max:120
-},
-
-{
-name:"هامور",
-min:50,
-max:110
-},
-
-{
-name:"شعري",
-min:30,
-max:80
-},
-
-{
-name:"كنعد",
-min:40,
-max:100
-},
-
-{
-name:"سبيطي",
-min:40,
-max:100
-},
-
-{
-name:"بياض",
-min:25,
-max:80
-},
-
-{
-name:"حريد",
-min:25,
-max:75
-},
-
-{
-name:"شريفي",
-min:40,
-max:90
-},
-
-{
-name:"أخرى",
-min:20,
-max:150
-}
-
+  {name:"ناجل",emoji:"🐟"},
+  {name:"هامور",emoji:"🐠"},
+  {name:"شعور",emoji:"🐟"},
+  {name:"شريفي",emoji:"🐠"},
+  {name:"كنعد",emoji:"🐟"},
+  {name:"حريد",emoji:"🐠"},
+  {name:"بياض قز",emoji:"🐟"},
+  {name:"بياض قرم",emoji:"🐠"}
 ];
 
 
-/* =====================================
+/* =========================
    مدن السعودية
-===================================== */
+========================= */
 
-const cities = [
-
-{
-name:"الرياض",
-lat:24.7136,
-lng:46.6753
-},
-
-{
-name:"جدة",
-lat:21.4858,
-lng:39.1925
-},
-
-{
-name:"مكة المكرمة",
-lat:21.3891,
-lng:39.8579
-},
-
-{
-name:"المدينة المنورة",
-lat:24.5247,
-lng:39.5692
-},
-
-{
-name:"تبوك",
-lat:28.3838,
-lng:36.5550
-},
-
-{
-name:"الوجه",
-lat:26.2455,
-lng:36.4525
-},
-
-{
-name:"ضباء",
-lat:27.3498,
-lng:35.6962
-},
-
-{
-name:"أملج",
-lat:25.0500,
-lng:37.2689
-},
-
-{
-name:"ينبع",
-lat:24.0895,
-lng:38.0618
-},
-
-{
-name:"رابغ",
-lat:22.7986,
-lng:39.0349
-},
-
-{
-name:"الدمام",
-lat:26.4207,
-lng:50.0888
-},
-
-{
-name:"الخبر",
-lat:26.2172,
-lng:50.1971
-},
-
-{
-name:"الظهران",
-lat:26.2361,
-lng:50.0393
-},
-
-{
-name:"الجبيل",
-lat:27.0174,
-lng:49.6225
-},
-
-{
-name:"القطيف",
-lat:26.5765,
-lng:50.0115
-},
-
-{
-name:"الأحساء",
-lat:25.3830,
-lng:49.5860
-},
-
-{
-name:"حفر الباطن",
-lat:28.4328,
-lng:45.9708
-},
-
-{
-name:"الطائف",
-lat:21.2854,
-lng:40.4167
-},
-
-{
-name:"أبها",
-lat:18.2164,
-lng:42.5053
-},
-
-{
-name:"خميس مشيط",
-lat:18.3064,
-lng:42.7296
-},
-
-{
-name:"جازان",
-lat:16.8892,
-lng:42.5511
-},
-
-{
-name:"فرسان",
-lat:16.7022,
-lng:42.1183
-},
-
-{
-name:"نجران",
-lat:17.5656,
-lng:44.2289
-},
-
-{
-name:"الباحة",
-lat:20.0129,
-lng:41.4677
-},
-
-{
-name:"بريدة",
-lat:26.3592,
-lng:43.9818
-},
-
-{
-name:"عنيزة",
-lat:26.0843,
-lng:43.9936
-},
-
-{
-name:"الرس",
-lat:25.8694,
-lng:43.4973
-},
-
-{
-name:"حائل",
-lat:27.5114,
-lng:41.7208
-},
-
-{
-name:"سكاكا",
-lat:29.9697,
-lng:40.2064
-},
-
-{
-name:"دومة الجندل",
-lat:29.8111,
-lng:39.8675
-},
-
-{
-name:"عرعر",
-lat:30.9753,
-lng:41.0381
-},
-
-{
-name:"رفحاء",
-lat:29.6278,
-lng:43.5183
-},
-
-{
-name:"القنفذة",
-lat:19.1264,
-lng:41.0789
-},
-
-{
-name:"الليث",
-lat:20.1500,
-lng:40.2667
-},
-
-{
-name:"رأس تنورة",
-lat:26.6439,
-lng:50.1597
-},
-
-{
-name:"أخرى",
-lat:0,
-lng:0
-}
-
+const saudiCities = [
+"الرياض",
+"جدة",
+"مكة المكرمة",
+"المدينة المنورة",
+"الدمام",
+"الخبر",
+"الظهران",
+"الجبيل",
+"القطيف",
+"رأس تنورة",
+"الأحساء",
+"حفر الباطن",
+"الخفجي",
+"تبوك",
+"ضباء",
+"الوجه",
+"أملج",
+"حقل",
+"تيماء",
+"ينبع",
+"رابغ",
+"الطائف",
+"القنفذة",
+"الليث",
+"القويعية",
+"الخرج",
+"المجمعة",
+"الدوادمي",
+"وادي الدواسر",
+"القصيم",
+"بريدة",
+"عنيزة",
+"الرس",
+"حائل",
+"سكاكا",
+"دومة الجندل",
+"القريات",
+"عرعر",
+"رفحاء",
+"طريف",
+"أبها",
+"خميس مشيط",
+"محايل عسير",
+"بيشة",
+"النماص",
+"جازان",
+"صبيا",
+"أبو عريش",
+"صامطة",
+"فرسان",
+"نجران",
+"الباحة",
+"بلجرشي"
 ];
 
 
-/* =====================================
-   التخزين
-===================================== */
+/* =========================
+   البيانات
+========================= */
 
-let offers =
-
-JSON.parse(
-
-localStorage.getItem(
-"saydOffers"
-)
-
-|| "[]"
-
+let listings = JSON.parse(
+  localStorage.getItem("saydTodayListings") || "[]"
 );
-
-
-let reservations =
-
-JSON.parse(
-
-localStorage.getItem(
-"saydReservations"
-)
-
-|| "[]"
-
-);
-
-
-let sellerRatings =
-
-JSON.parse(
-
-localStorage.getItem(
-"saydRatings"
-)
-
-|| "{}"
-
-);
-
-
-let priceAlert =
-
-JSON.parse(
-
-localStorage.getItem(
-"saydAlert"
-)
-
-|| "null"
-
-);
-
 
 let selectedImage = "";
+let activeType = "الكل";
 
 
-/* =====================================
-   HELPERS
-===================================== */
+function getElement(id){
+  return document.getElementById(id);
+}
 
-function el(id){
 
-return document
-.getElementById(id);
+/* =========================
+   حفظ
+========================= */
+
+function saveListings(){
+
+  try{
+
+    localStorage.setItem(
+      "saydTodayListings",
+      JSON.stringify(listings)
+    );
+
+  }catch(error){
+
+    alert(
+      "مساحة التخزين ممتلئة. حاول استخدام صورة أصغر."
+    );
+
+  }
 
 }
 
 
-function saveAll(){
+/* =========================
+   حماية النص
+========================= */
 
-localStorage.setItem(
-"saydOffers",
-JSON.stringify(offers)
-);
+function escapeHTML(value){
 
-localStorage.setItem(
-"saydReservations",
-JSON.stringify(reservations)
-);
-
-localStorage.setItem(
-"saydRatings",
-JSON.stringify(sellerRatings)
-);
+  return String(value || "")
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
 
 }
 
 
-function esc(text){
+/* =========================
+   السعر
+========================= */
 
-return String(text || "")
+function money(value){
 
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+  const number = Number(value || 0);
 
-}
+  if(Number.isInteger(number)){
+    return String(number);
+  }
 
-
-function number(value){
-
-const n =
-Number(value || 0);
-
-return Number.isInteger(n)
-
-?
-
-String(n)
-
-:
-
-n.toFixed(1);
+  return number.toFixed(2);
 
 }
 
 
-function today(){
+/* =========================
+   التاريخ المحلي
+========================= */
 
-return new Date()
-.toISOString()
-.slice(0,10);
+function localDateString(){
 
-}
+  const date = new Date();
 
+  const year = date.getFullYear();
 
-function fishData(name){
+  const month =
+    String(date.getMonth()+1)
+    .padStart(2,"0");
 
-return fishTypes.find(
-fish =>
-fish.name === name
-);
+  const day =
+    String(date.getDate())
+    .padStart(2,"0");
 
-}
-
-
-function cityData(name){
-
-return cities.find(
-city =>
-city.name === name
-);
+  return `${year}-${month}-${day}`;
 
 }
 
 
-/* =====================================
-   التنقل
-===================================== */
+/* =========================
+   هل صيد اليوم؟
+========================= */
 
-function openPage(
-id,
-button
-){
+function isToday(date){
 
-document
-.querySelectorAll(".page")
-.forEach(
-
-page =>
-
-page.classList.remove(
-"active"
-)
-
-);
-
-
-el(id)
-.classList.add(
-"active"
-);
-
-
-document
-.querySelectorAll(
-".bottomNav button"
-)
-.forEach(
-
-item =>
-
-item.classList.remove(
-"active"
-)
-
-);
-
-
-button.classList.add(
-"active"
-);
-
-
-renderAll();
+  return date === localDateString();
 
 }
 
 
-/* =====================================
-   القوائم
-===================================== */
+/* =========================
+   تنسيق وقت الصيد
+========================= */
 
-function setupSelects(){
+function catchText(offer){
 
-const fishOptions =
+  let dateText = offer.catchDate || "غير محدد";
 
-fishTypes
-.map(
+  if(isToday(offer.catchDate)){
+    dateText = "اليوم";
+  }
 
-fish =>
+  if(offer.catchTime){
 
-`
-<option value="${fish.name}">
-${fish.name}
-</option>
-`
+    return "تم صيده " +
+    dateText +
+    " الساعة " +
+    formatTime(offer.catchTime);
 
-)
-.join("");
+  }
 
-
-el("sellerFish").innerHTML =
-fishOptions;
-
-el("buyerFishType").innerHTML =
-
-`
-<option value="الكل">
-جميع الأنواع
-</option>
-`
-
-+
-
-fishOptions;
-
-
-el("alertFish").innerHTML =
-fishOptions;
-
-
-const cityOptions =
-
-cities
-.map(
-
-city =>
-
-`
-<option value="${city.name}">
-${city.name}
-</option>
-`
-
-)
-.join("");
-
-
-el("sellerCity").innerHTML =
-cityOptions;
-
-el("buyerCity").innerHTML =
-
-`
-<option value="">
-كل المدن
-</option>
-`
-
-+
-
-cityOptions;
-
-
-el("catchDate").max =
-today();
-
-
-updatePriceRange();
-
-}
-
-
-/* =====================================
-   السعر المسموح
-===================================== */
-
-function updatePriceRange(){
-
-const fish =
-
-fishData(
-el("sellerFish").value
-);
-
-
-if(!fish){
-return;
-}
-
-
-el("priceRange").textContent =
-
-"نطاق السعر المسموح لهذا النوع: "
-
-+
-
-fish.min
-
-+
-
-" إلى "
-
-+
-
-fish.max
-
-+
-
-" ريال / كجم";
-
-
-el("sellerPrice").min =
-fish.min;
-
-el("sellerPrice").max =
-fish.max;
-
-}
-
-
-/* =====================================
-   الصورة
-===================================== */
-
-el("fishImage")
-.addEventListener(
-
-"change",
-
-function(event){
-
-const file =
-event.target.files[0];
-
-
-if(!file){
-return;
-}
-
-
-const reader =
-new FileReader();
-
-
-reader.onload =
-function(){
-
-const image =
-new Image();
-
-
-image.onload =
-function(){
-
-const max =
-900;
-
-
-const scale =
-
-Math.min(
-
-1,
-
-max /
-
-Math.max(
-image.width,
-image.height
-)
-
-);
-
-
-const canvas =
-
-document.createElement(
-"canvas"
-);
-
-
-canvas.width =
-
-Math.round(
-image.width * scale
-);
-
-
-canvas.height =
-
-Math.round(
-image.height * scale
-);
-
-
-canvas
-.getContext("2d")
-.drawImage(
-
-image,
-
-0,
-
-0,
-
-canvas.width,
-
-canvas.height
-
-);
-
-
-selectedImage =
-
-canvas.toDataURL(
-"image/jpeg",
-0.72
-);
-
-
-el("preview").innerHTML =
-
-`
-<img
-src="${selectedImage}"
-alt="صورة السمك"
->
-`;
-
-};
-
-
-image.src =
-reader.result;
-
-};
-
-
-reader.readAsDataURL(
-file
-);
-
-}
-
-);
-
-
-/* =====================================
-   إضافة عرض
-===================================== */
-
-function addOffer(){
-
-const type =
-el("sellerFish").value;
-
-
-const fish =
-fishData(type);
-
-
-const weight =
-Number(
-el("fishWeight").value
-);
-
-
-const quantity =
-Number(
-el("fishQuantity").value
-);
-
-
-const date =
-el("catchDate").value;
-
-
-const time =
-el("catchTime").value;
-
-
-const city =
-el("sellerCity").value;
-
-
-const area =
-el("fishingArea").value.trim();
-
-
-const condition =
-el("fishCondition").value;
-
-
-const saleMode =
-el("saleMode").value;
-
-
-const price =
-Number(
-el("sellerPrice").value
-);
-
-
-const seller =
-el("sellerName").value.trim();
-
-
-const phone =
-el("sellerPhone").value.trim();
-
-
-const verified =
-
-el("sellerVerified").value ===
-"true";
-
-
-const notes =
-el("sellerNotes").value.trim();
-
-
-
-if(!seller){
-
-alert(
-"اكتب اسم البائع"
-);
-
-return;
-
-}
-
-
-if(!phone){
-
-alert(
-"اكتب رقم الجوال"
-);
-
-return;
-
-}
-
-
-if(!selectedImage){
-
-alert(
-"أضف صورة السمكة"
-);
-
-return;
-
-}
-
-
-if(weight <= 0){
-
-alert(
-"أدخل وزن السمكة"
-);
-
-return;
-
-}
-
-
-if(quantity <= 0){
-
-alert(
-"أدخل الكمية المتوفرة"
-);
-
-return;
-
-}
-
-
-if(quantity > weight){
-
-alert(
-"الكمية المتوفرة لا يمكن أن تكون أكبر من الوزن الإجمالي"
-);
-
-return;
-
-}
-
-
-if(!date){
-
-alert(
-"حدد تاريخ الصيد"
-);
-
-return;
-
-}
-
-
-if(!time){
-
-alert(
-"حدد وقت الصيد"
-);
-
-return;
-
-}
-
-
-if(
-price < fish.min
-||
-price > fish.max
-){
-
-alert(
-
-"سعر "
-
-+
-
-type
-
-+
-
-" يجب أن يكون بين "
-
-+
-
-fish.min
-
-+
-
-" و "
-
-+
-
-fish.max
-
-+
-
-" ريال"
-
-);
-
-return;
-
-}
-
-
-const offer = {
-
-id:
-Date.now().toString(),
-
-type:type,
-
-image:
-selectedImage,
-
-weight:weight,
-
-remaining:
-quantity,
-
-catchDate:
-date,
-
-catchTime:
-time,
-
-city:city,
-
-area:area,
-
-condition:
-condition,
-
-saleMode:
-saleMode,
-
-price:
-price,
-
-seller:
-seller,
-
-phone:
-phone,
-
-verified:
-verified,
-
-notes:
-notes,
-
-createdAt:
-Date.now()
-
-};
-
-
-offers.push(
-offer
-);
-
-
-saveAll();
-
-
-checkAlert(
-offer
-);
-
-
-selectedImage = "";
-
-
-el("fishImage").value =
-"";
-
-el("preview").innerHTML =
-"";
-
-el("fishWeight").value =
-"";
-
-el("fishQuantity").value =
-"";
-
-el("sellerPrice").value =
-"";
-
-el("sellerNotes").value =
-"";
-
-
-renderAll();
-
-
-alert(
-"تم عرض السمك للمشترين ✅"
-);
-
-}
-
-
-/* =====================================
-   تاريخ ووقت الصيد
-===================================== */
-
-function catchText(
-offer
-){
-
-const date =
-offer.catchDate;
-
-
-const time =
-offer.catchTime;
-
-
-if(date === today()){
-
-return (
-
-"تم صيده اليوم الساعة "
-
-+
-
-formatTime(time)
-
-);
-
-}
-
-
-const yesterday =
-new Date();
-
-
-yesterday.setDate(
-yesterday.getDate() - 1
-);
-
-
-const y =
-
-yesterday
-.toISOString()
-.slice(0,10);
-
-
-if(date === y){
-
-return (
-
-"تم صيده أمس الساعة "
-
-+
-
-formatTime(time)
-
-);
-
-}
-
-
-return (
-
-"تم صيده "
-
-+
-
-date
-
-+
-
-" الساعة "
-
-+
-
-formatTime(time)
-
-);
+  return "تاريخ الصيد: " + dateText;
 
 }
 
 
 function formatTime(time){
 
-if(!time){
-return "";
-}
+  if(!time) return "";
 
+  const parts = time.split(":");
 
-let [
-hours,
-minutes
-] =
+  let hour = Number(parts[0]);
 
-time
-.split(":")
-.map(Number);
+  const minute = parts[1];
 
+  const period =
+    hour >= 12
+    ? "م"
+    : "ص";
 
-const period =
+  hour = hour % 12;
 
-hours >= 12
+  if(hour === 0){
+    hour = 12;
+  }
 
-?
-
-"مساءً"
-
-:
-
-"صباحًا";
-
-
-hours =
-hours % 12;
-
-
-if(hours === 0){
-hours = 12;
-}
-
-
-return (
-
-hours
-
-+
-
-":"
-
-+
-
-String(minutes)
-.padStart(2,"0")
-
-+
-
-" "
-
-+
-
-period
-
-);
+  return hour + ":" + minute + " " + period;
 
 }
 
 
-/* =====================================
-   تقييم البائع
-===================================== */
+/* =========================
+   التنقل
+========================= */
 
-function sellerKey(
-offer
-){
+function openPage(pageID,button){
 
-return offer.phone || offer.seller;
+  document
+  .querySelectorAll(".page")
+  .forEach(page=>{
+    page.classList.remove("active");
+  });
 
-}
+  getElement(pageID)
+  .classList.add("active");
 
+  document
+  .querySelectorAll(".bottomNav button")
+  .forEach(item=>{
+    item.classList.remove("active");
+  });
 
-function ratingOf(
-offer
-){
+  button.classList.add("active");
 
-const key =
-sellerKey(offer);
-
-
-const data =
-sellerRatings[key];
-
-
-if(!data){
-
-return {
-average:0,
-count:0
-};
+  if(pageID === "calculator"){
+    renderCalculator();
+  }
 
 }
 
 
-return {
+/* =========================
+   تجهيز المدن
+========================= */
 
-average:
-data.total / data.count,
+function setupCities(){
 
-count:
-data.count
+  const cityOptions = saudiCities.map(
+    city =>
+    `<option value="${escapeHTML(city)}">${escapeHTML(city)}</option>`
+  ).join("");
 
-};
+  getElement("sellerCity").innerHTML =
+  `<option value="">اختر المدينة</option>` +
+  cityOptions;
 
-}
+  getElement("marketCity").innerHTML =
+  `<option value="الكل">جميع المدن</option>` +
+  cityOptions;
 
-
-/* =====================================
-   المسافة بين المدن
-===================================== */
-
-function distanceKm(
-city1Name,
-city2Name
-){
-
-const a =
-cityData(city1Name);
-
-
-const b =
-cityData(city2Name);
-
-
-if(
-!a
-||
-!b
-||
-!a.lat
-||
-!b.lat
-){
-
-return 999999;
-}
-
-
-const R =
-6371;
-
-
-const dLat =
-
-(
-b.lat -
-a.lat
-)
-
-*
-Math.PI / 180;
-
-
-const dLng =
-
-(
-b.lng -
-a.lng
-)
-
-*
-Math.PI / 180;
-
-
-const lat1 =
-a.lat *
-Math.PI / 180;
-
-
-const lat2 =
-b.lat *
-Math.PI / 180;
-
-
-const h =
-
-Math.sin(
-dLat/2
-)
-
-**
-2
-
-+
-
-Math.sin(
-dLng/2
-)
-
-**
-2
-
-*
-
-Math.cos(lat1)
-
-*
-
-Math.cos(lat2);
-
-
-return (
-
-2
-
-*
-
-R
-
-*
-
-Math.asin(
-Math.sqrt(h)
-)
-
-);
+  getElement("buyerCity").innerHTML =
+  `<option value="">حدد مدينتي</option>` +
+  cityOptions;
 
 }
 
 
-/* =====================================
-   بطاقة العرض
-===================================== */
+/* =========================
+   أنواع السمك
+========================= */
 
-function offerCard(
-offer
-){
+function setupFishTypes(){
 
-const rating =
-ratingOf(offer);
+  getElement("fishType").innerHTML =
+  fishTypes.map(
+    fish =>
+    `<option value="${fish.name}">${fish.name}</option>`
+  ).join("");
 
+  getElement("catchDate").max =
+  localDateString();
 
-const isToday =
-
-offer.catchDate ===
-today();
-
-
-const total =
-
-offer.saleMode ===
-"whole"
-
-?
-
-offer.weight *
-offer.price
-
-:
-
-offer.remaining *
-offer.price;
-
-
-const stars =
-
-rating.count
-
-?
-
-"⭐".repeat(
-Math.round(
-rating.average
-)
-)
-
-:
-
-"بدون تقييم";
-
-
-return `
-
-<div class="listing">
-
-
-<div class="listingImage">
-
-<img
-src="${offer.image}"
-alt="${esc(
-offer.type
-)}"
->
-
-${
-
-isToday
-
-?
-
-`
-<div class="todayBadge">
-صيد اليوم
-</div>
-`
-
-:
-
-""
+  getElement("catchDate").value =
+  localDateString();
 
 }
 
-</div>
 
-
-
-<div class="listingBody">
-
-
-<div class="listingTop">
-
-
-<div>
-
-
-<div class="fishName">
-
-${esc(
-offer.type
-)}
-
-</div>
-
-
-<div class="seller">
-
-${esc(
-offer.seller
-)}
-
-${
-
-offer.verified
-
-?
-
-`
-<span class="verified">
-✓ بائع موثّق
-</span>
-`
-
-:
-
-""
-
-}
-
-</div>
-
-
-<div class="rating">
-
-${stars}
-
-${
-
-rating.count
-
-?
-
-`
-${rating.average.toFixed(1)}
-(${rating.count})
-`
-
-:
-
-""
-
-}
-
-</div>
-
-
-</div>
-
-
-
-<div class="price">
-
-${number(
-offer.price
-)}
-
-ريال/كجم
-
-</div>
-
-
-</div>
-
-
-
-<div class="metaGrid">
-
-
-<div class="meta">
-
-<strong>
-
-${number(
-offer.remaining
-)}
-
-كجم
-
-</strong>
-
-<span>
-الكمية المتبقية
-</span>
-
-</div>
-
-
-<div class="meta">
-
-<strong class="fresh">
-
-${catchText(
-offer
-)}
-
-</strong>
-
-<span>
-وقت الصيد
-</span>
-
-</div>
-
-
-<div class="meta">
-
-<strong>
-
-📍
-
-${esc(
-offer.city
-)}
-
-</strong>
-
-<span>
-
-${esc(
-offer.area || "الموقع التقريبي"
-)}
-
-</span>
-
-</div>
-
-
-<div class="meta">
-
-<strong>
-
-${esc(
-offer.condition
-)}
-
-</strong>
-
-<span>
-حالة السمك
-</span>
-
-</div>
-
-
-<div class="meta">
-
-<strong>
-
-${
-
-offer.saleMode ===
-"whole"
-
-?
-
-"السمكة كاملة"
-
-:
-
-"بيع بالكيلو"
-
-}
-
-</strong>
-
-<span>
-طريقة البيع
-</span>
-
-</div>
-
-
-<div class="meta">
-
-<strong>
-
-${number(
-total
-)}
-
-ريال
-
-</strong>
-
-<span>
-
-${
-
-offer.saleMode ===
-"whole"
-
-?
-
-"سعر السمكة كاملة"
-
-:
-
-"قيمة الكمية المتبقية"
-
-}
-
-</span>
-
-</div>
-
-
-</div>
-
-
-${
-
-offer.notes
-
-?
-
-`
-<div class="notes">
-${esc(
-offer.notes
-)}
-</div>
-`
-
-:
-
-""
-
-}
-
-
-<div class="actions">
-
-
-<button
-class="btn primary"
-onclick="reserveOffer('${offer.id}')"
->
-
-${
-
-offer.saleMode ===
-"whole"
-
-?
-
-"احجز السمكة كاملة"
-
-:
-
-"احجز كمية"
-
-}
-
-</button>
-
-
-<button
-class="btn secondary"
-onclick="openMap('${offer.city}')"
->
-
-📍 الموقع التقريبي
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-`;
-
-}
-
-
-/* =====================================
-   صيد اليوم
-===================================== */
-
-function renderToday(){
-
-const todayOffers =
-
-offers.filter(
-
-offer =>
-
-offer.catchDate === today()
-
-&&
-
-offer.remaining > 0
-
-);
-
-
-if(!todayOffers.length){
-
-el("todayListings").innerHTML =
-
-`
-<div class="card empty">
-لا يوجد صيد مضاف اليوم حتى الآن.
-</div>
-`;
-
-return;
-
-}
-
-
-el("todayListings").innerHTML =
-
-todayOffers
-.slice()
-.reverse()
-.slice(0,4)
-.map(
-offerCard
-)
-.join("");
-
-}
-
-
-/* =====================================
-   الأقسام
-===================================== */
+/* =========================
+   عرض أنواع السمك
+========================= */
 
 function renderCategories(){
 
-el("categories").innerHTML =
+  const container =
+  getElement("categoryGrid");
 
-fishTypes
-.map(
+  container.innerHTML =
+  fishTypes.map(fish=>{
 
-fish => {
+    const numberOfOffers =
+    listings.filter(
+      offer =>
+      offer.type === fish.name &&
+      Number(offer.weight) > 0
+    ).length;
 
-const count =
+    return `
 
-offers.filter(
+    <button
+      class="category"
+      onclick="filterType('${fish.name}')"
+    >
 
-offer =>
+      <div class="categoryEmoji">
+        ${fish.emoji}
+      </div>
 
-offer.type === fish.name
+      <div class="categoryName">
+        ${escapeHTML(fish.name)}
+      </div>
 
-&&
+      <div class="categoryCount">
+        ${numberOfOffers} عرض
+      </div>
 
-offer.remaining > 0
+    </button>
 
-).length;
+    `;
 
+  }).join("");
 
-return `
-
-<button
-
-class="category"
-
-onclick="selectFish('${fish.name}')"
-
->
-
-
-<div class="categoryEmoji">
-🐟
-</div>
-
-
-<div class="categoryName">
-
-${fish.name}
-
-</div>
-
-
-<div class="categoryCount">
-
-${count}
-
-عرض متوفر
-
-</div>
-
-
-</button>
-
-`;
-
-}
-
-)
-.join("");
+  renderChips();
 
 }
 
 
-function selectFish(
-fish
-){
+/* =========================
+   الفلاتر
+========================= */
 
-el("buyerFishType").value =
-fish;
+function renderChips(){
 
+  const names = [
+    "الكل",
+    ...fishTypes.map(fish=>fish.name)
+  ];
 
-renderBuyerOffers();
+  getElement("chips").innerHTML =
+  names.map(name=>`
 
+    <button
+      class="chip ${activeType === name ? "active" : ""}"
+      onclick="filterType('${name}')"
+    >
+      ${escapeHTML(name)}
+    </button>
 
-el("buyerFishType")
-.scrollIntoView(
-
-{
-behavior:"smooth",
-block:"center"
-}
-
-);
-
-}
-
-
-/* =====================================
-   عروض المشتري
-===================================== */
-
-function getBuyerOffers(){
-
-const fish =
-el("buyerFishType").value;
-
-
-const search =
-
-el("searchInput")
-.value
-.trim()
-.toLowerCase();
-
-
-const sort =
-el("sortOffers").value;
-
-
-const buyerCity =
-el("buyerCity").value;
-
-
-let result =
-
-offers.filter(
-
-offer =>
-offer.remaining > 0
-
-);
-
-
-if(
-fish !==
-"الكل"
-){
-
-result =
-
-result.filter(
-
-offer =>
-offer.type === fish
-
-);
+  `).join("");
 
 }
 
 
-if(search){
+/* =========================
+   اختيار نوع
+========================= */
 
-result =
+function filterType(type){
 
-result.filter(
+  activeType = type;
 
-offer =>
+  if(type === "الكل"){
 
-offer.type
-.toLowerCase()
-.includes(search)
+    getElement("offersTitle").textContent =
+    "جميع العروض";
 
-||
+  }else{
 
-offer.seller
-.toLowerCase()
-.includes(search)
+    getElement("offersTitle").textContent =
+    "عروض " + type;
 
-||
+  }
 
-offer.city
-.toLowerCase()
-.includes(search)
+  renderCategories();
+  renderListings();
 
-);
+  setTimeout(()=>{
 
-}
+    getElement("offersTitle")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
 
-
-if(sort === "price"){
-
-result.sort(
-
-(a,b) =>
-a.price -
-b.price
-
-);
+  },100);
 
 }
 
 
-else if(
-sort === "weight"
-){
-
-result.sort(
-
-(a,b) =>
-b.remaining -
-a.remaining
-
-);
-
-}
-
-
-else if(
-sort === "rating"
-){
-
-result.sort(
-
-(a,b) =>
-
-ratingOf(b).average
-
--
-
-ratingOf(a).average
-
-);
-
-}
-
-
-else if(
-sort === "near"
-&&
-buyerCity
-){
-
-result.sort(
-
-(a,b) =>
-
-distanceKm(
-buyerCity,
-a.city
-)
-
--
-
-distanceKm(
-buyerCity,
-b.city
-)
-
-);
-
-}
-
-
-else{
-
-result.sort(
-
-(a,b) => {
-
-const aDate =
-
-new Date(
-
-a.catchDate
-
-+
-
-"T"
-
-+
-
-a.catchTime
-
-);
-
-
-const bDate =
-
-new Date(
-
-b.catchDate
-
-+
-
-"T"
-
-+
-
-b.catchTime
-
-);
-
-
-return (
-
-bDate -
-aDate
-
-);
-
-}
-
-);
-
-}
-
-
-return result;
-
-}
-
-
-/* =====================================
+/* =========================
    مقارنة الأسعار
-===================================== */
+========================= */
 
-function renderPriceStats(
-data
-){
+function renderPriceComparison(result){
 
-if(!data.length){
+  const container =
+  getElement("priceComparison");
 
-el("priceStats").innerHTML =
-"";
+  if(!result.length){
 
-return;
+    container.innerHTML = "";
+    return;
 
-}
+  }
 
+  const prices =
+  result.map(
+    offer=>Number(offer.price)
+  )
+  .filter(
+    price=>price > 0
+  );
 
-const prices =
+  if(!prices.length){
 
-data.map(
-item =>
-item.price
-);
+    container.innerHTML = "";
+    return;
 
+  }
 
-const min =
-Math.min(
-...prices
-);
+  const min =
+  Math.min(...prices);
 
+  const max =
+  Math.max(...prices);
 
-const max =
-Math.max(
-...prices
-);
+  const average =
+  prices.reduce(
+    (a,b)=>a+b,
+    0
+  ) / prices.length;
 
+  container.innerHTML = `
 
-const average =
+  <div class="priceStats">
 
-prices.reduce(
+    <div class="stat">
+      <strong>${money(min)} ر.س</strong>
+      <small>أقل سعر</small>
+    </div>
 
-(a,b) =>
-a+b,
+    <div class="stat">
+      <strong>${money(average)} ر.س</strong>
+      <small>متوسط السعر</small>
+    </div>
 
-0
+    <div class="stat">
+      <strong>${money(max)} ر.س</strong>
+      <small>أعلى سعر</small>
+    </div>
 
-)
+  </div>
 
-/
-
-prices.length;
-
-
-el("priceStats").innerHTML = `
-
-<div class="stat">
-
-<strong>
-${number(min)}
-</strong>
-
-<span>
-أقل سعر
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<strong>
-${number(average)}
-</strong>
-
-<span>
-متوسط السعر
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<strong>
-${number(max)}
-</strong>
-
-<span>
-أعلى سعر
-</span>
-
-</div>
-
-`;
+  `;
 
 }
 
 
-/* =====================================
-   جدول المقارنة
-===================================== */
-
-function renderComparison(
-data
-){
-
-if(!data.length){
-
-el("comparisonTable").innerHTML =
-"";
-
-return;
-
-}
-
-
-el("comparisonTable").innerHTML = `
-
-<table>
-
-
-<thead>
-
-<tr>
-
-<th>
-البائع
-</th>
-
-<th>
-النوع
-</th>
-
-<th>
-المتوفر
-</th>
-
-<th>
-السعر/كجم
-</th>
-
-<th>
-تاريخ الصيد
-</th>
-
-<th>
-الإجمالي
-</th>
-
-</tr>
-
-</thead>
-
-
-<tbody>
-
-${
-
-data
-.map(
-
-offer => `
-
-<tr>
-
-<td>
-${esc(
-offer.seller
-)}
-</td>
-
-<td>
-${esc(
-offer.type
-)}
-</td>
-
-<td>
-${number(
-offer.remaining
-)}
-كجم
-</td>
-
-<td>
-${number(
-offer.price
-)}
-ريال
-</td>
-
-<td>
-${catchText(
-offer
-)}
-</td>
-
-<td>
-${number(
-offer.remaining *
-offer.price
-)}
-ريال
-</td>
-
-</tr>
-
-`
-
-)
-.join("")
-
-}
-
-</tbody>
-
-
-</table>
-
-`;
-
-}
-
-
-/* =====================================
+/* =========================
    عرض السوق
-===================================== */
+========================= */
 
-function renderBuyerOffers(){
+function renderListings(){
 
-const data =
-getBuyerOffers();
+  const searchValue =
+  getElement("marketSearch")
+  .value
+  .trim()
+  .toLowerCase();
+
+  const city =
+  getElement("marketCity").value;
+
+  const sort =
+  getElement("marketSort").value;
+
+  const buyerCity =
+  getElement("buyerCity").value;
+
+  let result =
+  listings
+  .filter(
+    offer =>
+    Number(offer.weight) > 0
+  )
+  .slice();
+
+  if(activeType !== "الكل"){
+
+    result =
+    result.filter(
+      offer =>
+      offer.type === activeType
+    );
+
+  }
+
+  if(city && city !== "الكل"){
+
+    result =
+    result.filter(
+      offer =>
+      offer.city === city
+    );
+
+  }
+
+  if(searchValue){
+
+    result =
+    result.filter(offer=>
+
+      String(offer.type || "")
+      .toLowerCase()
+      .includes(searchValue)
+
+      ||
+
+      String(offer.seller || "")
+      .toLowerCase()
+      .includes(searchValue)
+
+      ||
+
+      String(offer.city || "")
+      .toLowerCase()
+      .includes(searchValue)
+
+    );
+
+  }
+
+  if(sort === "price"){
+
+    result.sort(
+      (a,b)=>
+      Number(a.price) -
+      Number(b.price)
+    );
+
+  }
+
+  else if(sort === "weight"){
+
+    result.sort(
+      (a,b)=>
+      Number(b.weight) -
+      Number(a.weight)
+    );
+
+  }
+
+  else if(sort === "rating"){
+
+    result.sort(
+      (a,b)=>
+      Number(b.rating || 5) -
+      Number(a.rating || 5)
+    );
+
+  }
+
+  else if(sort === "nearest"){
+
+    result.sort((a,b)=>{
+
+      const aNear =
+      buyerCity &&
+      a.city === buyerCity
+      ? 0
+      : 1;
+
+      const bNear =
+      buyerCity &&
+      b.city === buyerCity
+      ? 0
+      : 1;
+
+      return aNear - bNear;
+
+    });
+
+  }
+
+  else{
+
+    result.sort(
+      (a,b)=>
+      Number(b.createdAt || 0) -
+      Number(a.createdAt || 0)
+    );
+
+  }
+
+  renderPriceComparison(result);
+
+  if(result.length === 0){
+
+    getElement("listingGrid").innerHTML = `
+
+      <div class="card empty">
+        لا توجد عروض لهذا النوع أو المدينة حتى الآن.
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+  getElement("listingGrid").innerHTML =
+  result.map(offer=>{
+
+    const fullPrice =
+    Number(offer.weight) *
+    Number(offer.price);
+
+    const rating =
+    Number(offer.rating || 5);
+
+    const near =
+    buyerCity &&
+    offer.city === buyerCity;
+
+    return `
+
+    <div class="listing">
+
+      <div class="listingImage">
+
+        ${
+          offer.image
+          ?
+          `
+          <img
+            src="${offer.image}"
+            alt="${escapeHTML(offer.type)}"
+          >
+          `
+          :
+          "🐟"
+        }
+
+        ${
+          isToday(offer.catchDate)
+          ?
+          `<div class="todayBadge">صيد اليوم</div>`
+          :
+          ""
+        }
+
+      </div>
+
+      <div class="listingBody">
+
+        <div class="listingHeader">
+
+          <div>
+
+            <div class="fishName">
+              ${escapeHTML(offer.type)}
+            </div>
+
+            <div class="sellerName">
+              الصياد:
+              ${escapeHTML(offer.seller)}
+            </div>
+
+            <div class="verifiedBadge">
+              ✓ بائع موثّق
+            </div>
+
+          </div>
+
+          <div class="price">
+            ${money(offer.price)}
+            ريال/كجم
+          </div>
+
+        </div>
+
+        <div class="location">
+
+          📍
+          ${
+            offer.city
+            ?
+            escapeHTML(offer.city)
+            :
+            "المدينة غير محددة"
+          }
+
+          ${
+            near
+            ?
+            " — الأقرب لك"
+            :
+            ""
+          }
+
+        </div>
+
+        ${
+          offer.catchLocation
+          ?
+          `
+          <div class="small">
+            منطقة الصيد:
+            ${escapeHTML(offer.catchLocation)}
+          </div>
+          `
+          :
+          ""
+        }
+
+        <div class="catchInfo">
+          ${escapeHTML(catchText(offer))}
+        </div>
+
+        <div class="infoGrid">
+
+          <div class="info">
+
+            <strong>
+              ${money(offer.weight)} كجم
+            </strong>
+
+            <small>
+              الكمية المتبقية
+            </small>
+
+          </div>
+
+          <div class="info">
+
+            <strong>
+              ${escapeHTML(offer.condition || "طازجة")}
+            </strong>
+
+            <small>
+              حالة السمك
+            </small>
+
+          </div>
+
+          <div class="info">
+
+            <strong>
+              ${money(fullPrice)} ريال
+            </strong>
+
+            <small>
+              قيمة كامل الكمية
+            </small>
+
+          </div>
+
+          <div class="info">
+
+            <strong>
+              ${escapeHTML(offer.saleType || "بالكيلو")}
+            </strong>
+
+            <small>
+              طريقة البيع
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="rating">
+          ⭐ ${money(rating)} / 5
+        </div>
+
+        ${
+          offer.notes
+          ?
+          `
+          <div class="notes">
+            ${escapeHTML(offer.notes)}
+          </div>
+          `
+          :
+          ""
+        }
+
+        <div class="listingActions">
+
+          <button
+            class="btn primary"
+            onclick="openCalculator('${offer.id}')"
+          >
+            احجز / احسب
+          </button>
+
+          <button
+            class="btn secondary"
+            onclick="contactSeller('${offer.id}')"
+          >
+            تواصل مع البائع
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    `;
+
+  }).join("");
+
+}
 
 
-renderPriceStats(
-data
+/* =========================
+   البحث والفلاتر
+========================= */
+
+getElement("marketSearch")
+.addEventListener(
+  "input",
+  renderListings
+);
+
+getElement("marketCity")
+.addEventListener(
+  "change",
+  renderListings
+);
+
+getElement("marketSort")
+.addEventListener(
+  "change",
+  renderListings
+);
+
+getElement("buyerCity")
+.addEventListener(
+  "change",
+  renderListings
 );
 
 
-renderComparison(
-data
-);
+/* =========================
+   صورة السمك
+========================= */
 
+getElement("fishPhoto")
+.addEventListener(
+"change",
+function(event){
 
-if(!data.length){
+  const file =
+  event.target.files[0];
 
-el("allListings").innerHTML =
+  if(!file){
 
-`
-<div class="card empty">
-لا توجد عروض مطابقة حاليًا.
-</div>
-`;
+    selectedImage = "";
+    return;
 
-return;
+  }
 
-}
+  const reader =
+  new FileReader();
 
+  reader.onload =
+  function(){
 
-el("allListings").innerHTML =
+    const image =
+    new Image();
 
-data
-.map(
-offerCard
-)
-.join("");
+    image.onload =
+    function(){
 
-}
+      const maxSize = 1000;
 
+      const scale =
+      Math.min(
+        1,
+        maxSize /
+        Math.max(
+          image.width,
+          image.height
+        )
+      );
 
-/* =====================================
-   الحجز
-===================================== */
+      const canvas =
+      document.createElement("canvas");
 
-function reserveOffer(
-id
-){
+      canvas.width =
+      Math.round(
+        image.width * scale
+      );
 
-const offer =
+      canvas.height =
+      Math.round(
+        image.height * scale
+      );
 
-offers.find(
+      const context =
+      canvas.getContext("2d");
 
-item =>
-item.id === id
+      context.drawImage(
+        image,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
 
-);
+      selectedImage =
+      canvas.toDataURL(
+        "image/jpeg",
+        .72
+      );
 
+      getElement("photoPreview")
+      .innerHTML = `
 
-if(!offer){
-return;
-}
+        <img
+          src="${selectedImage}"
+          alt="صورة السمك"
+        >
 
+      `;
 
-let quantity;
+    };
 
+    image.src =
+    reader.result;
 
-if(
-offer.saleMode ===
-"whole"
-){
+  };
 
-quantity =
-offer.remaining;
-
-}
-
-
-else{
-
-const value =
-
-prompt(
-
-"كم كيلو تريد حجزه؟ المتوفر "
-
-+
-
-number(
-offer.remaining
-)
-
-+
-
-" كجم"
-
-);
-
-
-if(value === null){
-return;
-}
-
-
-quantity =
-Number(value);
-
-}
-
-
-if(
-quantity <= 0
-||
-quantity > offer.remaining
-){
-
-alert(
-"الكمية المطلوبة غير صحيحة"
-);
-
-return;
-
-}
-
-
-const buyer =
-
-prompt(
-"اكتب اسم المشتري"
-);
-
-
-if(!buyer){
-return;
-}
-
-
-offer.remaining =
-
-offer.remaining -
-quantity;
-
-
-reservations.push({
-
-id:
-Date.now().toString(),
-
-offerId:
-offer.id,
-
-buyer:
-buyer,
-
-seller:
-offer.seller,
-
-phone:
-offer.phone,
-
-fish:
-offer.type,
-
-quantity:
-quantity,
-
-price:
-offer.price,
-
-total:
-quantity *
-offer.price,
-
-date:
-new Date()
-.toLocaleString("ar-SA")
+  reader.readAsDataURL(file);
 
 });
 
 
-saveAll();
+/* =========================
+   إضافة عرض
+========================= */
+
+function addListing(){
+
+  const seller =
+  getElement("sellerName")
+  .value
+  .trim();
+
+  const phone =
+  getElement("sellerPhone")
+  .value
+  .trim();
+
+  const type =
+  getElement("fishType").value;
+
+  const city =
+  getElement("sellerCity").value;
+
+  const catchLocation =
+  getElement("catchLocation")
+  .value
+  .trim();
+
+  const weight =
+  Number(
+    getElement("fishWeight").value
+  );
+
+  const catchDate =
+  getElement("catchDate").value;
+
+  const catchTime =
+  getElement("catchTime").value;
+
+  const condition =
+  getElement("fishCondition").value;
+
+  const price =
+  Number(
+    getElement("priceKg").value
+  );
+
+  const saleType =
+  getElement("saleType").value;
+
+  const notes =
+  getElement("fishNotes")
+  .value
+  .trim();
 
 
-renderAll();
+  if(!seller){
+
+    alert(
+      "اكتب اسم الصياد أو البائع"
+    );
+
+    return;
+
+  }
 
 
-alert(
+  if(!city){
 
-"تم حجز "
+    alert(
+      "حدد مدينة البائع"
+    );
 
-+
+    return;
 
-number(quantity)
+  }
 
-+
 
-" كجم ✅\n"
+  if(weight <= 0){
 
-+
+    alert(
+      "اكتب الوزن المتوفر"
+    );
 
-"المبلغ: "
+    return;
 
-+
+  }
 
-number(
-quantity *
-offer.price
-)
 
-+
+  if(!catchDate){
 
-" ريال"
+    alert(
+      "حدد تاريخ الصيد"
+    );
 
-);
+    return;
+
+  }
+
+
+  if(catchDate > localDateString()){
+
+    alert(
+      "تاريخ الصيد لا يمكن أن يكون في المستقبل"
+    );
+
+    return;
+
+  }
+
+
+  if(!catchTime){
+
+    alert(
+      "حدد وقت الصيد"
+    );
+
+    return;
+
+  }
+
+
+  if(price < 50 || price > 120){
+
+    alert(
+      "سعر الكيلو يجب أن يكون من 50 إلى 120 ريال"
+    );
+
+    return;
+
+  }
+
+
+  if(!selectedImage){
+
+    alert(
+      "أضف صورة السمك"
+    );
+
+    return;
+
+  }
+
+
+  const offer = {
+
+    id:
+    Date.now().toString(),
+
+    seller:seller,
+
+    phone:phone,
+
+    type:type,
+
+    city:city,
+
+    catchLocation:
+    catchLocation,
+
+    weight:weight,
+
+    originalWeight:
+    weight,
+
+    catchDate:
+    catchDate,
+
+    catchTime:
+    catchTime,
+
+    condition:
+    condition,
+
+    price:price,
+
+    saleType:
+    saleType,
+
+    notes:notes,
+
+    image:
+    selectedImage,
+
+    rating:5,
+
+    ratingCount:0,
+
+    verified:true,
+
+    createdAt:
+    Date.now()
+
+  };
+
+
+  listings.push(offer);
+
+  saveListings();
+
+  renderAll();
+
+
+  getElement("fishWeight").value = "";
+  getElement("priceKg").value = "";
+  getElement("fishNotes").value = "";
+  getElement("catchLocation").value = "";
+  getElement("catchTime").value = "";
+  getElement("fishPhoto").value = "";
+
+  getElement("photoPreview")
+  .innerHTML = "";
+
+  selectedImage = "";
+
+
+  alert(
+    "تم نشر عرض " +
+    type +
+    " في " +
+    city
+  );
 
 }
 
 
-/* =====================================
-   الحجوزات
-===================================== */
-
-function renderReservations(){
-
-if(!reservations.length){
-
-el("reservations").innerHTML =
-
-`
-<div class="card empty">
-لا توجد حجوزات حتى الآن.
-</div>
-`;
-
-}
-
-else{
-
-el("reservations").innerHTML =
-
-reservations
-.slice()
-.reverse()
-.map(
-
-order => `
-
-<div class="card">
-
-
-<strong>
-
-${esc(
-order.fish
-)}
-
-—
-
-${number(
-order.quantity
-)}
-
-كجم
-
-</strong>
-
-
-<div class="small">
-
-المشتري:
-
-${esc(
-order.buyer
-)}
-
-</div>
-
-
-<div class="small">
-
-البائع:
-
-${esc(
-order.seller
-)}
-
-</div>
-
-
-<div class="small">
-
-الجوال:
-
-${esc(
-order.phone
-)}
-
-</div>
-
-
-<div class="small">
-
-الإجمالي:
-
-${number(
-order.total
-)}
-
-ريال
-
-</div>
-
-
-<div class="small">
-
-${esc(
-order.date
-)}
-
-</div>
-
-
-</div>
-
-`
-
-)
-.join("");
-
-}
-
-
-/* =====================================
-   قائمة البائعين للتقييم
-===================================== */
-
-function renderRatingSellers(){
-
-const sellers =
-
-[
-...new Map(
-
-offers.map(
-
-offer => [
-
-sellerKey(offer),
-
-offer
-
-]
-
-)
-
-).values()
-
-];
-
-
-if(!sellers.length){
-
-el("ratingSeller").innerHTML =
-
-`
-<option>
-لا يوجد بائعون
-</option>
-`;
-
-return;
-
-}
-
-
-el("ratingSeller").innerHTML =
-
-sellers
-.map(
-
-offer => `
-
-<option value="${sellerKey(offer)}">
-
-${esc(
-offer.seller
-)}
-
-</option>
-
-`
-
-)
-.join("");
-
-}
-
-
-/* =====================================
-   التقييم
-===================================== */
-
-function rateSeller(){
-
-const key =
-el("ratingSeller").value;
-
-
-const rating =
-Number(
-el("ratingValue").value
-);
-
-
-if(!key){
-return;
-}
-
-
-if(
-!sellerRatings[key]
-){
-
-sellerRatings[key] = {
-
-total:0,
-count:0
-
-};
-
-}
-
-
-sellerRatings[key].total +=
-rating;
-
-
-sellerRatings[key].count +=
-1;
-
-
-saveAll();
-
-renderAll();
-
-
-alert(
-"تم إرسال تقييمك ⭐"
-);
-
-}
-
-
-/* =====================================
+/* =========================
    عروض البائع
-===================================== */
+========================= */
 
-function renderSellerOffers(){
+function renderMyOffers(){
 
-if(!offers.length){
+  const container =
+  getElement("myOffers");
 
-el("sellerOffers").innerHTML =
+  if(listings.length === 0){
 
-`
-<div class="card empty">
-لم تتم إضافة عروض بعد.
-</div>
-`;
+    container.innerHTML = `
 
-return;
+      <div class="empty">
+        لا توجد عروض مضافة.
+      </div>
 
-}
+    `;
 
+    return;
 
-el("sellerOffers").innerHTML =
-
-offers
-.slice()
-.reverse()
-.map(
-
-offer => `
-
-<div class="card">
+  }
 
 
-<strong>
+  container.innerHTML =
+  listings
+  .slice()
+  .reverse()
+  .map(offer=>`
 
-${esc(
-offer.type
-)}
+    <div class="myOffer">
 
-—
+      <div>
 
-متبقي
+        <strong>
 
-${number(
-offer.remaining
-)}
+          ${escapeHTML(offer.type)}
 
-كجم
+          —
 
-</strong>
+          ${money(offer.weight)}
 
+          كجم
 
-<div class="small">
+        </strong>
 
-${esc(
-offer.seller
-)}
+        <div class="small">
 
-•
+          ${escapeHTML(offer.seller)}
 
-${number(
-offer.price
-)}
+          •
 
-ريال/كجم
+          📍 ${escapeHTML(offer.city || "غير محدد")}
 
-•
+          •
 
-${esc(
-offer.city
-)}
+          ${money(offer.price)}
 
-</div>
+          ريال/كجم
 
+          •
 
-<br>
+          ${escapeHTML(offer.catchDate)}
 
+          ${
+            offer.catchTime
+            ?
+            " • " + escapeHTML(formatTime(offer.catchTime))
+            :
+            ""
+          }
 
-<button
-class="btn danger"
-onclick="deleteOffer('${offer.id}')"
->
+        </div>
 
-حذف العرض
+      </div>
 
-</button>
+      <button
+        class="deleteButton"
+        onclick="deleteOffer('${offer.id}')"
+      >
+        حذف
+      </button>
 
+    </div>
 
-</div>
-
-`
-
-)
-.join("");
+  `).join("");
 
 }
 
 
-function deleteOffer(
-id
-){
+/* =========================
+   حذف عرض
+========================= */
 
-if(
-!confirm(
-"هل تريد حذف العرض؟"
-)
-){
+function deleteOffer(id){
 
-return;
-}
+  const result =
+  confirm(
+    "هل تريد حذف هذا العرض؟"
+  );
 
+  if(!result){
+    return;
+  }
 
-offers =
+  listings =
+  listings.filter(
+    offer =>
+    offer.id !== id
+  );
 
-offers.filter(
+  saveListings();
 
-offer =>
-offer.id !== id
-
-);
-
-
-saveAll();
-
-renderAll();
+  renderAll();
 
 }
 
 
-/* =====================================
-   الخريطة التقريبية
-===================================== */
+/* =========================
+   التواصل
+========================= */
 
-function openMap(
-city
-){
+function contactSeller(id){
 
-const url =
+  const offer =
+  listings.find(
+    item=>item.id === id
+  );
 
-"https://www.google.com/maps/search/?api=1&query="
+  if(!offer){
+    return;
+  }
 
-+
+  if(!offer.phone){
 
-encodeURIComponent(
-city + " السعودية"
-);
+    alert(
+      "البائع لم يضف رقم تواصل."
+    );
 
+    return;
 
-window.open(
-url,
-"_blank"
-);
+  }
 
-}
+  const cleanPhone =
+  String(offer.phone)
+  .replace(/\D/g,"");
 
+  if(!cleanPhone){
 
-/* =====================================
-   تنبيه السعر
-===================================== */
+    alert(
+      "رقم التواصل غير صحيح."
+    );
 
-function savePriceAlert(){
+    return;
 
-const fish =
-el("alertFish").value;
+  }
 
-
-const price =
-Number(
-el("alertPrice").value
-);
-
-
-if(price <= 0){
-
-alert(
-"أدخل السعر المطلوب"
-);
-
-return;
+  window.location.href =
+  "tel:" + cleanPhone;
 
 }
 
 
-priceAlert = {
+/* =========================
+   الحاسبة
+========================= */
 
-fish:fish,
-price:price
+function renderCalculator(){
 
-};
+  const select =
+  getElement("calculatorListing");
 
-
-localStorage.setItem(
-
-"saydAlert",
-
-JSON.stringify(
-priceAlert
-)
-
-);
+  const available =
+  listings.filter(
+    offer =>
+    Number(offer.weight) > 0
+  );
 
 
-el("alertStatus").textContent =
+  if(available.length === 0){
 
-"🔔 سيتم تنبيهك عند إضافة "
+    select.innerHTML =
+    `<option value="">لا توجد عروض</option>`;
 
-+
+    updateCalculator();
 
-fish
+    return;
 
-+
-
-" بسعر "
-
-+
-
-price
-
-+
-
-" ريال أو أقل";
+  }
 
 
-if(
-"Notification"
-in window
-
-&&
-
-Notification.permission ===
-"default"
-){
-
-Notification
-.requestPermission();
-
-}
-
-}
+  const previous =
+  select.value;
 
 
-/* =====================================
-   فحص التنبيه
-===================================== */
+  select.innerHTML =
+  available
+  .slice()
+  .reverse()
+  .map(offer=>`
 
-function checkAlert(
-offer
-){
+    <option value="${offer.id}">
 
-if(!priceAlert){
-return;
-}
+      ${escapeHTML(offer.type)}
+      —
+      ${escapeHTML(offer.seller)}
+      —
+      ${escapeHTML(offer.city || "غير محدد")}
+      —
+      ${money(offer.price)}
+      ريال
 
+    </option>
 
-if(
-
-offer.type ===
-priceAlert.fish
-
-&&
-
-offer.price <=
-priceAlert.price
-
-){
-
-alert(
-
-"🔔 عرض مناسب!\n"
-
-+
-
-offer.type
-
-+
-
-" بسعر "
-
-+
-
-offer.price
-
-+
-
-" ريال/كجم"
-
-);
+  `).join("");
 
 
-if(
+  if(
+    previous &&
+    available.some(
+      item =>
+      item.id === previous
+    )
+  ){
 
-"Notification"
-in window
+    select.value =
+    previous;
 
-&&
+  }
 
-Notification.permission ===
-"granted"
-
-){
-
-new Notification(
-
-"صيد اليوم 🐟",
-
-{
-
-body:
-
-offer.type
-
-+
-
-" بسعر "
-
-+
-
-offer.price
-
-+
-
-" ريال/كجم"
+  updateCalculator();
 
 }
 
-);
 
-}
+/* =========================
+   فتح عرض بالحاسبة
+========================= */
 
-}
+function openCalculator(id){
+
+  const calculatorButton =
+  document
+  .querySelectorAll(
+    ".bottomNav button"
+  )[2];
+
+  openPage(
+    "calculator",
+    calculatorButton
+  );
+
+  getElement(
+    "calculatorListing"
+  ).value = id;
+
+  getElement(
+    "buyWeight"
+  ).value = "";
+
+  updateCalculator();
 
 }
 
 
-/* =====================================
-   تحديث التنبيه
-===================================== */
+/* =========================
+   تحديث الحاسبة
+========================= */
 
-function renderAlert(){
-
-if(!priceAlert){
-
-el("alertStatus").textContent =
-"";
-
-return;
-
-}
-
-
-el("alertFish").value =
-priceAlert.fish;
-
-
-el("alertPrice").value =
-priceAlert.price;
-
-
-el("alertStatus").textContent =
-
-"🔔 تنبيه مفعل: "
-
-+
-
-priceAlert.fish
-
-+
-
-" بسعر "
-
-+
-
-priceAlert.price
-
-+
-
-" ريال أو أقل";
-
-}
-
-
-/* =====================================
-   EVENTS
-===================================== */
-
-el("buyerFishType")
+getElement("calculatorListing")
 .addEventListener(
-
-"change",
-
-renderBuyerOffers
-
+  "change",
+  updateCalculator
 );
 
-
-el("buyerCity")
+getElement("buyWeight")
 .addEventListener(
-
-"change",
-
-renderBuyerOffers
-
+  "input",
+  updateCalculator
 );
 
-
-el("sortOffers")
+getElement("buyerName")
 .addEventListener(
-
-"change",
-
-renderBuyerOffers
-
+  "input",
+  updateCalculator
 );
 
 
-el("searchInput")
-.addEventListener(
+function updateCalculator(){
 
-"input",
+  const selectedID =
+  getElement(
+    "calculatorListing"
+  ).value;
 
-renderBuyerOffers
+  const offer =
+  listings.find(
+    item =>
+    item.id === selectedID
+  );
 
-);
+
+  if(!offer){
+
+    getElement(
+      "calculatorInfo"
+    ).textContent =
+    "لا توجد عروض متاحة";
+
+    getElement(
+      "calculatorTotal"
+    ).textContent =
+    "الإجمالي: 0 ريال";
+
+    return;
+
+  }
 
 
-/* =====================================
-   RENDER
-===================================== */
+  let buyWeight =
+  Number(
+    getElement("buyWeight").value
+    || 0
+  );
+
+
+  if(buyWeight > Number(offer.weight)){
+
+    buyWeight =
+    Number(offer.weight);
+
+  }
+
+
+  const total =
+  buyWeight *
+  Number(offer.price);
+
+
+  getElement(
+    "calculatorInfo"
+  ).textContent =
+
+  offer.type +
+
+  " من الصياد " +
+
+  offer.seller +
+
+  " — 📍 " +
+
+  (offer.city || "غير محدد") +
+
+  " — المتوفر " +
+
+  money(offer.weight) +
+
+  " كجم — سعر الكيلو " +
+
+  money(offer.price) +
+
+  " ريال";
+
+
+  getElement(
+    "calculatorTotal"
+  ).textContent =
+
+  "الإجمالي: " +
+
+  money(total) +
+
+  " ريال";
+
+
+  getElement(
+    "invoiceDate"
+  ).textContent =
+
+  new Date()
+  .toLocaleString("ar-SA");
+
+
+  getElement(
+    "invoiceBuyer"
+  ).textContent =
+
+  getElement(
+    "buyerName"
+  )
+  .value
+  .trim()
+
+  ||
+
+  "—";
+
+
+  getElement(
+    "invoiceSeller"
+  ).textContent =
+  offer.seller;
+
+
+  getElement(
+    "invoiceCity"
+  ).textContent =
+  offer.city || "—";
+
+
+  getElement(
+    "invoiceFish"
+  ).textContent =
+  offer.type;
+
+
+  getElement(
+    "invoicePrice"
+  ).textContent =
+
+  money(offer.price) +
+  " ريال";
+
+
+  getElement(
+    "invoiceWeight"
+  ).textContent =
+
+  money(buyWeight) +
+  " كجم";
+
+
+  getElement(
+    "invoiceTotal"
+  ).textContent =
+
+  money(total) +
+  " ريال";
+
+}
+
+
+/* =========================
+   حجز السمك
+========================= */
+
+function reserveFish(){
+
+  const selectedID =
+  getElement(
+    "calculatorListing"
+  ).value;
+
+  const offer =
+  listings.find(
+    item =>
+    item.id === selectedID
+  );
+
+
+  if(!offer){
+
+    alert(
+      "لا يوجد عرض للحجز."
+    );
+
+    return;
+
+  }
+
+
+  let requested =
+  Number(
+    getElement(
+      "buyWeight"
+    ).value
+  );
+
+
+  if(
+    !requested ||
+    requested <= 0
+  ){
+
+    alert(
+      "حدد الكمية التي تريد حجزها."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    offer.saleType === "كاملة"
+  ){
+
+    requested =
+    Number(offer.weight);
+
+    const acceptFull =
+    confirm(
+      "هذا العرض للبيع كاملًا فقط. سيتم حجز كامل الكمية " +
+      money(offer.weight) +
+      " كجم. هل تريد المتابعة؟"
+    );
+
+    if(!acceptFull){
+      return;
+    }
+
+  }
+
+
+  if(
+    requested >
+    Number(offer.weight)
+  ){
+
+    alert(
+      "الكمية المطلوبة أكبر من المتوفر. المتوفر " +
+      money(offer.weight) +
+      " كجم."
+    );
+
+    return;
+
+  }
+
+
+  const total =
+  requested *
+  Number(offer.price);
+
+
+  const confirmation =
+  confirm(
+
+    "تأكيد الحجز\n\n" +
+
+    "السمك: " +
+    offer.type +
+
+    "\nالصياد: " +
+    offer.seller +
+
+    "\nالمدينة: " +
+    (offer.city || "غير محدد") +
+
+    "\nالكمية: " +
+    money(requested) +
+    " كجم" +
+
+    "\nالإجمالي: " +
+    money(total) +
+    " ريال"
+
+  );
+
+
+  if(!confirmation){
+    return;
+  }
+
+
+  offer.weight =
+  Number(
+    (
+      Number(offer.weight) -
+      requested
+    ).toFixed(2)
+  );
+
+
+  saveListings();
+
+  renderAll();
+
+
+  getElement(
+    "buyWeight"
+  ).value = "";
+
+
+  alert(
+    "تم حجز " +
+    money(requested) +
+    " كجم بنجاح.\n" +
+    "المتبقي لدى البائع: " +
+    money(offer.weight) +
+    " كجم."
+  );
+
+
+  if(
+    offer.weight <= 0
+  ){
+
+    alert(
+      "تم بيع كامل الكمية من هذا العرض."
+    );
+
+  }
+
+}
+
+
+/* =========================
+   الطباعة
+========================= */
+
+function printInvoice(){
+
+  updateCalculator();
+
+  window.print();
+
+}
+
+
+/* =========================
+   تحديث الكل
+========================= */
 
 function renderAll(){
 
-renderToday();
+  renderCategories();
 
-renderCategories();
+  renderListings();
 
-renderBuyerOffers();
+  renderMyOffers();
 
-renderSellerOffers();
-
-renderReservations();
-
-renderRatingSellers();
-
-renderAlert();
+  renderCalculator();
 
 }
 
 
-/* =====================================
-   START
-===================================== */
+/* =========================
+   تشغيل التطبيق
+========================= */
 
-setupSelects();
+setupCities();
+
+setupFishTypes();
 
 renderAll();
 
 </script>
-
 
 </body>
 </html>

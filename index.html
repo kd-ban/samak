@@ -4,9 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#087fdb">
+
 <title>صيد اليوم</title>
 
-<!-- Firebase -->
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
+
 <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore-compat.js"></script>
@@ -14,12 +18,12 @@
 
 <script>
 const firebaseConfig = {
-  apiKey:"AIzaSyDvo3eo4csufE4yAyiz-DRxKMAoK2LSlCM",
-  authDomain:"samak-77.firebaseapp.com",
-  projectId:"samak-77",
-  storageBucket:"samak-77.firebasestorage.app",
-  messagingSenderId:"857403583496",
-  appId:"1:857403583496:web:c3c650989267dee95bf5bd"
+  apiKey: "AIzaSyDvo3eo4csufE4yAyiz-DRxKMAoK2LSlCM",
+  authDomain: "samak-77.firebaseapp.com",
+  projectId: "samak-77",
+  storageBucket: "samak-77.firebasestorage.app",
+  messagingSenderId: "857403583496",
+  appId: "1:857403583496:web:c3c650989267dee95bf5bd"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -62,7 +66,7 @@ body.customBackground{
 .app{
   max-width:700px;
   margin:auto;
-  padding-bottom:105px;
+  padding-bottom:100px;
 }
 
 header{
@@ -150,9 +154,7 @@ textarea{
   resize:vertical;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
+input:focus,select:focus,textarea:focus{
   border-color:#6dbaf0;
   box-shadow:0 0 0 3px rgba(8,127,219,.08);
 }
@@ -175,9 +177,14 @@ button{font-family:inherit}
   cursor:pointer;
 }
 
+.btn:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
+
 .primary{
   background:var(--blue);
-  color:#fff;
+  color:white;
 }
 
 .secondary{
@@ -204,7 +211,7 @@ button{font-family:inherit}
 .category{
   border:1px solid var(--line);
   border-radius:19px;
-  background:#fff;
+  background:white;
   padding:10px;
   text-align:right;
   cursor:pointer;
@@ -344,7 +351,7 @@ button{font-family:inherit}
 
 .fishName{
   font-size:22px;
-  font-weight:900;
+  font-weight:1000;
 }
 
 .sellerName{
@@ -356,7 +363,7 @@ button{font-family:inherit}
 .price{
   color:var(--blue);
   font-size:21px;
-  font-weight:900;
+  font-weight:1000;
 }
 
 .location{
@@ -411,9 +418,31 @@ button{font-family:inherit}
 }
 
 .preview img{
+  width:100%;
   max-width:220px;
   max-height:220px;
+  object-fit:cover;
   border-radius:18px;
+}
+
+.myOffer{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:10px;
+  background:#f7fafc;
+  border-radius:14px;
+  padding:12px;
+  margin-bottom:8px;
+}
+
+.deleteButton{
+  border:none;
+  border-radius:12px;
+  background:#fff0f0;
+  color:var(--red);
+  padding:10px 13px;
+  font-weight:900;
 }
 
 .total{
@@ -423,7 +452,7 @@ button{font-family:inherit}
   border-radius:16px;
   padding:16px;
   font-size:23px;
-  font-weight:900;
+  font-weight:1000;
 }
 
 .invoice{
@@ -438,7 +467,7 @@ button{font-family:inherit}
   text-align:center;
   color:var(--blue);
   font-size:28px;
-  font-weight:900;
+  font-weight:1000;
 }
 
 .invoiceSubtitle{
@@ -466,8 +495,10 @@ button{font-family:inherit}
   background:#eaf8f2;
   color:#08714d;
   font-size:19px;
-  font-weight:900;
+  font-weight:1000;
 }
+
+/* ADMIN */
 
 .adminHero{
   text-align:center;
@@ -487,7 +518,7 @@ button{font-family:inherit}
 
 .adminTitle{
   font-size:23px;
-  font-weight:900;
+  font-weight:1000;
 }
 
 .adminEmail{
@@ -543,6 +574,22 @@ button{font-family:inherit}
   margin-bottom:15px;
 }
 
+.uploadStatus{
+  text-align:center;
+  font-weight:900;
+  margin-top:12px;
+  min-height:20px;
+  color:var(--blue);
+}
+
+.loginError{
+  color:var(--red);
+  text-align:center;
+  font-weight:800;
+  margin-top:12px;
+  min-height:20px;
+}
+
 .adminListItem{
   background:#f6f9fb;
   border:1px solid var(--line);
@@ -563,6 +610,7 @@ button{font-family:inherit}
   border-radius:10px;
   padding:9px;
   font-weight:900;
+  cursor:pointer;
 }
 
 .adminEdit{
@@ -575,19 +623,9 @@ button{font-family:inherit}
   color:var(--red);
 }
 
-.uploadStatus{
-  text-align:center;
-  font-weight:900;
-  margin-top:12px;
-  min-height:20px;
-  color:var(--blue);
-}
-
-.loginError{
-  color:var(--red);
-  text-align:center;
-  font-weight:800;
-  margin-top:12px;
+.colorInput{
+  height:52px;
+  padding:4px;
 }
 
 .small{
@@ -635,11 +673,16 @@ button{font-family:inherit}
 }
 
 @media(max-width:430px){
-  .row{grid-template-columns:1fr}
+  .row{
+    grid-template-columns:1fr;
+  }
 }
 
 @media print{
-  header,.bottomNav,.noPrint,.page:not(#calculator){
+  header,
+  .bottomNav,
+  .noPrint,
+  .page:not(#calculator){
     display:none!important;
   }
 
@@ -648,7 +691,19 @@ button{font-family:inherit}
     padding:0;
   }
 
+  .invoice{
+    display:block!important;
+    border:none;
+    margin:0;
+    padding:25px;
+  }
+
   body{background:white}
+
+  .app{
+    max-width:none;
+    padding:0;
+  }
 }
 </style>
 </head>
@@ -659,6 +714,7 @@ button{font-family:inherit}
 
 <header>
 <div class="brand">
+
 <div>
 <h1 id="mainAppTitle">صيد اليوم</h1>
 <div id="mainAppSubtitle" class="subtitle">
@@ -667,6 +723,7 @@ button{font-family:inherit}
 </div>
 
 <div class="logo" id="mainLogo">🎣</div>
+
 </div>
 </header>
 
@@ -677,7 +734,7 @@ button{font-family:inherit}
 <div class="card">
 
 <label>ابحث عن نوع السمك</label>
-<input id="marketSearch" placeholder="مثال: ناجل أو هامور">
+<input id="marketSearch" placeholder="مثال: ناجل أو هامور" autocomplete="off">
 
 <br><br>
 
@@ -707,37 +764,29 @@ button{font-family:inherit}
 
 </div>
 
-<div id="fishSectionTitle" class="sectionTitle">
-اختر نوع السمك
-</div>
+<div id="fishSectionTitle" class="sectionTitle">اختر نوع السمك</div>
 
 <div id="categoryGrid" class="categories"></div>
 
-<div id="offersTitle" class="sectionTitle">
-جميع العروض
-</div>
+<div id="offersTitle" class="sectionTitle">جميع العروض</div>
 
 <div id="chips" class="chips"></div>
-
 <div id="priceComparison"></div>
-
 <div id="listingGrid" class="listings"></div>
 
 </section>
-
 
 <!-- البائع -->
 
 <section id="seller" class="page">
 
-<div id="sellerPageTitle" class="sectionTitle">
-بائع السمك
-</div>
+<div id="sellerPageTitle" class="sectionTitle">بائع السمك</div>
 
 <div class="card">
 
 <div id="sellerDescription" class="small">
 أدخل بيانات السمك الذي تريد عرضه.
+سعر الكيلو يجب أن يكون من 50 إلى 120 ريال.
 </div>
 
 <br>
@@ -783,7 +832,7 @@ button{font-family:inherit}
 
 <div>
 <label>الوزن المتوفر بالكيلو</label>
-<input id="fishWeight" type="number" step=".1" min=".1">
+<input id="fishWeight" type="number" step="0.1" min="0.1" placeholder="مثال: 15">
 </div>
 
 <div>
@@ -818,7 +867,7 @@ button{font-family:inherit}
 
 <div>
 <label>سعر الكيلو</label>
-<input id="priceKg" type="number">
+<input id="priceKg" type="number" min="50" max="120" placeholder="من 50 إلى 120">
 </div>
 
 <div>
@@ -841,13 +890,15 @@ button{font-family:inherit}
 <br>
 
 <label>ملاحظات</label>
-<textarea id="fishNotes"></textarea>
+<textarea id="fishNotes" placeholder="مثال: صيد اليوم وطازج"></textarea>
 
 <br>
 
 <button id="publishButton" class="btn primary" onclick="addListing()">
 نشر العرض
 </button>
+
+<div id="publishStatus" class="uploadStatus"></div>
 
 </div>
 
@@ -859,16 +910,13 @@ button{font-family:inherit}
 
 </section>
 
-
 <!-- الحاسبة -->
 
 <section id="calculator" class="page">
 
 <div class="noPrint">
 
-<div id="calculatorPageTitle" class="sectionTitle">
-حاسبة الشراء
-</div>
+<div id="calculatorPageTitle" class="sectionTitle">حاسبة الشراء</div>
 
 <div class="card">
 
@@ -881,7 +929,7 @@ button{font-family:inherit}
 
 <div>
 <label>الكمية المطلوبة بالكيلو</label>
-<input id="buyWeight" type="number" step=".1" min=".1">
+<input id="buyWeight" type="number" step="0.1" min="0.1" placeholder="مثال: 3">
 </div>
 
 <div>
@@ -893,9 +941,7 @@ button{font-family:inherit}
 
 <div id="calculatorInfo" class="small" style="margin-top:12px"></div>
 
-<div id="calculatorTotal" class="total">
-الإجمالي: 0 ريال
-</div>
+<div id="calculatorTotal" class="total">الإجمالي: 0 ريال</div>
 
 <br>
 
@@ -911,50 +957,20 @@ button{font-family:inherit}
 
 </div>
 
-<div class="invoice">
+<div id="invoice" class="invoice">
 
-<div id="invoiceMainTitle" class="invoiceTitle">
-صيد اليوم
-</div>
-
+<div id="invoiceMainTitle" class="invoiceTitle">صيد اليوم</div>
 <div class="invoiceSubtitle">حساب شراء السمك</div>
 
 <div class="invoiceRows">
 
-<div class="invoiceRow">
-<span>التاريخ</span>
-<b id="invoiceDate">—</b>
-</div>
-
-<div class="invoiceRow">
-<span>المشتري</span>
-<b id="invoiceBuyer">—</b>
-</div>
-
-<div class="invoiceRow">
-<span>الصياد</span>
-<b id="invoiceSeller">—</b>
-</div>
-
-<div class="invoiceRow">
-<span>المدينة</span>
-<b id="invoiceCity">—</b>
-</div>
-
-<div class="invoiceRow">
-<span>نوع السمك</span>
-<b id="invoiceFish">—</b>
-</div>
-
-<div class="invoiceRow">
-<span>سعر الكيلو</span>
-<b id="invoicePrice">—</b>
-</div>
-
-<div class="invoiceRow">
-<span>الكمية</span>
-<b id="invoiceWeight">—</b>
-</div>
+<div class="invoiceRow"><span>التاريخ</span><b id="invoiceDate">—</b></div>
+<div class="invoiceRow"><span>المشتري</span><b id="invoiceBuyer">—</b></div>
+<div class="invoiceRow"><span>الصياد</span><b id="invoiceSeller">—</b></div>
+<div class="invoiceRow"><span>المدينة</span><b id="invoiceCity">—</b></div>
+<div class="invoiceRow"><span>نوع السمك</span><b id="invoiceFish">—</b></div>
+<div class="invoiceRow"><span>سعر الكيلو</span><b id="invoicePrice">—</b></div>
+<div class="invoiceRow"><span>الكمية</span><b id="invoiceWeight">—</b></div>
 
 <div class="invoiceRow invoiceTotal">
 <span>الإجمالي</span>
@@ -966,8 +982,7 @@ button{font-family:inherit}
 
 </section>
 
-
-<!-- تسجيل دخول الأدمن -->
+<!-- دخول الأدمن -->
 
 <section id="adminLogin" class="page">
 
@@ -976,39 +991,28 @@ button{font-family:inherit}
 <div class="card">
 
 <div class="adminHero">
-
 <div class="adminIcon">🔐</div>
-
-<div class="adminTitle">
-لوحة إدارة صيد اليوم
-</div>
-
-<div class="small">
-هذه الصفحة خاصة بإدارة الموقع
-</div>
-
+<div class="adminTitle">لوحة إدارة صيد اليوم</div>
+<div class="small" style="margin-top:7px">هذه الصفحة خاصة بإدارة الموقع</div>
 </div>
 
 <label>البريد الإلكتروني</label>
-<input id="adminEmail" type="email">
+<input id="adminEmail" type="email" placeholder="البريد الإلكتروني" autocomplete="email">
 
 <br><br>
 
 <label>كلمة المرور</label>
-<input id="adminPassword" type="password">
+<input id="adminPassword" type="password" placeholder="كلمة المرور" autocomplete="current-password">
 
 <br><br>
 
-<button class="btn primary" onclick="adminLogin()">
-تسجيل الدخول
-</button>
+<button class="btn primary" onclick="adminLogin()">تسجيل الدخول</button>
 
 <div id="loginMessage" class="loginError"></div>
 
 </div>
 
 </section>
-
 
 <!-- لوحة الأدمن -->
 
@@ -1019,17 +1023,10 @@ button{font-family:inherit}
 <div class="card">
 
 <div class="adminHero">
-
 <div class="adminIcon">👨‍💼</div>
-
 <div class="adminTitle">إدارة صيد اليوم</div>
-
 <div id="adminAccount" class="adminEmail">—</div>
-
-<div class="adminStatus">
-✓ تم تسجيل الدخول
-</div>
-
+<div class="adminStatus">✓ تم تسجيل الدخول</div>
 </div>
 
 </div>
@@ -1084,22 +1081,19 @@ button{font-family:inherit}
 
 <input id="adminImagePicker" type="file" accept="image/*" style="display:none">
 
-
-<!-- الأسماك -->
+<!-- إدارة الأسماك -->
 
 <div id="fishManager" class="adminBox">
 
-<div class="adminSubTitle">
-🐟 إدارة أنواع الأسماك
-</div>
+<div class="adminSubTitle">🐟 إدارة أنواع الأسماك</div>
 
-<label>اختر السمكة</label>
+<label>اختر السمكة لتغيير صورتها</label>
 <select id="adminFishType"></select>
 
 <br><br>
 
 <button class="btn primary" onclick="selectFishImage()">
-📱 تغيير الصورة من الجوال
+📱 تغيير صورة السمكة من الجوال
 </button>
 
 <br><br>
@@ -1109,18 +1103,33 @@ button{font-family:inherit}
 </button>
 
 <br><br>
+<hr>
+<br>
 
-<label>إضافة نوع جديد</label>
-<input id="newFishName" placeholder="اسم السمكة">
+<label>إضافة نوع سمك جديد</label>
+
+<input id="newFishName" placeholder="مثال: هامور أحمر">
 
 <br><br>
 
-<input id="newFishEmoji" value="🐟">
+<!-- تم استبدال الرمز برفع الصورة -->
 
-<br><br>
+<label>صورة السمكة</label>
 
-<button class="btn success" onclick="adminAddFish()">
-+ إضافة السمكة
+<input
+id="newFishImage"
+type="file"
+accept="image/*"
+>
+
+<div id="newFishImagePreview" class="preview"></div>
+
+<div id="newFishUploadStatus" class="uploadStatus"></div>
+
+<br>
+
+<button id="addFishButton" class="btn success" onclick="adminAddFish()">
++ إضافة نوع السمك
 </button>
 
 <br><br>
@@ -1129,13 +1138,13 @@ button{font-family:inherit}
 
 </div>
 
-
 <!-- المدن -->
 
 <div id="cityManager" class="adminBox">
 
 <div class="adminSubTitle">📍 إدارة المدن</div>
 
+<label>إضافة مدينة</label>
 <input id="newCityName" placeholder="اسم المدينة">
 
 <br><br>
@@ -1150,12 +1159,11 @@ button{font-family:inherit}
 
 </div>
 
-
 <!-- النصوص -->
 
 <div id="textManager" class="adminBox">
 
-<div class="adminSubTitle">✏️ النصوص</div>
+<div class="adminSubTitle">✏️ تعديل نصوص الموقع</div>
 
 <label>اسم الموقع</label>
 <input id="adminSiteTitle">
@@ -1187,48 +1195,59 @@ button{font-family:inherit}
 
 <br><br>
 
-<label>زر نشر العرض</label>
+<label>نص زر نشر العرض</label>
 <input id="adminPublishText">
 
 <br><br>
 
-<label>زر الحجز</label>
+<label>نص زر الحجز</label>
 <input id="adminReserveText">
 
 <br><br>
 
 <button class="btn success" onclick="saveSiteTexts()">
-حفظ النصوص
+حفظ جميع النصوص
 </button>
 
 </div>
-
 
 <!-- الألوان -->
 
 <div id="colorManager" class="adminBox">
 
-<div class="adminSubTitle">🎨 الألوان</div>
+<div class="adminSubTitle">🎨 ألوان الموقع</div>
 
+<div class="row">
+
+<div>
 <label>اللون الرئيسي</label>
-<input id="adminPrimaryColor" type="color" value="#087fdb">
+<input id="adminPrimaryColor" class="colorInput" type="color" value="#087fdb">
+</div>
 
-<br><br>
-
+<div>
 <label>لون الخلفية</label>
-<input id="adminBackgroundColor" type="color" value="#f4f8fb">
+<input id="adminBackgroundColor" class="colorInput" type="color" value="#f4f8fb">
+</div>
 
-<br><br>
+</div>
 
+<br>
+
+<div class="row">
+
+<div>
 <label>لون النص</label>
-<input id="adminTextColor" type="color" value="#122332">
+<input id="adminTextColor" class="colorInput" type="color" value="#122332">
+</div>
 
-<br><br>
-
+<div>
 <label>لون النجاح</label>
-<input id="adminGreenColor" type="color" value="#119463">
+<input id="adminGreenColor" class="colorInput" type="color" value="#119463">
+</div>
 
-<br><br>
+</div>
+
+<br>
 
 <button class="btn success" onclick="saveColors()">
 حفظ الألوان
@@ -1236,36 +1255,39 @@ button{font-family:inherit}
 
 </div>
 
-
 <!-- الأسعار -->
 
 <div id="priceManager" class="adminBox">
 
-<div class="adminSubTitle">💰 الأسعار</div>
+<div class="adminSubTitle">💰 إعدادات الأسعار</div>
 
-<label>أقل سعر</label>
-<input id="adminMinPrice" type="number">
+<div class="row">
 
-<br><br>
+<div>
+<label>أقل سعر للكيلو</label>
+<input id="adminMinPrice" type="number" min="0">
+</div>
 
-<label>أعلى سعر</label>
-<input id="adminMaxPrice" type="number">
-
-<br><br>
-
-<button class="btn success" onclick="savePriceSettings()">
-حفظ الأسعار
-</button>
+<div>
+<label>أعلى سعر للكيلو</label>
+<input id="adminMaxPrice" type="number" min="0">
+</div>
 
 </div>
 
+<br>
+
+<button class="btn success" onclick="savePriceSettings()">
+حفظ إعدادات السعر
+</button>
+
+</div>
 
 <!-- العروض -->
 
 <div id="offersManager" class="adminBox">
 
-<div class="adminSubTitle">📦 إدارة العروض</div>
-
+<div class="adminSubTitle">📦 إدارة عروض البائعين</div>
 <div id="adminOffersList"></div>
 
 </div>
@@ -1275,19 +1297,12 @@ button{font-family:inherit}
 </div>
 
 <div class="card">
-
-<button class="btn danger" onclick="adminLogout()">
-تسجيل الخروج
-</button>
-
+<button class="btn danger" onclick="adminLogout()">تسجيل الخروج</button>
 </div>
 
 </section>
 
 </div>
-
-
-<!-- القائمة السفلية -->
 
 <nav class="bottomNav">
 
@@ -1313,36 +1328,35 @@ button{font-family:inherit}
 
 </nav>
 
-
 <script>
 
 /* =====================================================
    البيانات
 ===================================================== */
 
-let fishTypes=[
-{name:"ناجل",emoji:"🐟",image:"images/najel.jpg"},
-{name:"هامور",emoji:"🐠",image:""},
-{name:"شعور",emoji:"🐟",image:"images/shaoor.jpg"},
-{name:"شريفي",emoji:"🐠",image:"images/shareefi.jpg"},
-{name:"كنعد",emoji:"🐟",image:""},
-{name:"حريد",emoji:"🐠",image:"images/hareed.jpg"},
-{name:"بياض قز",emoji:"🐟",image:"images/bayad.jpg"},
-{name:"بياض قرم",emoji:"🐠",image:"images/bayad.jpg"},
-{name:"عربي",emoji:"🐟",image:"images/arabi.jpg"},
-{name:"سيجان",emoji:"🐟",image:""},
-{name:"تونه",emoji:"🐟",image:"images/tuna.jpg"},
-{name:"ربيان",emoji:"🦐",image:"images/shrimp.jpg"},
-{name:"استكوزا",emoji:"🦞",image:"images/lobster.jpg"},
-{name:"حبار",emoji:"🦑",image:""},
-{name:"باغه",emoji:"🐟",image:""},
-{name:"سردين",emoji:"🐟",image:"images/sardine.jpg"},
-{name:"بهارة",emoji:"🐟",image:""},
-{name:"كابوريا",emoji:"🦀",image:"images/crab.jpg"},
-{name:"دراك",emoji:"🐟",image:"images/darak.jpg"}
+let fishTypes = [
+{name:"ناجل",image:"images/najel.jpg"},
+{name:"هامور",image:""},
+{name:"شعور",image:"images/shaoor.jpg"},
+{name:"شريفي",image:"images/shareefi.jpg"},
+{name:"كنعد",image:""},
+{name:"حريد",image:"images/hareed.jpg"},
+{name:"بياض قز",image:"images/bayad.jpg"},
+{name:"بياض قرم",image:"images/bayad.jpg"},
+{name:"عربي",image:"images/arabi.jpg"},
+{name:"سيجان",image:""},
+{name:"تونه",image:"images/tuna.jpg"},
+{name:"ربيان",image:"images/shrimp.jpg"},
+{name:"استكوزا",image:"images/lobster.jpg"},
+{name:"حبار",image:""},
+{name:"باغه",image:""},
+{name:"سردين",image:"images/sardine.jpg"},
+{name:"بهارة",image:""},
+{name:"كابوريا",image:"images/crab.jpg"},
+{name:"دراك",image:"images/darak.jpg"}
 ];
 
-let saudiCities=[
+let saudiCities = [
 "الرياض","جدة","مكة المكرمة","المدينة المنورة",
 "الدمام","الخبر","الظهران","الجبيل","القطيف",
 "رأس تنورة","الأحساء","حفر الباطن","الخفجي",
@@ -1357,1507 +1371,660 @@ let saudiCities=[
 "نجران","الباحة","بلجرشي"
 ];
 
-let listings=[];
-let customFishImages={};
-let selectedImageFile=null;
-let selectedImagePreview="";
-let activeType="الكل";
-let adminUploadMode="";
-let minFishPrice=50;
-let maxFishPrice=120;
+let listings = [];
+let selectedImageFile = null;
+let newFishImageFile = null;
+let activeType = "الكل";
+let adminUploadMode = "";
+let customFishImages = {};
+let minFishPrice = 50;
+let maxFishPrice = 120;
+let listingsUnsubscribe = null;
 
-let siteSettings={
-title:"صيد اليوم",
-subtitle:"سوق السمك الطازج من الصياد إلى المشتري",
-fishSectionTitle:"اختر نوع السمك",
-sellerTitle:"بائع السمك",
-sellerDescription:"أدخل بيانات السمك الذي تريد عرضه.",
-calculatorTitle:"حاسبة الشراء",
-publishText:"نشر العرض",
-reserveText:"احجز الكمية"
+let siteSettings = {
+  title:"صيد اليوم",
+  subtitle:"سوق السمك الطازج من الصياد إلى المشتري",
+  fishSectionTitle:"اختر نوع السمك",
+  sellerTitle:"بائع السمك",
+  sellerDescription:"أدخل بيانات السمك الذي تريد عرضه. سعر الكيلو يجب أن يكون من 50 إلى 120 ريال.",
+  calculatorTitle:"حاسبة الشراء",
+  publishText:"نشر العرض",
+  reserveText:"احجز الكمية"
 };
 
-
-/* =====================================================
-   أدوات
-===================================================== */
-
-function E(id){
-return document.getElementById(id);
+function getElement(id){
+  return document.getElementById(id);
 }
 
-function escapeHTML(v){
-return String(v||"")
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+function escapeHTML(value){
+  return String(value || "")
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
 }
 
-function money(v){
-const n=Number(v||0);
-return Number.isInteger(n)?String(n):n.toFixed(2);
+function money(value){
+  const number = Number(value || 0);
+  return Number.isInteger(number) ? String(number) : number.toFixed(2);
 }
 
-function today(){
-const d=new Date();
-return d.getFullYear()+"-"+
-String(d.getMonth()+1).padStart(2,"0")+"-"+
-String(d.getDate()).padStart(2,"0");
+function localDateString(){
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth()+1).padStart(2,"0");
+  const day = String(date.getDate()).padStart(2,"0");
+  return year+"-"+month+"-"+day;
 }
 
-function isToday(v){
-return v===today();
+function isToday(date){
+  return date === localDateString();
 }
 
 function formatTime(time){
+  if(!time) return "";
 
-if(!time)return "";
+  const parts = time.split(":");
+  let hour = Number(parts[0]);
+  const minute = parts[1];
+  const period = hour >= 12 ? "م" : "ص";
 
-let [h,m]=time.split(":");
+  hour %= 12;
+  if(hour === 0) hour = 12;
 
-h=Number(h);
-
-const p=h>=12?"م":"ص";
-
-h=h%12||12;
-
-return h+":"+m+" "+p;
+  return hour+":"+minute+" "+period;
 }
 
-function getMillis(v){
-
-if(!v)return 0;
-
-if(v.toMillis)return v.toMillis();
-
-return Number(v)||0;
+function safeFileName(name){
+  return String(name || "image")
+  .replace(/[^a-zA-Z0-9\u0600-\u06FF._-]/g,"_");
 }
-
 
 /* =====================================================
    التنقل
 ===================================================== */
 
-function openPage(id,button){
+function openPage(pageID,button){
 
-document.querySelectorAll(".page")
-.forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".page")
+  .forEach(page => page.classList.remove("active"));
 
-if(E(id)){
-E(id).classList.add("active");
+  const page = getElement(pageID);
+
+  if(page){
+    page.classList.add("active");
+  }
+
+  document.querySelectorAll(".bottomNav button")
+  .forEach(item => item.classList.remove("active"));
+
+  if(button){
+    button.classList.add("active");
+  }
+
+  if(pageID === "calculator"){
+    renderCalculator();
+  }
 }
-
-document.querySelectorAll(".bottomNav button")
-.forEach(x=>x.classList.remove("active"));
-
-if(button){
-button.classList.add("active");
-}
-
-if(id==="calculator"){
-renderCalculator();
-}
-}
-
 
 /* =====================================================
-   تسجيل الأدمن
+   الأدمن
 ===================================================== */
 
 function openAdmin(button){
 
-if(auth.currentUser){
+  if(auth.currentUser){
 
-E("adminAccount").textContent=
-auth.currentUser.email||"Admin";
+    getElement("adminAccount").textContent =
+      auth.currentUser.email || "Admin";
 
-openPage("adminPanel",button);
+    openPage("adminPanel",button);
 
-renderAdminAll();
+    renderAdminAll();
 
-}else{
-
-openPage("adminLogin",button);
-
-}
+  }else{
+    openPage("adminLogin",button);
+  }
 }
 
 async function adminLogin(){
 
-const email=E("adminEmail").value.trim();
-const password=E("adminPassword").value;
+  const email = getElement("adminEmail").value.trim();
+  const password = getElement("adminPassword").value;
+  const message = getElement("loginMessage");
 
-E("loginMessage").textContent="";
+  message.textContent = "";
 
-if(!email||!password){
+  if(!email || !password){
+    message.textContent = "اكتب البريد وكلمة المرور.";
+    return;
+  }
 
-E("loginMessage").textContent=
-"اكتب البريد وكلمة المرور.";
+  try{
 
-return;
-}
+    const result =
+      await auth.signInWithEmailAndPassword(email,password);
 
-try{
+    getElement("adminAccount").textContent =
+      result.user.email || email;
 
-const result=
-await auth.signInWithEmailAndPassword(
-email,
-password
-);
+    getElement("adminPassword").value = "";
 
-E("adminAccount").textContent=
-result.user.email;
+    const button =
+      document.querySelectorAll(".bottomNav button")[3];
 
-E("adminPassword").value="";
+    openPage("adminPanel",button);
 
-openPage(
-"adminPanel",
-document.querySelectorAll(".bottomNav button")[3]
-);
+    renderAdminAll();
 
-renderAdminAll();
+  }catch(error){
 
-}catch(error){
+    console.error(error);
 
-console.error(error);
-
-E("loginMessage").textContent=
-"تعذر تسجيل الدخول. تأكد من البريد وكلمة المرور.";
-
-}
+    message.textContent =
+      "البريد الإلكتروني أو كلمة المرور غير صحيحة.";
+  }
 }
 
 async function adminLogout(){
 
-await auth.signOut();
+  try{
 
-openPage(
-"market",
-document.querySelectorAll(".bottomNav button")[0]
-);
+    await auth.signOut();
+
+    getElement("adminAccount").textContent = "—";
+
+    const button =
+      document.querySelectorAll(".bottomNav button")[0];
+
+    openPage("market",button);
+
+  }catch(error){
+    console.error(error);
+  }
 }
 
-auth.onAuthStateChanged(user=>{
+auth.onAuthStateChanged(user => {
 
-E("adminAccount").textContent=
-user?(user.email||"Admin"):"—";
-
+  getElement("adminAccount").textContent =
+    user ? (user.email || "Admin") : "—";
 });
 
 function requireAdmin(){
 
-if(!auth.currentUser){
+  if(!auth.currentUser){
+    alert("يجب تسجيل دخول الأدمن أولاً.");
+    return false;
+  }
 
-alert("يجب تسجيل دخول الأدمن.");
-
-return false;
+  return true;
 }
-
-return true;
-}
-
-function adminStatus(text){
-E("adminUploadStatus").textContent=text;
-}
-
-
-/* =====================================================
-   فتح أقسام الأدمن
-===================================================== */
 
 function toggleAdminBox(id){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-document.querySelectorAll(".adminBox")
-.forEach(box=>{
+  document.querySelectorAll(".adminBox")
+  .forEach(box => {
 
-if(box.id!==id){
-box.classList.remove("active");
+    if(box.id !== id){
+      box.classList.remove("active");
+    }
+
+  });
+
+  getElement(id).classList.toggle("active");
+
+  renderAdminAll();
 }
 
-});
-
-E(id).classList.toggle("active");
-
-renderAdminAll();
+function adminStatus(message){
+  getElement("adminUploadStatus").textContent = message;
 }
-
 
 /* =====================================================
-   المدن
-===================================================== */
-
-function setupCities(){
-
-const options=
-saudiCities.map(city=>
-`<option value="${escapeHTML(city)}">${escapeHTML(city)}</option>`
-).join("");
-
-E("sellerCity").innerHTML=
-'<option value="">اختر المدينة</option>'+options;
-
-E("marketCity").innerHTML=
-'<option value="الكل">جميع المدن</option>'+options;
-
-E("buyerCity").innerHTML=
-'<option value="">حدد مدينتي</option>'+options;
-}
-
-
-/* =====================================================
-   الأسماك
-===================================================== */
-
-function setupFishTypes(){
-
-const options=
-fishTypes.map(f=>
-`<option value="${escapeHTML(f.name)}">${escapeHTML(f.name)}</option>`
-).join("");
-
-E("fishType").innerHTML=options;
-
-E("adminFishType").innerHTML=options;
-
-E("catchDate").max=today();
-
-if(!E("catchDate").value){
-E("catchDate").value=today();
-}
-}
-
-function getFishImage(fish){
-
-return customFishImages[fish.name]
-||fish.image
-||"";
-}
-
-
-/* =====================================================
-   السوق
-===================================================== */
-
-function renderCategories(){
-
-E("categoryGrid").innerHTML=
-fishTypes.map(fish=>{
-
-const count=listings.filter(x=>
-x.type===fish.name &&
-Number(x.weight)>0
-).length;
-
-const image=getFishImage(fish);
-
-return `
-
-<button class="category"
-onclick='filterType(${JSON.stringify(fish.name)})'>
-
-${
-image
-?
-`<img class="categoryFishImage"
-src="${escapeHTML(image)}"
-onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-
-<div class="categoryFallback" style="display:none">
-${fish.emoji}
-</div>`
-:
-`<div class="categoryFallback">${fish.emoji}</div>`
-}
-
-<div class="categoryName">
-${escapeHTML(fish.name)}
-</div>
-
-<div class="categoryCount">
-${count} عرض
-</div>
-
-</button>
-`;
-
-}).join("");
-
-renderChips();
-}
-
-function renderChips(){
-
-const names=["الكل",...fishTypes.map(x=>x.name)];
-
-E("chips").innerHTML=
-names.map(name=>`
-
-<button
-class="chip ${activeType===name?"active":""}"
-onclick='filterType(${JSON.stringify(name)})'>
-${escapeHTML(name)}
-</button>
-
-`).join("");
-}
-
-function filterType(type){
-
-activeType=type;
-
-E("offersTitle").textContent=
-type==="الكل"
-?"جميع العروض"
-:"عروض "+type;
-
-renderCategories();
-renderListings();
-}
-
-
-/* =====================================================
-   مقارنة الأسعار
-===================================================== */
-
-function renderPriceComparison(offers){
-
-const prices=
-offers
-.map(x=>Number(x.price))
-.filter(x=>x>0);
-
-if(!prices.length){
-
-E("priceComparison").innerHTML="";
-
-return;
-}
-
-const min=Math.min(...prices);
-const max=Math.max(...prices);
-
-const avg=
-prices.reduce((a,b)=>a+b,0)/prices.length;
-
-E("priceComparison").innerHTML=`
-
-<div class="priceStats">
-
-<div class="priceStat">
-<strong>${money(min)} ر.س</strong>
-<small>أقل سعر</small>
-</div>
-
-<div class="priceStat">
-<strong>${money(avg)} ر.س</strong>
-<small>متوسط السعر</small>
-</div>
-
-<div class="priceStat">
-<strong>${money(max)} ر.س</strong>
-<small>أعلى سعر</small>
-</div>
-
-</div>
-`;
-}
-
-
-/* =====================================================
-   عرض العروض
-===================================================== */
-
-function renderListings(){
-
-const search=
-E("marketSearch").value.trim().toLowerCase();
-
-const city=E("marketCity").value;
-const sort=E("marketSort").value;
-const buyerCity=E("buyerCity").value;
-
-let result=
-listings.filter(x=>Number(x.weight)>0).slice();
-
-if(activeType!=="الكل"){
-
-result=result.filter(
-x=>x.type===activeType
-);
-}
-
-if(city&&city!=="الكل"){
-
-result=result.filter(
-x=>x.city===city
-);
-}
-
-if(search){
-
-result=result.filter(x=>
-
-String(x.type||"").toLowerCase().includes(search)
-||
-String(x.seller||"").toLowerCase().includes(search)
-||
-String(x.city||"").toLowerCase().includes(search)
-
-);
-}
-
-if(sort==="price"){
-
-result.sort(
-(a,b)=>Number(a.price)-Number(b.price)
-);
-
-}else if(sort==="weight"){
-
-result.sort(
-(a,b)=>Number(b.weight)-Number(a.weight)
-);
-
-}else if(sort==="nearest"){
-
-result.sort((a,b)=>{
-
-const aa=
-buyerCity&&a.city===buyerCity?0:1;
-
-const bb=
-buyerCity&&b.city===buyerCity?0:1;
-
-return aa-bb;
-
-});
-
-}else{
-
-result.sort(
-(a,b)=>getMillis(b.createdAt)-getMillis(a.createdAt)
-);
-}
-
-renderPriceComparison(result);
-
-if(!result.length){
-
-E("listingGrid").innerHTML=
-'<div class="card empty">لا توجد عروض حتى الآن.</div>';
-
-return;
-}
-
-E("listingGrid").innerHTML=
-result.map(offer=>{
-
-const fish=
-fishTypes.find(
-x=>x.name===offer.type
-);
-
-const image=
-offer.imageUrl||
-(fish?getFishImage(fish):"");
-
-const total=
-Number(offer.weight)*Number(offer.price);
-
-return `
-
-<div class="listing">
-
-<div class="listingImage">
-
-${
-image
-?`<img src="${escapeHTML(image)}">`
-:"🐟"
-}
-
-${
-isToday(offer.catchDate)
-?'<div class="todayBadge">صيد اليوم</div>'
-:""
-}
-
-</div>
-
-<div class="listingBody">
-
-<div class="listingHeader">
-
-<div>
-
-<div class="fishName">
-${escapeHTML(offer.type)}
-</div>
-
-<div class="sellerName">
-الصياد: ${escapeHTML(offer.seller)}
-</div>
-
-</div>
-
-<div class="price">
-${money(offer.price)} ريال/كجم
-</div>
-
-</div>
-
-<div class="location">
-📍 ${escapeHTML(offer.city||"غير محدد")}
-</div>
-
-<div class="catchInfo">
-
-${
-isToday(offer.catchDate)
-?"تم صيده اليوم"
-:"تاريخ الصيد: "+escapeHTML(offer.catchDate)
-}
-
-${
-offer.catchTime
-?" الساعة "+formatTime(offer.catchTime)
-:""
-}
-
-</div>
-
-<div class="infoGrid">
-
-<div class="info">
-<strong>${money(offer.weight)} كجم</strong>
-<small>الكمية المتبقية</small>
-</div>
-
-<div class="info">
-<strong>${escapeHTML(offer.condition||"طازجة")}</strong>
-<small>الحالة</small>
-</div>
-
-<div class="info">
-<strong>${money(total)} ريال</strong>
-<small>قيمة كامل الكمية</small>
-</div>
-
-<div class="info">
-<strong>${escapeHTML(offer.saleType||"بالكيلو")}</strong>
-<small>طريقة البيع</small>
-</div>
-
-</div>
-
-${
-offer.notes
-?`<div class="notes">${escapeHTML(offer.notes)}</div>`
-:""
-}
-
-<div class="listingActions">
-
-<button
-class="btn primary"
-onclick='openCalculator(${JSON.stringify(offer.id)})'>
-احجز / احسب
-</button>
-
-<button
-class="btn secondary"
-onclick='contactSeller(${JSON.stringify(offer.id)})'>
-تواصل مع البائع
-</button>
-
-</div>
-
-</div>
-</div>
-`;
-
-}).join("");
-}
-
-
-/* =====================================================
-   أحداث البحث
-===================================================== */
-
-E("marketSearch")
-.addEventListener("input",renderListings);
-
-E("marketCity")
-.addEventListener("change",renderListings);
-
-E("marketSort")
-.addEventListener("change",renderListings);
-
-E("buyerCity")
-.addEventListener("change",renderListings);
-
-
-/* =====================================================
-   اختيار صورة البائع
-===================================================== */
-
-E("fishPhoto")
-.addEventListener("change",event=>{
-
-const file=event.target.files[0];
-
-if(!file){
-
-selectedImageFile=null;
-selectedImagePreview="";
-
-E("photoPreview").innerHTML="";
-
-return;
-}
-
-if(!file.type.startsWith("image/")){
-
-alert("اختر صورة فقط.");
-
-event.target.value="";
-
-return;
-}
-
-selectedImageFile=file;
-
-const reader=new FileReader();
-
-reader.onload=e=>{
-
-selectedImagePreview=e.target.result;
-
-E("photoPreview").innerHTML=
-`<img src="${selectedImagePreview}">`;
-
-};
-
-reader.readAsDataURL(file);
-
-});
-
-
-/* =====================================================
-   رفع صورة
-===================================================== */
-
-async function uploadImage(file,path){
-
-const safeName=
-file.name.replace(/[^\w.\-]/g,"_");
-
-const ref=
-storage.ref(
-path+"/"+Date.now()+"-"+safeName
-);
-
-const snapshot=
-await ref.put(file);
-
-return await snapshot.ref.getDownloadURL();
-}
-
-
-/* =====================================================
-   نشر عرض إلى Firestore
-===================================================== */
-
-async function addListing(){
-
-const seller=E("sellerName").value.trim();
-const phone=E("sellerPhone").value.trim();
-const type=E("fishType").value;
-const city=E("sellerCity").value;
-
-const weight=
-Number(E("fishWeight").value);
-
-const date=E("catchDate").value;
-const time=E("catchTime").value;
-
-const price=
-Number(E("priceKg").value);
-
-if(!seller){
-alert("اكتب اسم البائع.");
-return;
-}
-
-if(!phone){
-alert("اكتب رقم التواصل.");
-return;
-}
-
-if(!city){
-alert("حدد المدينة.");
-return;
-}
-
-if(!weight||weight<=0){
-alert("اكتب الوزن.");
-return;
-}
-
-if(!date){
-alert("حدد تاريخ الصيد.");
-return;
-}
-
-if(date>today()){
-alert("تاريخ الصيد لا يمكن أن يكون في المستقبل.");
-return;
-}
-
-if(
-price<minFishPrice ||
-price>maxFishPrice
-){
-
-alert(
-"السعر يجب أن يكون من "+
-minFishPrice+
-" إلى "+
-maxFishPrice+
-" ريال."
-);
-
-return;
-}
-
-if(!selectedImageFile){
-
-alert("أضف صورة السمك.");
-
-return;
-}
-
-const button=E("publishButton");
-
-button.disabled=true;
-button.textContent="⏳ جاري النشر...";
-
-try{
-
-const imageUrl=
-await uploadImage(
-selectedImageFile,
-"listings"
-);
-
-await db.collection("listings").add({
-
-seller,
-phone,
-type,
-city,
-
-catchLocation:
-E("catchLocation").value.trim(),
-
-weight,
-originalWeight:weight,
-
-catchDate:date,
-catchTime:time,
-
-condition:
-E("fishCondition").value,
-
-price,
-
-saleType:
-E("saleType").value,
-
-notes:
-E("fishNotes").value.trim(),
-
-imageUrl,
-
-createdAt:
-firebase.firestore.FieldValue.serverTimestamp()
-
-});
-
-E("fishWeight").value="";
-E("priceKg").value="";
-E("fishNotes").value="";
-E("catchLocation").value="";
-E("catchTime").value="";
-E("fishPhoto").value="";
-E("photoPreview").innerHTML="";
-
-selectedImageFile=null;
-selectedImagePreview="";
-
-alert("تم نشر العرض وسيظهر عند جميع المستخدمين.");
-
-}catch(error){
-
-console.error(error);
-
-alert(
-"تعذر نشر العرض.\n"+
-(error.message||"")
-);
-
-}finally{
-
-button.disabled=false;
-button.textContent=siteSettings.publishText;
-
-}
-}
-
-
-/* =====================================================
-   عروض البائع
-===================================================== */
-
-function renderMyOffers(){
-
-if(!listings.length){
-
-E("myOffers").innerHTML=
-'<div class="empty">لا توجد عروض.</div>';
-
-return;
-}
-
-E("myOffers").innerHTML=
-listings
-.slice()
-.sort((a,b)=>getMillis(b.createdAt)-getMillis(a.createdAt))
-.map(offer=>`
-
-<div class="adminListItem">
-
-<strong>
-${escapeHTML(offer.type)}
-— ${money(offer.weight)} كجم
-</strong>
-
-<div class="small">
-${escapeHTML(offer.seller)}
-•
-📍 ${escapeHTML(offer.city)}
-•
-${money(offer.price)} ريال/كجم
-</div>
-
-</div>
-
-`).join("");
-}
-
-
-/* =====================================================
-   التواصل
-===================================================== */
-
-function contactSeller(id){
-
-const offer=
-listings.find(x=>x.id===id);
-
-if(!offer||!offer.phone){
-
-alert("لا يوجد رقم تواصل.");
-
-return;
-}
-
-let phone=
-String(offer.phone)
-.replace(/\D/g,"");
-
-location.href="tel:"+phone;
-}
-
-
-/* =====================================================
-   الحاسبة
-===================================================== */
-
-function renderCalculator(){
-
-const available=
-listings.filter(x=>Number(x.weight)>0);
-
-const select=E("calculatorListing");
-
-const old=select.value;
-
-if(!available.length){
-
-select.innerHTML=
-'<option value="">لا توجد عروض</option>';
-
-updateCalculator();
-
-return;
-}
-
-select.innerHTML=
-available.map(x=>`
-
-<option value="${escapeHTML(x.id)}">
-${escapeHTML(x.type)}
-—
-${escapeHTML(x.seller)}
-—
-${money(x.price)} ريال
-</option>
-
-`).join("");
-
-if(available.some(x=>x.id===old)){
-select.value=old;
-}
-
-updateCalculator();
-}
-
-function openCalculator(id){
-
-openPage(
-"calculator",
-document.querySelectorAll(".bottomNav button")[2]
-);
-
-E("calculatorListing").value=id;
-
-E("buyWeight").value="";
-
-updateCalculator();
-}
-
-E("calculatorListing")
-.addEventListener("change",updateCalculator);
-
-E("buyWeight")
-.addEventListener("input",updateCalculator);
-
-E("buyerName")
-.addEventListener("input",updateCalculator);
-
-function updateCalculator(){
-
-const offer=
-listings.find(
-x=>x.id===E("calculatorListing").value
-);
-
-if(!offer){
-
-E("calculatorInfo").textContent=
-"لا توجد عروض متاحة";
-
-E("calculatorTotal").textContent=
-"الإجمالي: 0 ريال";
-
-return;
-}
-
-let weight=
-Number(E("buyWeight").value||0);
-
-if(weight>Number(offer.weight)){
-weight=Number(offer.weight);
-}
-
-const total=
-weight*Number(offer.price);
-
-E("calculatorInfo").textContent=
-offer.type+
-" من الصياد "+
-offer.seller+
-" — المتوفر "+
-money(offer.weight)+
-" كجم";
-
-E("calculatorTotal").textContent=
-"الإجمالي: "+money(total)+" ريال";
-
-E("invoiceDate").textContent=
-new Date().toLocaleString("ar-SA");
-
-E("invoiceBuyer").textContent=
-E("buyerName").value.trim()||"—";
-
-E("invoiceSeller").textContent=
-offer.seller;
-
-E("invoiceCity").textContent=
-offer.city;
-
-E("invoiceFish").textContent=
-offer.type;
-
-E("invoicePrice").textContent=
-money(offer.price)+" ريال";
-
-E("invoiceWeight").textContent=
-money(weight)+" كجم";
-
-E("invoiceTotal").textContent=
-money(total)+" ريال";
-}
-
-
-/* =====================================================
-   الحجز - Transaction
-===================================================== */
-
-async function reserveFish(){
-
-const id=
-E("calculatorListing").value;
-
-if(!id){
-
-alert("لا يوجد عرض.");
-
-return;
-}
-
-let requested=
-Number(E("buyWeight").value);
-
-if(!requested||requested<=0){
-
-alert("حدد الكمية.");
-
-return;
-}
-
-const localOffer=
-listings.find(x=>x.id===id);
-
-if(!localOffer){
-
-alert("العرض غير موجود.");
-
-return;
-}
-
-if(localOffer.saleType==="كاملة"){
-
-if(!confirm(
-"هذا العرض للبيع كاملًا. حجز كامل الكمية؟"
-)){
-return;
-}
-
-requested=
-Number(localOffer.weight);
-}
-
-if(!confirm(
-"تأكيد حجز "+
-money(requested)+
-" كجم؟"
-)){
-return;
-}
-
-try{
-
-const ref=
-db.collection("listings").doc(id);
-
-await db.runTransaction(
-async transaction=>{
-
-const snap=
-await transaction.get(ref);
-
-if(!snap.exists){
-
-throw new Error(
-"العرض لم يعد موجودًا."
-);
-}
-
-const data=snap.data();
-
-const available=
-Number(data.weight||0);
-
-if(requested>available){
-
-throw new Error(
-"الكمية المتبقية فقط "+
-money(available)+
-" كجم."
-);
-}
-
-const remaining=
-Number(
-(available-requested).toFixed(2)
-);
-
-transaction.update(ref,{
-weight:remaining,
-updatedAt:
-firebase.firestore.FieldValue.serverTimestamp()
-});
-
-}
-);
-
-E("buyWeight").value="";
-
-alert(
-"تم الحجز بنجاح وسيتم تحديث الكمية عند جميع المستخدمين."
-);
-
-}catch(error){
-
-console.error(error);
-
-alert(error.message||"تعذر الحجز.");
-
-}
-}
-
-
-/* =====================================================
-   PDF
-===================================================== */
-
-function printInvoice(){
-
-updateCalculator();
-
-window.print();
-}
-
-
-/* =====================================================
-   صور الأدمن
+   رفع صور الأدمن
 ===================================================== */
 
 function selectAdminUpload(type){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-adminUploadMode=type;
+  adminUploadMode = type;
 
-E("adminImagePicker").value="";
+  const picker = getElement("adminImagePicker");
 
-E("adminImagePicker").click();
+  picker.value = "";
+  picker.click();
 }
 
 function selectFishImage(){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const fish=E("adminFishType").value;
+  const fish = getElement("adminFishType").value;
 
-if(!fish){
+  if(!fish){
+    alert("اختر نوع السمك.");
+    return;
+  }
 
-alert("اختر نوع السمك.");
+  adminUploadMode = "fish:"+fish;
 
-return;
+  const picker = getElement("adminImagePicker");
+
+  picker.value = "";
+  picker.click();
 }
 
-adminUploadMode="fish:"+fish;
+getElement("adminImagePicker").addEventListener("change",async function(event){
 
-E("adminImagePicker").value="";
+  const file = event.target.files[0];
 
-E("adminImagePicker").click();
-}
+  if(!file || !requireAdmin()) return;
 
-E("adminImagePicker")
-.addEventListener("change",async event=>{
+  if(!file.type.startsWith("image/")){
+    alert("اختر صورة فقط.");
+    return;
+  }
 
-const file=event.target.files[0];
+  adminStatus("⏳ جاري رفع الصورة...");
 
-if(!file)return;
+  try{
 
-if(!requireAdmin())return;
+    let folder = "";
 
-if(!file.type.startsWith("image/")){
+    if(adminUploadMode === "background"){
+      folder = "site/background";
+    }
+    else if(adminUploadMode === "logo"){
+      folder = "site/logo";
+    }
+    else if(adminUploadMode.startsWith("fish:")){
+      const fishName = adminUploadMode.substring(5);
+      folder = "fish/"+safeFileName(fishName);
+    }
+    else{
+      throw new Error("Upload mode missing");
+    }
 
-alert("اختر صورة فقط.");
+    const ref = storage.ref(
+      folder+"/"+Date.now()+"-"+safeFileName(file.name)
+    );
 
-return;
-}
+    const snapshot = await ref.put(file);
+    const url = await snapshot.ref.getDownloadURL();
 
-adminStatus("⏳ جاري رفع الصورة...");
+    if(adminUploadMode === "background"){
 
-try{
+      await db.collection("settings").doc("site").set({
+        background:url
+      },{merge:true});
 
-if(adminUploadMode==="background"){
+      applyBackground(url);
 
-const url=
-await uploadImage(
-file,
-"site/background"
-);
+    }
+    else if(adminUploadMode === "logo"){
 
-await db.collection("settings")
-.doc("site")
-.set({
-background:url
-},{merge:true});
+      await db.collection("settings").doc("site").set({
+        logo:url
+      },{merge:true});
 
-}
+      applyLogo(url);
 
-else if(adminUploadMode==="logo"){
+    }
+    else{
 
-const url=
-await uploadImage(
-file,
-"site/logo"
-);
+      const fishName = adminUploadMode.substring(5);
 
-await db.collection("settings")
-.doc("site")
-.set({
-logo:url
-},{merge:true});
+      await db.collection("fishImages")
+      .doc(encodeURIComponent(fishName))
+      .set({
+        name:fishName,
+        url:url
+      });
 
-}
+      customFishImages[fishName] = url;
 
-else if(adminUploadMode.startsWith("fish:")){
+      renderCategories();
+      renderListings();
+    }
 
-const fishName=
-adminUploadMode.substring(5);
+    adminStatus("✅ تم رفع الصورة وحفظها");
 
-const url=
-await uploadImage(
-file,
-"fish/"+encodeURIComponent(fishName)
-);
+  }catch(error){
 
-await db.collection("fishImages")
-.doc(encodeURIComponent(fishName))
-.set({
-name:fishName,
-url:url,
-updatedAt:
-firebase.firestore.FieldValue.serverTimestamp()
+    console.error(error);
+
+    adminStatus("❌ فشل رفع الصورة");
+
+    alert(
+      "فشل رفع الصورة.\n\n"+
+      (error.message || error.code || "خطأ غير معروف")
+    );
+  }
 });
-
-}
-
-adminStatus(
-"✅ تم الحفظ وسيظهر التغيير للجميع"
-);
-
-}catch(error){
-
-console.error(error);
-
-adminStatus("❌ فشل رفع الصورة");
-
-alert(
-"تعذر رفع الصورة: "+
-(error.message||"")
-);
-
-}
-});
-
 
 /* =====================================================
-   تطبيق الشعار والخلفية
+   الخلفية والشعار
 ===================================================== */
-
-function applyLogo(url){
-
-if(!url){
-
-E("mainLogo").innerHTML="🎣";
-
-return;
-}
-
-E("mainLogo").innerHTML=
-`<img src="${escapeHTML(url)}" alt="الشعار">`;
-}
 
 function applyBackground(url){
 
-if(!url){
+  if(!url) return;
 
-document.body.classList.remove(
-"customBackground"
-);
-
-document.body.style.backgroundImage="";
-
-return;
+  document.body.classList.add("customBackground");
+  document.body.style.backgroundImage = "url('"+url+"')";
 }
 
-document.body.classList.add(
-"customBackground"
-);
+function applyLogo(url){
 
-document.body.style.backgroundImage=
-`url("${url}")`;
+  if(!url) return;
+
+  getElement("mainLogo").innerHTML =
+    '<img src="'+escapeHTML(url)+'" alt="الشعار">';
 }
-
 
 /* =====================================================
-   حذف صورة سمكة
+   إضافة سمكة: الاسم + الصورة فقط
 ===================================================== */
 
-async function removeFishImage(){
+getElement("newFishImage").addEventListener("change",function(event){
 
-if(!requireAdmin())return;
+  const file = event.target.files[0];
 
-const name=
-E("adminFishType").value;
+  newFishImageFile = file || null;
 
-if(!name)return;
+  if(!file){
 
-if(!confirm(
-"حذف الصورة المخصصة لـ "+name+"؟"
-)){
-return;
-}
+    getElement("newFishImagePreview").innerHTML = "";
+    return;
+  }
 
-try{
+  if(!file.type.startsWith("image/")){
 
-await db.collection("fishImages")
-.doc(encodeURIComponent(name))
-.delete();
+    newFishImageFile = null;
 
-adminStatus("✅ تم حذف الصورة");
+    event.target.value = "";
 
-}catch(error){
+    alert("اختر صورة فقط.");
 
-console.error(error);
+    return;
+  }
 
-alert("تعذر حذف الصورة.");
-}
-}
+  const previewURL = URL.createObjectURL(file);
 
-
-/* =====================================================
-   إضافة سمكة
-===================================================== */
+  getElement("newFishImagePreview").innerHTML =
+    '<img src="'+previewURL+'" alt="معاينة صورة السمكة">';
+});
 
 async function adminAddFish(){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const name=
-E("newFishName").value.trim();
+  const name =
+    getElement("newFishName").value.trim();
 
-const emoji=
-E("newFishEmoji").value.trim()||"🐟";
+  if(!name){
+    alert("اكتب اسم السمكة.");
+    return;
+  }
 
-if(!name){
+  if(!newFishImageFile){
+    alert("اختر صورة السمكة.");
+    return;
+  }
 
-alert("اكتب اسم السمكة.");
+  if(fishTypes.some(fish => fish.name === name)){
+    alert("هذا النوع موجود بالفعل.");
+    return;
+  }
 
-return;
+  const button = getElement("addFishButton");
+  const status = getElement("newFishUploadStatus");
+
+  button.disabled = true;
+  button.textContent = "⏳ جاري الإضافة...";
+  status.textContent = "⏳ جاري رفع صورة السمكة...";
+
+  try{
+
+    const file = newFishImageFile;
+
+    const imageRef = storage.ref(
+      "fish/types/"+
+      Date.now()+"-"+
+      safeFileName(file.name)
+    );
+
+    const snapshot =
+      await imageRef.put(file);
+
+    const imageURL =
+      await snapshot.ref.getDownloadURL();
+
+    fishTypes.push({
+      name:name,
+      image:imageURL
+    });
+
+    await saveFishTypesToFirebase();
+
+    await db.collection("fishImages")
+    .doc(encodeURIComponent(name))
+    .set({
+      name:name,
+      url:imageURL
+    });
+
+    customFishImages[name] = imageURL;
+
+    getElement("newFishName").value = "";
+    getElement("newFishImage").value = "";
+    getElement("newFishImagePreview").innerHTML = "";
+
+    newFishImageFile = null;
+
+    setupFishTypes();
+    renderAll();
+    renderAdminAll();
+
+    status.textContent = "✅ تم إضافة السمكة والصورة";
+
+  }catch(error){
+
+    console.error(error);
+
+    status.textContent = "❌ تعذر إضافة السمكة";
+
+    alert(
+      "تعذر إضافة السمكة.\n\n"+
+      (error.message || error.code || "خطأ غير معروف")
+    );
+
+  }finally{
+
+    button.disabled = false;
+    button.textContent = "+ إضافة نوع السمك";
+  }
 }
 
-if(fishTypes.some(x=>x.name===name)){
+function getFishImage(fish){
 
-alert("السمكة موجودة.");
-
-return;
+  return customFishImages[fish.name]
+  || fish.image
+  || "";
 }
 
-const newItems=[
-...fishTypes,
-{name,emoji,image:""}
-];
+async function removeFishImage(){
 
-try{
+  if(!requireAdmin()) return;
 
-await db.collection("settings")
-.doc("fishTypes")
-.set({
-items:newItems,
-updatedAt:
-firebase.firestore.FieldValue.serverTimestamp()
-});
+  const fishName =
+    getElement("adminFishType").value;
 
-E("newFishName").value="";
-E("newFishEmoji").value="🐟";
+  if(!fishName) return;
 
-adminStatus("✅ تمت إضافة السمكة");
+  if(!confirm("حذف الصورة المخصصة لـ "+fishName+"؟")){
+    return;
+  }
 
-}catch(error){
+  try{
 
-console.error(error);
+    await db.collection("fishImages")
+    .doc(encodeURIComponent(fishName))
+    .delete();
 
-alert("تعذر إضافة السمكة.");
+    delete customFishImages[fishName];
 
-}
+    const fish =
+      fishTypes.find(x => x.name === fishName);
+
+    if(fish){
+      fish.image = "";
+      await saveFishTypesToFirebase();
+    }
+
+    renderCategories();
+    renderListings();
+
+    adminStatus("✅ تم حذف الصورة المخصصة");
+
+  }catch(error){
+
+    console.error(error);
+    alert("تعذر حذف الصورة.");
+  }
 }
 
 async function adminDeleteFish(index){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const fish=fishTypes[index];
+  const fish = fishTypes[index];
 
-if(!fish)return;
+  if(!fish) return;
 
-if(!confirm(
-"حذف "+fish.name+"؟"
-)){
-return;
+  if(!confirm("هل تريد حذف نوع السمك: "+fish.name+"؟")){
+    return;
+  }
+
+  fishTypes.splice(index,1);
+
+  try{
+
+    await saveFishTypesToFirebase();
+
+    setupFishTypes();
+    renderAll();
+    renderAdminAll();
+
+    adminStatus("✅ تم حذف النوع");
+
+  }catch(error){
+    console.error(error);
+    alert("تعذر حذف النوع.");
+  }
 }
 
-const newItems=
-fishTypes.filter((_,i)=>i!==index);
+async function adminRenameFish(index){
 
-await db.collection("settings")
-.doc("fishTypes")
-.set({
-items:newItems
-});
+  if(!requireAdmin()) return;
 
-adminStatus("✅ تم الحذف");
+  const fish = fishTypes[index];
+
+  if(!fish) return;
+
+  const newName =
+    prompt("اكتب الاسم الجديد:",fish.name);
+
+  if(!newName) return;
+
+  const cleanName = newName.trim();
+
+  if(!cleanName) return;
+
+  fish.name = cleanName;
+
+  try{
+
+    await saveFishTypesToFirebase();
+
+    setupFishTypes();
+    renderAll();
+    renderAdminAll();
+
+    adminStatus("✅ تم تعديل اسم السمكة");
+
+  }catch(error){
+    console.error(error);
+    alert("تعذر تعديل النوع.");
+  }
 }
 
 function renderAdminFishList(){
 
-E("adminFishList").innerHTML=
-fishTypes.map((fish,index)=>`
+  const container = getElement("adminFishList");
 
-<div class="adminListItem">
+  if(!container) return;
 
-<strong>
-${escapeHTML(fish.emoji)}
-${escapeHTML(fish.name)}
-</strong>
+  if(!fishTypes.length){
 
-<div class="adminListActions">
+    container.innerHTML =
+      '<div class="empty">لا توجد أنواع.</div>';
 
-<button
-class="adminMiniButton adminDelete"
-onclick="adminDeleteFish(${index})">
-حذف
-</button>
+    return;
+  }
 
-</div>
+  container.innerHTML =
+    fishTypes.map((fish,index) => {
 
-</div>
+      const image = getFishImage(fish);
 
-`).join("");
+      return `
+      <div class="adminListItem">
+
+        ${
+          image
+          ?
+          `<img src="${escapeHTML(image)}"
+          style="width:70px;height:70px;object-fit:cover;border-radius:12px;margin-bottom:8px">`
+          :
+          ""
+        }
+
+        <strong>${escapeHTML(fish.name)}</strong>
+
+        <div class="adminListActions">
+
+          <button
+          class="adminMiniButton adminEdit"
+          onclick="adminRenameFish(${index})">
+          تعديل الاسم
+          </button>
+
+          <button
+          class="adminMiniButton adminDelete"
+          onclick="adminDeleteFish(${index})">
+          حذف
+          </button>
+
+        </div>
+
+      </div>
+      `;
+
+    }).join("");
 }
 
+async function saveFishTypesToFirebase(){
+
+  await db.collection("settings").doc("fishTypes").set({
+    items:fishTypes,
+    updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+  });
+}
 
 /* =====================================================
    المدن
@@ -2865,79 +2032,146 @@ onclick="adminDeleteFish(${index})">
 
 async function adminAddCity(){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const city=
-E("newCityName").value.trim();
+  const city =
+    getElement("newCityName").value.trim();
 
-if(!city){
+  if(!city){
+    alert("اكتب اسم المدينة.");
+    return;
+  }
 
-alert("اكتب المدينة.");
+  if(saudiCities.includes(city)){
+    alert("المدينة موجودة بالفعل.");
+    return;
+  }
 
-return;
-}
+  saudiCities.push(city);
 
-if(saudiCities.includes(city)){
+  try{
 
-alert("المدينة موجودة.");
+    await saveCitiesToFirebase();
 
-return;
-}
+    getElement("newCityName").value = "";
 
-await db.collection("settings")
-.doc("cities")
-.set({
-items:[...saudiCities,city]
-});
+    setupCities();
+    renderAdminAll();
 
-E("newCityName").value="";
+    adminStatus("✅ تم إضافة المدينة");
 
-adminStatus("✅ تمت إضافة المدينة");
+  }catch(error){
+    console.error(error);
+    alert("تعذر إضافة المدينة.");
+  }
 }
 
 async function adminDeleteCity(index){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const city=saudiCities[index];
+  const city = saudiCities[index];
 
-if(!confirm("حذف "+city+"؟")){
-return;
+  if(!city) return;
+
+  if(!confirm("حذف مدينة "+city+"؟")){
+    return;
+  }
+
+  saudiCities.splice(index,1);
+
+  try{
+
+    await saveCitiesToFirebase();
+
+    setupCities();
+    renderListings();
+    renderAdminAll();
+
+    adminStatus("✅ تم حذف المدينة");
+
+  }catch(error){
+    console.error(error);
+    alert("تعذر حذف المدينة.");
+  }
 }
 
-await db.collection("settings")
-.doc("cities")
-.set({
-items:saudiCities.filter((_,i)=>i!==index)
-});
+async function adminRenameCity(index){
 
-adminStatus("✅ تم حذف المدينة");
+  if(!requireAdmin()) return;
+
+  const city = saudiCities[index];
+
+  if(!city) return;
+
+  const newName =
+    prompt("اكتب اسم المدينة الجديد:",city);
+
+  if(!newName) return;
+
+  const clean = newName.trim();
+
+  if(!clean) return;
+
+  saudiCities[index] = clean;
+
+  try{
+
+    await saveCitiesToFirebase();
+
+    setupCities();
+    renderAll();
+    renderAdminAll();
+
+    adminStatus("✅ تم تعديل المدينة");
+
+  }catch(error){
+    console.error(error);
+    alert("تعذر تعديل المدينة.");
+  }
 }
 
 function renderAdminCityList(){
 
-E("adminCityList").innerHTML=
-saudiCities.map((city,index)=>`
+  const container = getElement("adminCityList");
 
-<div class="adminListItem">
+  if(!container) return;
 
-<strong>📍 ${escapeHTML(city)}</strong>
+  container.innerHTML =
+    saudiCities.map((city,index) => `
 
-<div class="adminListActions">
+    <div class="adminListItem">
 
-<button
-class="adminMiniButton adminDelete"
-onclick="adminDeleteCity(${index})">
-حذف
-</button>
+    <strong>📍 ${escapeHTML(city)}</strong>
 
-</div>
+    <div class="adminListActions">
 
-</div>
+    <button
+    class="adminMiniButton adminEdit"
+    onclick="adminRenameCity(${index})">
+    تعديل
+    </button>
 
-`).join("");
+    <button
+    class="adminMiniButton adminDelete"
+    onclick="adminDeleteCity(${index})">
+    حذف
+    </button>
+
+    </div>
+
+    </div>
+
+    `).join("");
 }
 
+async function saveCitiesToFirebase(){
+
+  await db.collection("settings").doc("cities").set({
+    items:saudiCities,
+    updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+  });
+}
 
 /* =====================================================
    النصوص
@@ -2945,109 +2179,71 @@ onclick="adminDeleteCity(${index})">
 
 function applyTexts(){
 
-E("mainAppTitle").textContent=
-siteSettings.title;
+  getElement("mainAppTitle").textContent = siteSettings.title;
+  getElement("mainAppSubtitle").textContent = siteSettings.subtitle;
+  getElement("fishSectionTitle").textContent = siteSettings.fishSectionTitle;
+  getElement("sellerPageTitle").textContent = siteSettings.sellerTitle;
+  getElement("sellerDescription").textContent = siteSettings.sellerDescription;
+  getElement("calculatorPageTitle").textContent = siteSettings.calculatorTitle;
+  getElement("publishButton").textContent = siteSettings.publishText;
+  getElement("reserveButton").textContent = siteSettings.reserveText;
+  getElement("invoiceMainTitle").textContent = siteSettings.title;
 
-E("mainAppSubtitle").textContent=
-siteSettings.subtitle;
+  document.title = siteSettings.title;
 
-E("fishSectionTitle").textContent=
-siteSettings.fishSectionTitle;
-
-E("sellerPageTitle").textContent=
-siteSettings.sellerTitle;
-
-E("sellerDescription").textContent=
-siteSettings.sellerDescription;
-
-E("calculatorPageTitle").textContent=
-siteSettings.calculatorTitle;
-
-E("publishButton").textContent=
-siteSettings.publishText;
-
-E("reserveButton").textContent=
-siteSettings.reserveText;
-
-E("invoiceMainTitle").textContent=
-siteSettings.title;
-
-document.title=siteSettings.title;
-
-E("adminSiteTitle").value=
-siteSettings.title;
-
-E("adminSiteSubtitle").value=
-siteSettings.subtitle;
-
-E("adminFishSectionTitle").value=
-siteSettings.fishSectionTitle;
-
-E("adminSellerTitle").value=
-siteSettings.sellerTitle;
-
-E("adminSellerDescription").value=
-siteSettings.sellerDescription;
-
-E("adminCalculatorTitle").value=
-siteSettings.calculatorTitle;
-
-E("adminPublishText").value=
-siteSettings.publishText;
-
-E("adminReserveText").value=
-siteSettings.reserveText;
+  getElement("adminSiteTitle").value = siteSettings.title;
+  getElement("adminSiteSubtitle").value = siteSettings.subtitle;
+  getElement("adminFishSectionTitle").value = siteSettings.fishSectionTitle;
+  getElement("adminSellerTitle").value = siteSettings.sellerTitle;
+  getElement("adminSellerDescription").value = siteSettings.sellerDescription;
+  getElement("adminCalculatorTitle").value = siteSettings.calculatorTitle;
+  getElement("adminPublishText").value = siteSettings.publishText;
+  getElement("adminReserveText").value = siteSettings.reserveText;
 }
 
 async function saveSiteTexts(){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const texts={
+  siteSettings.title =
+    getElement("adminSiteTitle").value.trim() || "صيد اليوم";
 
-title:
-E("adminSiteTitle").value.trim()
-||"صيد اليوم",
+  siteSettings.subtitle =
+    getElement("adminSiteSubtitle").value.trim();
 
-subtitle:
-E("adminSiteSubtitle").value.trim(),
+  siteSettings.fishSectionTitle =
+    getElement("adminFishSectionTitle").value.trim() || "اختر نوع السمك";
 
-fishSectionTitle:
-E("adminFishSectionTitle").value.trim()
-||"اختر نوع السمك",
+  siteSettings.sellerTitle =
+    getElement("adminSellerTitle").value.trim() || "بائع السمك";
 
-sellerTitle:
-E("adminSellerTitle").value.trim()
-||"بائع السمك",
+  siteSettings.sellerDescription =
+    getElement("adminSellerDescription").value.trim();
 
-sellerDescription:
-E("adminSellerDescription").value.trim(),
+  siteSettings.calculatorTitle =
+    getElement("adminCalculatorTitle").value.trim() || "حاسبة الشراء";
 
-calculatorTitle:
-E("adminCalculatorTitle").value.trim()
-||"حاسبة الشراء",
+  siteSettings.publishText =
+    getElement("adminPublishText").value.trim() || "نشر العرض";
 
-publishText:
-E("adminPublishText").value.trim()
-||"نشر العرض",
+  siteSettings.reserveText =
+    getElement("adminReserveText").value.trim() || "احجز الكمية";
 
-reserveText:
-E("adminReserveText").value.trim()
-||"احجز الكمية"
+  try{
 
-};
+    await db.collection("settings").doc("site").set({
+      texts:siteSettings
+    },{merge:true});
 
-await db.collection("settings")
-.doc("site")
-.set({
-texts
-},{merge:true});
+    applyTexts();
 
-adminStatus(
-"✅ النصوص تغيرت عند جميع المستخدمين"
-);
+    adminStatus("✅ تم حفظ جميع النصوص");
+
+  }catch(error){
+    console.error(error);
+    alert("تعذر حفظ النصوص.");
+  }
 }
-
 
 /* =====================================================
    الألوان
@@ -3055,76 +2251,55 @@ adminStatus(
 
 function applyColors(colors){
 
-if(!colors)return;
+  if(!colors) return;
 
-if(colors.primary){
+  if(colors.primary){
+    document.documentElement.style.setProperty("--blue",colors.primary);
+    getElement("adminPrimaryColor").value = colors.primary;
+  }
 
-document.documentElement.style
-.setProperty("--blue",colors.primary);
+  if(colors.background){
+    document.documentElement.style.setProperty("--bg",colors.background);
+    getElement("adminBackgroundColor").value = colors.background;
+  }
 
-E("adminPrimaryColor").value=
-colors.primary;
-}
+  if(colors.text){
+    document.documentElement.style.setProperty("--text",colors.text);
+    getElement("adminTextColor").value = colors.text;
+  }
 
-if(colors.background){
-
-document.documentElement.style
-.setProperty("--bg",colors.background);
-
-E("adminBackgroundColor").value=
-colors.background;
-}
-
-if(colors.text){
-
-document.documentElement.style
-.setProperty("--text",colors.text);
-
-E("adminTextColor").value=
-colors.text;
-}
-
-if(colors.green){
-
-document.documentElement.style
-.setProperty("--green",colors.green);
-
-E("adminGreenColor").value=
-colors.green;
-}
+  if(colors.green){
+    document.documentElement.style.setProperty("--green",colors.green);
+    getElement("adminGreenColor").value = colors.green;
+  }
 }
 
 async function saveColors(){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const colors={
+  const colors = {
+    primary:getElement("adminPrimaryColor").value,
+    background:getElement("adminBackgroundColor").value,
+    text:getElement("adminTextColor").value,
+    green:getElement("adminGreenColor").value
+  };
 
-primary:
-E("adminPrimaryColor").value,
+  try{
 
-background:
-E("adminBackgroundColor").value,
+    await db.collection("settings").doc("site").set({
+      colors:colors
+    },{merge:true});
 
-text:
-E("adminTextColor").value,
+    applyColors(colors);
 
-green:
-E("adminGreenColor").value
+    adminStatus("✅ تم حفظ ألوان الموقع");
 
-};
-
-await db.collection("settings")
-.doc("site")
-.set({
-colors
-},{merge:true});
-
-adminStatus(
-"✅ الألوان تغيرت عند الجميع"
-);
+  }catch(error){
+    console.error(error);
+    alert("تعذر حفظ الألوان.");
+  }
 }
-
 
 /* =====================================================
    الأسعار
@@ -3132,49 +2307,729 @@ adminStatus(
 
 function applyPriceSettings(){
 
-E("priceKg").min=minFishPrice;
-E("priceKg").max=maxFishPrice;
+  getElement("priceKg").min = minFishPrice;
+  getElement("priceKg").max = maxFishPrice;
 
-E("priceKg").placeholder=
-"من "+minFishPrice+
-" إلى "+maxFishPrice;
+  getElement("priceKg").placeholder =
+    "من "+minFishPrice+" إلى "+maxFishPrice;
 
-E("adminMinPrice").value=
-minFishPrice;
-
-E("adminMaxPrice").value=
-maxFishPrice;
+  getElement("adminMinPrice").value = minFishPrice;
+  getElement("adminMaxPrice").value = maxFishPrice;
 }
 
 async function savePriceSettings(){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const min=
-Number(E("adminMinPrice").value);
+  const min =
+    Number(getElement("adminMinPrice").value);
 
-const max=
-Number(E("adminMaxPrice").value);
+  const max =
+    Number(getElement("adminMaxPrice").value);
 
-if(min<0||max<=min){
+  if(min < 0 || max <= min){
+    alert("تأكد من الحد الأدنى والأعلى للسعر.");
+    return;
+  }
 
-alert("تأكد من الأسعار.");
+  minFishPrice = min;
+  maxFishPrice = max;
 
-return;
+  try{
+
+    await db.collection("settings").doc("site").set({
+      minPrice:minFishPrice,
+      maxPrice:maxFishPrice
+    },{merge:true});
+
+    applyPriceSettings();
+
+    adminStatus("✅ تم حفظ حدود السعر");
+
+  }catch(error){
+    console.error(error);
+    alert("تعذر حفظ السعر.");
+  }
 }
 
-await db.collection("settings")
-.doc("site")
-.set({
-minPrice:min,
-maxPrice:max
-},{merge:true});
+/* =====================================================
+   القوائم
+===================================================== */
 
-adminStatus(
-"✅ تم تغيير الأسعار عند الجميع"
-);
+function setupCities(){
+
+  const sellerOld = getElement("sellerCity").value;
+  const marketOld = getElement("marketCity").value;
+  const buyerOld = getElement("buyerCity").value;
+
+  const options =
+    saudiCities.map(city =>
+      '<option value="'+escapeHTML(city)+'">'+
+      escapeHTML(city)+
+      '</option>'
+    ).join("");
+
+  getElement("sellerCity").innerHTML =
+    '<option value="">اختر المدينة</option>'+options;
+
+  getElement("marketCity").innerHTML =
+    '<option value="الكل">جميع المدن</option>'+options;
+
+  getElement("buyerCity").innerHTML =
+    '<option value="">حدد مدينتي</option>'+options;
+
+  if(saudiCities.includes(sellerOld)){
+    getElement("sellerCity").value = sellerOld;
+  }
+
+  if(marketOld === "الكل" || saudiCities.includes(marketOld)){
+    getElement("marketCity").value = marketOld || "الكل";
+  }
+
+  if(saudiCities.includes(buyerOld)){
+    getElement("buyerCity").value = buyerOld;
+  }
 }
 
+function setupFishTypes(){
+
+  const options =
+    fishTypes.map(fish =>
+      '<option value="'+escapeHTML(fish.name)+'">'+
+      escapeHTML(fish.name)+
+      '</option>'
+    ).join("");
+
+  getElement("fishType").innerHTML = options;
+  getElement("adminFishType").innerHTML = options;
+
+  getElement("catchDate").max = localDateString();
+
+  if(!getElement("catchDate").value){
+    getElement("catchDate").value = localDateString();
+  }
+}
+
+/* =====================================================
+   التصنيفات
+===================================================== */
+
+function renderCategories(){
+
+  const container = getElement("categoryGrid");
+
+  container.innerHTML =
+    fishTypes.map(fish => {
+
+      const count =
+        listings.filter(
+          offer =>
+          offer.type === fish.name &&
+          Number(offer.weight) > 0
+        ).length;
+
+      const image = getFishImage(fish);
+
+      return `
+      <button
+      class="category"
+      data-fish="${escapeHTML(fish.name)}"
+      onclick="filterType(this.dataset.fish)">
+
+      ${
+        image
+        ?
+        `<img
+        class="categoryFishImage"
+        src="${escapeHTML(image)}"
+        alt="${escapeHTML(fish.name)}">`
+        :
+        `<div class="categoryFallback">🐟</div>`
+      }
+
+      <div class="categoryName">${escapeHTML(fish.name)}</div>
+      <div class="categoryCount">${count} عرض</div>
+
+      </button>
+      `;
+
+    }).join("");
+
+  renderChips();
+}
+
+function renderChips(){
+
+  const names = [
+    "الكل",
+    ...fishTypes.map(fish => fish.name)
+  ];
+
+  getElement("chips").innerHTML =
+    names.map(name => `
+
+    <button
+    class="chip ${activeType===name?"active":""}"
+    data-fish="${escapeHTML(name)}"
+    onclick="filterType(this.dataset.fish)">
+    ${escapeHTML(name)}
+    </button>
+
+    `).join("");
+}
+
+function filterType(type){
+
+  activeType = type;
+
+  getElement("offersTitle").textContent =
+    type === "الكل"
+    ? "جميع العروض"
+    : "عروض "+type;
+
+  renderCategories();
+  renderListings();
+}
+
+/* =====================================================
+   الأسعار
+===================================================== */
+
+function renderPriceComparison(offers){
+
+  const container = getElement("priceComparison");
+
+  const prices =
+    offers
+    .map(x => Number(x.price))
+    .filter(x => x > 0);
+
+  if(!prices.length){
+    container.innerHTML = "";
+    return;
+  }
+
+  const min = Math.min(...prices);
+  const max = Math.max(...prices);
+
+  const avg =
+    prices.reduce((a,b)=>a+b,0) / prices.length;
+
+  container.innerHTML = `
+
+  <div class="priceStats">
+
+  <div class="priceStat">
+  <strong>${money(min)} ر.س</strong>
+  <small>أقل سعر</small>
+  </div>
+
+  <div class="priceStat">
+  <strong>${money(avg)} ر.س</strong>
+  <small>متوسط السعر</small>
+  </div>
+
+  <div class="priceStat">
+  <strong>${money(max)} ر.س</strong>
+  <small>أعلى سعر</small>
+  </div>
+
+  </div>
+  `;
+}
+
+/* =====================================================
+   عرض السوق
+===================================================== */
+
+function renderListings(){
+
+  const search =
+    getElement("marketSearch").value.trim().toLowerCase();
+
+  const city = getElement("marketCity").value;
+  const sort = getElement("marketSort").value;
+  const buyerCity = getElement("buyerCity").value;
+
+  let result =
+    listings.filter(x => Number(x.weight)>0).slice();
+
+  if(activeType !== "الكل"){
+    result = result.filter(x => x.type === activeType);
+  }
+
+  if(city && city !== "الكل"){
+    result = result.filter(x => x.city === city);
+  }
+
+  if(search){
+
+    result = result.filter(x =>
+
+      String(x.type||"").toLowerCase().includes(search)
+      ||
+      String(x.seller||"").toLowerCase().includes(search)
+      ||
+      String(x.city||"").toLowerCase().includes(search)
+
+    );
+  }
+
+  if(sort === "price"){
+    result.sort((a,b)=>Number(a.price)-Number(b.price));
+  }
+  else if(sort === "weight"){
+    result.sort((a,b)=>Number(b.weight)-Number(a.weight));
+  }
+  else if(sort === "nearest"){
+
+    result.sort((a,b)=>{
+
+      const aa = buyerCity && a.city===buyerCity ? 0:1;
+      const bb = buyerCity && b.city===buyerCity ? 0:1;
+
+      return aa-bb;
+    });
+
+  }
+  else{
+    result.sort((a,b)=>Number(b.createdAt||0)-Number(a.createdAt||0));
+  }
+
+  renderPriceComparison(result);
+
+  if(!result.length){
+
+    getElement("listingGrid").innerHTML =
+      '<div class="card empty">لا توجد عروض حتى الآن.</div>';
+
+    return;
+  }
+
+  getElement("listingGrid").innerHTML =
+    result.map(offer => {
+
+      const fish =
+        fishTypes.find(x => x.name === offer.type);
+
+      const image =
+        offer.image ||
+        (fish ? getFishImage(fish) : "");
+
+      const total =
+        Number(offer.weight) * Number(offer.price);
+
+      return `
+
+      <div class="listing">
+
+      <div class="listingImage">
+
+      ${
+        image
+        ? `<img src="${escapeHTML(image)}" alt="${escapeHTML(offer.type)}">`
+        : "🐟"
+      }
+
+      ${
+        isToday(offer.catchDate)
+        ? '<div class="todayBadge">صيد اليوم</div>'
+        : ""
+      }
+
+      </div>
+
+      <div class="listingBody">
+
+      <div class="listingHeader">
+
+      <div>
+
+      <div class="fishName">
+      ${escapeHTML(offer.type)}
+      </div>
+
+      <div class="sellerName">
+      الصياد: ${escapeHTML(offer.seller)}
+      </div>
+
+      </div>
+
+      <div class="price">
+      ${money(offer.price)} ريال/كجم
+      </div>
+
+      </div>
+
+      <div class="location">
+      📍 ${escapeHTML(offer.city || "غير محدد")}
+      ${
+        buyerCity && offer.city === buyerCity
+        ? " — الأقرب لك"
+        : ""
+      }
+      </div>
+
+      ${
+        offer.catchLocation
+        ?
+        `<div class="small">
+        منطقة الصيد: ${escapeHTML(offer.catchLocation)}
+        </div>`
+        :
+        ""
+      }
+
+      <div class="catchInfo">
+
+      ${
+        isToday(offer.catchDate)
+        ? "تم صيده اليوم"
+        : "تاريخ الصيد: "+escapeHTML(offer.catchDate)
+      }
+
+      ${
+        offer.catchTime
+        ? " الساعة "+formatTime(offer.catchTime)
+        : ""
+      }
+
+      </div>
+
+      <div class="infoGrid">
+
+      <div class="info">
+      <strong>${money(offer.weight)} كجم</strong>
+      <small>الكمية المتبقية</small>
+      </div>
+
+      <div class="info">
+      <strong>${escapeHTML(offer.condition || "طازجة")}</strong>
+      <small>الحالة</small>
+      </div>
+
+      <div class="info">
+      <strong>${money(total)} ريال</strong>
+      <small>قيمة كامل الكمية</small>
+      </div>
+
+      <div class="info">
+      <strong>${escapeHTML(offer.saleType || "بالكيلو")}</strong>
+      <small>طريقة البيع</small>
+      </div>
+
+      </div>
+
+      ${
+        offer.notes
+        ? '<div class="notes">'+escapeHTML(offer.notes)+'</div>'
+        : ""
+      }
+
+      <div class="listingActions">
+
+      <button
+      class="btn primary"
+      onclick="openCalculator('${offer.id}')">
+      احجز / احسب
+      </button>
+
+      <button
+      class="btn secondary"
+      onclick="contactSeller('${offer.id}')">
+      تواصل مع البائع
+      </button>
+
+      </div>
+
+      </div>
+      </div>
+
+      `;
+
+    }).join("");
+}
+
+getElement("marketSearch").addEventListener("input",renderListings);
+getElement("marketCity").addEventListener("change",renderListings);
+getElement("marketSort").addEventListener("change",renderListings);
+getElement("buyerCity").addEventListener("change",renderListings);
+
+/* =====================================================
+   صورة المنتج
+===================================================== */
+
+getElement("fishPhoto").addEventListener("change",function(event){
+
+  const file = event.target.files[0];
+
+  selectedImageFile = file || null;
+
+  if(!file){
+
+    getElement("photoPreview").innerHTML = "";
+    return;
+  }
+
+  if(!file.type.startsWith("image/")){
+
+    selectedImageFile = null;
+    event.target.value = "";
+
+    alert("اختر صورة فقط.");
+    return;
+  }
+
+  const previewURL = URL.createObjectURL(file);
+
+  getElement("photoPreview").innerHTML =
+    '<img src="'+previewURL+'" alt="صورة السمك">';
+});
+
+/* =====================================================
+   نشر العرض - Firebase
+===================================================== */
+
+async function addListing(){
+
+  const button = getElement("publishButton");
+  const status = getElement("publishStatus");
+
+  const seller = getElement("sellerName").value.trim();
+  const phone = getElement("sellerPhone").value.trim();
+  const type = getElement("fishType").value;
+  const city = getElement("sellerCity").value;
+
+  const weight =
+    Number(getElement("fishWeight").value);
+
+  const date = getElement("catchDate").value;
+  const time = getElement("catchTime").value;
+
+  const price =
+    Number(getElement("priceKg").value);
+
+  if(!seller){
+    alert("اكتب اسم البائع.");
+    return;
+  }
+
+  if(!city){
+    alert("حدد المدينة.");
+    return;
+  }
+
+  if(!weight || weight <= 0){
+    alert("اكتب الوزن.");
+    return;
+  }
+
+  if(!date){
+    alert("حدد تاريخ الصيد.");
+    return;
+  }
+
+  if(date > localDateString()){
+    alert("تاريخ الصيد لا يمكن أن يكون في المستقبل.");
+    return;
+  }
+
+  if(!price || price < minFishPrice || price > maxFishPrice){
+
+    alert(
+      "السعر يجب أن يكون من "+
+      minFishPrice+
+      " إلى "+
+      maxFishPrice+
+      " ريال."
+    );
+
+    return;
+  }
+
+  if(!selectedImageFile){
+    alert("أضف صورة السمك.");
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "⏳ جاري النشر...";
+  status.textContent = "⏳ جاري رفع صورة العرض...";
+
+  try{
+
+    const file = selectedImageFile;
+
+    const imageRef =
+      storage.ref(
+        "listings/"+
+        Date.now()+"-"+
+        safeFileName(file.name)
+      );
+
+    const uploadSnapshot =
+      await imageRef.put(file);
+
+    const imageURL =
+      await uploadSnapshot.ref.getDownloadURL();
+
+    status.textContent = "⏳ جاري حفظ العرض...";
+
+    const offerData = {
+
+      seller:seller,
+      phone:phone,
+      type:type,
+      city:city,
+
+      catchLocation:
+        getElement("catchLocation").value.trim(),
+
+      weight:weight,
+      originalWeight:weight,
+
+      catchDate:date,
+      catchTime:time,
+
+      condition:
+        getElement("fishCondition").value,
+
+      price:price,
+
+      saleType:
+        getElement("saleType").value,
+
+      notes:
+        getElement("fishNotes").value.trim(),
+
+      image:imageURL,
+
+      createdAt:Date.now(),
+
+      createdAtServer:
+        firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    await db.collection("listings").add(offerData);
+
+    getElement("fishWeight").value = "";
+    getElement("priceKg").value = "";
+    getElement("fishNotes").value = "";
+    getElement("catchLocation").value = "";
+    getElement("catchTime").value = "";
+    getElement("fishPhoto").value = "";
+    getElement("photoPreview").innerHTML = "";
+
+    selectedImageFile = null;
+
+    status.textContent = "✅ تم نشر العرض بنجاح";
+
+    alert("تم نشر العرض.");
+
+  }catch(error){
+
+    console.error("Publish error:",error);
+
+    status.textContent = "❌ فشل نشر العرض";
+
+    let message =
+      error.message ||
+      error.code ||
+      "حدث خطأ أثناء النشر.";
+
+    alert(
+      "تعذر نشر العرض.\n\n"+
+      message
+    );
+
+  }finally{
+
+    button.disabled = false;
+    button.textContent = siteSettings.publishText || "نشر العرض";
+  }
+}
+
+/* =====================================================
+   الاستماع للعروض لجميع المستخدمين
+===================================================== */
+
+function startListingsListener(){
+
+  if(listingsUnsubscribe){
+    listingsUnsubscribe();
+  }
+
+  listingsUnsubscribe =
+    db.collection("listings")
+    .onSnapshot(snapshot => {
+
+      listings = snapshot.docs.map(doc => {
+
+        const data = doc.data();
+
+        return {
+          id:doc.id,
+          ...data
+        };
+
+      });
+
+      renderAll();
+      renderAdminOffers();
+
+    },error => {
+
+      console.error("Listings listener:",error);
+
+      getElement("listingGrid").innerHTML =
+        '<div class="card empty">تعذر تحميل العروض.</div>';
+    });
+}
+
+/* =====================================================
+   عروض البائع
+===================================================== */
+
+function renderMyOffers(){
+
+  const container = getElement("myOffers");
+
+  if(!listings.length){
+
+    container.innerHTML =
+      '<div class="empty">لا توجد عروض مضافة.</div>';
+
+    return;
+  }
+
+  container.innerHTML =
+    listings
+    .slice()
+    .sort((a,b)=>Number(b.createdAt||0)-Number(a.createdAt||0))
+    .map(offer => `
+
+    <div class="myOffer">
+
+    <div>
+
+    <strong>
+    ${escapeHTML(offer.type)}
+    —
+    ${money(offer.weight)} كجم
+    </strong>
+
+    <div class="small">
+    ${escapeHTML(offer.seller)}
+    • 📍 ${escapeHTML(offer.city || "غير محدد")}
+    • ${money(offer.price)} ريال/كجم
+    </div>
+
+    </div>
+
+    </div>
+
+    `).join("");
+}
 
 /* =====================================================
    إدارة العروض
@@ -3182,346 +3037,552 @@ adminStatus(
 
 function renderAdminOffers(){
 
-if(!listings.length){
+  const container = getElement("adminOffersList");
 
-E("adminOffersList").innerHTML=
-'<div class="empty">لا توجد عروض.</div>';
+  if(!container) return;
 
-return;
-}
+  if(!listings.length){
 
-E("adminOffersList").innerHTML=
-listings.map(offer=>`
+    container.innerHTML =
+      '<div class="empty">لا توجد عروض.</div>';
 
-<div class="adminListItem">
+    return;
+  }
 
-<strong>
-${escapeHTML(offer.type)}
-—
-${escapeHTML(offer.seller)}
-</strong>
+  container.innerHTML =
+    listings
+    .slice()
+    .sort((a,b)=>Number(b.createdAt||0)-Number(a.createdAt||0))
+    .map(offer => `
 
-<div class="small">
+    <div class="adminListItem">
 
-📍 ${escapeHTML(offer.city)}
-<br>
+    <strong>
+    ${escapeHTML(offer.type)}
+    —
+    ${escapeHTML(offer.seller)}
+    </strong>
 
-${money(offer.weight)} كجم
-•
-${money(offer.price)} ريال/كجم
+    <div class="small">
+    📍 ${escapeHTML(offer.city || "غير محدد")}
+    <br>
+    المتوفر: ${money(offer.weight)} كجم
+    <br>
+    السعر: ${money(offer.price)} ريال/كجم
+    </div>
 
-</div>
+    <div class="adminListActions">
 
-<div class="adminListActions">
+    <button
+    class="adminMiniButton adminEdit"
+    onclick="adminEditOffer('${offer.id}')">
+    تعديل
+    </button>
 
-<button
-class="adminMiniButton adminEdit"
-onclick='adminEditOffer(${JSON.stringify(offer.id)})'>
-تعديل
-</button>
+    <button
+    class="adminMiniButton adminDelete"
+    onclick="adminDeleteOffer('${offer.id}')">
+    حذف
+    </button>
 
-<button
-class="adminMiniButton adminDelete"
-onclick='adminDeleteOffer(${JSON.stringify(offer.id)})'>
-حذف
-</button>
+    </div>
 
-</div>
+    </div>
 
-</div>
-
-`).join("");
+    `).join("");
 }
 
 async function adminDeleteOffer(id){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-if(!confirm(
-"حذف العرض من جميع الأجهزة؟"
-)){
-return;
-}
+  if(!confirm("هل تريد حذف هذا العرض من الموقع؟")){
+    return;
+  }
 
-try{
+  try{
 
-await db.collection("listings")
-.doc(id)
-.delete();
+    await db.collection("listings").doc(id).delete();
 
-adminStatus(
-"✅ تم حذف العرض من الجميع"
-);
+    adminStatus("✅ تم حذف العرض");
 
-}catch(error){
+  }catch(error){
 
-console.error(error);
-
-alert("تعذر حذف العرض.");
-}
+    console.error(error);
+    alert("تعذر حذف العرض.");
+  }
 }
 
 async function adminEditOffer(id){
 
-if(!requireAdmin())return;
+  if(!requireAdmin()) return;
 
-const offer=
-listings.find(x=>x.id===id);
+  const offer =
+    listings.find(x => x.id === id);
 
-if(!offer)return;
+  if(!offer) return;
 
-const p=
-prompt(
-"سعر الكيلو:",
-offer.price
-);
+  const newPrice =
+    prompt("سعر الكيلو:",offer.price);
 
-if(p===null)return;
+  if(newPrice === null) return;
 
-const w=
-prompt(
-"الوزن:",
-offer.weight
-);
+  const price = Number(newPrice);
 
-if(w===null)return;
+  if(!price || price < minFishPrice || price > maxFishPrice){
+    alert("السعر غير صحيح.");
+    return;
+  }
 
-const price=Number(p);
-const weight=Number(w);
+  const newWeight =
+    prompt("الكمية المتبقية بالكيلو:",offer.weight);
 
-if(
-price<minFishPrice ||
-price>maxFishPrice ||
-weight<0
-){
+  if(newWeight === null) return;
 
-alert("القيم غير صحيحة.");
+  const weight = Number(newWeight);
 
-return;
+  if(weight < 0){
+    alert("الوزن غير صحيح.");
+    return;
+  }
+
+  try{
+
+    await db.collection("listings").doc(id).update({
+      price:price,
+      weight:weight
+    });
+
+    adminStatus("✅ تم تعديل العرض");
+
+  }catch(error){
+
+    console.error(error);
+    alert("تعذر تعديل العرض.");
+  }
 }
-
-await db.collection("listings")
-.doc(id)
-.update({
-price,
-weight,
-updatedAt:
-firebase.firestore.FieldValue.serverTimestamp()
-});
-
-adminStatus(
-"✅ تم تعديل العرض عند الجميع"
-);
-}
-
 
 /* =====================================================
-   تحديث الأدمن
+   التواصل
+===================================================== */
+
+function contactSeller(id){
+
+  const offer =
+    listings.find(x => x.id === id);
+
+  if(!offer || !offer.phone){
+    alert("لا يوجد رقم تواصل.");
+    return;
+  }
+
+  const phone =
+    String(offer.phone).replace(/\D/g,"");
+
+  if(!phone){
+    alert("رقم التواصل غير صحيح.");
+    return;
+  }
+
+  window.location.href = "tel:"+phone;
+}
+
+/* =====================================================
+   الحاسبة
+===================================================== */
+
+function renderCalculator(){
+
+  const select = getElement("calculatorListing");
+
+  const available =
+    listings.filter(x => Number(x.weight)>0);
+
+  if(!available.length){
+
+    select.innerHTML =
+      '<option value="">لا توجد عروض</option>';
+
+    updateCalculator();
+    return;
+  }
+
+  const old = select.value;
+
+  select.innerHTML =
+    available.map(x => `
+
+    <option value="${x.id}">
+    ${escapeHTML(x.type)}
+    —
+    ${escapeHTML(x.seller)}
+    —
+    ${money(x.price)} ريال
+    </option>
+
+    `).join("");
+
+  if(available.some(x => x.id === old)){
+    select.value = old;
+  }
+
+  updateCalculator();
+}
+
+function openCalculator(id){
+
+  const button =
+    document.querySelectorAll(".bottomNav button")[2];
+
+  openPage("calculator",button);
+
+  getElement("calculatorListing").value = id;
+  getElement("buyWeight").value = "";
+
+  updateCalculator();
+}
+
+getElement("calculatorListing")
+.addEventListener("change",updateCalculator);
+
+getElement("buyWeight")
+.addEventListener("input",updateCalculator);
+
+getElement("buyerName")
+.addEventListener("input",updateCalculator);
+
+function updateCalculator(){
+
+  const id =
+    getElement("calculatorListing").value;
+
+  const offer =
+    listings.find(x => x.id === id);
+
+  if(!offer){
+
+    getElement("calculatorInfo").textContent =
+      "لا توجد عروض متاحة";
+
+    getElement("calculatorTotal").textContent =
+      "الإجمالي: 0 ريال";
+
+    return;
+  }
+
+  let weight =
+    Number(getElement("buyWeight").value || 0);
+
+  if(weight > Number(offer.weight)){
+    weight = Number(offer.weight);
+  }
+
+  const total =
+    weight * Number(offer.price);
+
+  getElement("calculatorInfo").textContent =
+    offer.type+
+    " من الصياد "+
+    offer.seller+
+    " — 📍 "+
+    (offer.city || "غير محدد")+
+    " — المتوفر "+
+    money(offer.weight)+
+    " كجم — سعر الكيلو "+
+    money(offer.price)+
+    " ريال";
+
+  getElement("calculatorTotal").textContent =
+    "الإجمالي: "+money(total)+" ريال";
+
+  getElement("invoiceDate").textContent =
+    new Date().toLocaleString("ar-SA");
+
+  getElement("invoiceBuyer").textContent =
+    getElement("buyerName").value.trim() || "—";
+
+  getElement("invoiceSeller").textContent =
+    offer.seller;
+
+  getElement("invoiceCity").textContent =
+    offer.city || "—";
+
+  getElement("invoiceFish").textContent =
+    offer.type;
+
+  getElement("invoicePrice").textContent =
+    money(offer.price)+" ريال";
+
+  getElement("invoiceWeight").textContent =
+    money(weight)+" كجم";
+
+  getElement("invoiceTotal").textContent =
+    money(total)+" ريال";
+}
+
+/* =====================================================
+   الحجز
+===================================================== */
+
+async function reserveFish(){
+
+  const id =
+    getElement("calculatorListing").value;
+
+  const offer =
+    listings.find(x => x.id === id);
+
+  if(!offer){
+    alert("لا يوجد عرض.");
+    return;
+  }
+
+  let requested =
+    Number(getElement("buyWeight").value);
+
+  if(!requested || requested <= 0){
+    alert("حدد الكمية.");
+    return;
+  }
+
+  if(offer.saleType === "كاملة"){
+
+    if(!confirm(
+      "هذا العرض للبيع كاملًا. هل تريد حجز كامل الكمية؟"
+    )){
+      return;
+    }
+
+    requested = Number(offer.weight);
+  }
+
+  if(requested > Number(offer.weight)){
+    alert("الكمية المطلوبة أكبر من المتوفر.");
+    return;
+  }
+
+  const total =
+    requested * Number(offer.price);
+
+  if(!confirm(
+    "تأكيد الحجز\n\n"+
+    "السمك: "+offer.type+
+    "\nالصياد: "+offer.seller+
+    "\nالمدينة: "+(offer.city || "غير محدد")+
+    "\nالكمية: "+money(requested)+" كجم"+
+    "\nالإجمالي: "+money(total)+" ريال"
+  )){
+    return;
+  }
+
+  try{
+
+    const offerRef =
+      db.collection("listings").doc(id);
+
+    await db.runTransaction(async transaction => {
+
+      const freshDoc =
+        await transaction.get(offerRef);
+
+      if(!freshDoc.exists){
+        throw new Error("العرض لم يعد موجودًا.");
+      }
+
+      const fresh =
+        freshDoc.data();
+
+      const available =
+        Number(fresh.weight || 0);
+
+      if(requested > available){
+        throw new Error(
+          "الكمية المتبقية الآن "+money(available)+" كجم فقط."
+        );
+      }
+
+      const remaining =
+        Number((available-requested).toFixed(2));
+
+      transaction.update(offerRef,{
+        weight:remaining
+      });
+
+    });
+
+    getElement("buyWeight").value = "";
+
+    alert("تم الحجز بنجاح.");
+
+  }catch(error){
+
+    console.error(error);
+
+    alert(
+      error.message ||
+      "تعذر إتمام الحجز."
+    );
+  }
+}
+
+/* =====================================================
+   PDF
+===================================================== */
+
+function printInvoice(){
+  updateCalculator();
+  window.print();
+}
+
+/* =====================================================
+   لوحة الأدمن
 ===================================================== */
 
 function renderAdminAll(){
 
-renderAdminFishList();
-renderAdminCityList();
-renderAdminOffers();
+  renderAdminFishList();
+  renderAdminCityList();
+  renderAdminOffers();
 
-applyTexts();
-applyPriceSettings();
+  applyTexts();
+  applyPriceSettings();
 }
-
 
 /* =====================================================
-   FIREBASE REALTIME
+   إعدادات Firebase
 ===================================================== */
 
-/*
-  أهم جزء:
-  onSnapshot يعني أي تغيير يظهر مباشرة
-  عند كل الأجهزة المفتوحة.
-*/
+function startSiteSettingsListener(){
 
+  db.collection("settings")
+  .doc("site")
+  .onSnapshot(site => {
 
-/* إعدادات الموقع */
+    if(!site.exists) return;
 
-db.collection("settings")
-.doc("site")
-.onSnapshot(snapshot=>{
+    const data = site.data();
 
-if(!snapshot.exists){
+    if(data.background){
+      applyBackground(data.background);
+    }
 
-applyTexts();
-applyPriceSettings();
+    if(data.logo){
+      applyLogo(data.logo);
+    }
 
-return;
+    if(data.texts){
+      siteSettings = {
+        ...siteSettings,
+        ...data.texts
+      };
+    }
+
+    if(data.colors){
+      applyColors(data.colors);
+    }
+
+    if(data.minPrice !== undefined){
+      minFishPrice = Number(data.minPrice);
+    }
+
+    if(data.maxPrice !== undefined){
+      maxFishPrice = Number(data.maxPrice);
+    }
+
+    applyTexts();
+    applyPriceSettings();
+
+  },error => {
+    console.error("Site settings:",error);
+  });
 }
 
-const data=snapshot.data();
+function startFishTypesListener(){
 
-if(data.background!==undefined){
-applyBackground(data.background);
+  db.collection("settings")
+  .doc("fishTypes")
+  .onSnapshot(doc => {
+
+    if(
+      doc.exists &&
+      Array.isArray(doc.data().items) &&
+      doc.data().items.length
+    ){
+
+      fishTypes = doc.data().items;
+
+      setupFishTypes();
+      renderCategories();
+      renderListings();
+      renderAdminFishList();
+    }
+
+  },error => {
+    console.error("Fish types:",error);
+  });
 }
 
-if(data.logo!==undefined){
-applyLogo(data.logo);
+function startCitiesListener(){
+
+  db.collection("settings")
+  .doc("cities")
+  .onSnapshot(doc => {
+
+    if(
+      doc.exists &&
+      Array.isArray(doc.data().items) &&
+      doc.data().items.length
+    ){
+
+      saudiCities = doc.data().items;
+
+      setupCities();
+      renderListings();
+      renderAdminCityList();
+    }
+
+  },error => {
+    console.error("Cities:",error);
+  });
 }
 
-if(data.texts){
+function startFishImagesListener(){
 
-siteSettings={
-...siteSettings,
-...data.texts
-};
+  db.collection("fishImages")
+  .onSnapshot(snapshot => {
 
-applyTexts();
+    customFishImages = {};
+
+    snapshot.forEach(doc => {
+
+      const data = doc.data();
+
+      if(data.name && data.url){
+        customFishImages[data.name] = data.url;
+      }
+
+    });
+
+    renderCategories();
+    renderListings();
+    renderAdminFishList();
+
+  },error => {
+    console.error("Fish images:",error);
+  });
 }
-
-if(data.colors){
-applyColors(data.colors);
-}
-
-if(data.minPrice!==undefined){
-
-minFishPrice=
-Number(data.minPrice);
-}
-
-if(data.maxPrice!==undefined){
-
-maxFishPrice=
-Number(data.maxPrice);
-}
-
-applyPriceSettings();
-
-},error=>{
-
-console.error(
-"Site settings:",
-error
-);
-
-});
-
-
-/* أنواع السمك */
-
-db.collection("settings")
-.doc("fishTypes")
-.onSnapshot(snapshot=>{
-
-if(
-snapshot.exists &&
-Array.isArray(snapshot.data().items)
-){
-
-fishTypes=
-snapshot.data().items;
-
-setupFishTypes();
-
-renderCategories();
-renderListings();
-renderCalculator();
-renderAdminFishList();
-
-}
-
-},console.error);
-
-
-/* المدن */
-
-db.collection("settings")
-.doc("cities")
-.onSnapshot(snapshot=>{
-
-if(
-snapshot.exists &&
-Array.isArray(snapshot.data().items)
-){
-
-saudiCities=
-snapshot.data().items;
-
-setupCities();
-
-renderListings();
-renderAdminCityList();
-
-}
-
-},console.error);
-
-
-/* صور الأسماك */
-
-db.collection("fishImages")
-.onSnapshot(snapshot=>{
-
-customFishImages={};
-
-snapshot.forEach(doc=>{
-
-const data=doc.data();
-
-if(data.name&&data.url){
-
-customFishImages[data.name]=
-data.url;
-
-}
-
-});
-
-renderCategories();
-renderListings();
-
-},console.error);
-
 
 /* =====================================================
-   العروض عند جميع المستخدمين
+   تحديث
 ===================================================== */
 
-db.collection("listings")
-.onSnapshot(snapshot=>{
+function renderAll(){
 
-listings=[];
-
-snapshot.forEach(doc=>{
-
-listings.push({
-id:doc.id,
-...doc.data()
-});
-
-});
-
-listings.sort(
-(a,b)=>
-getMillis(b.createdAt)
--
-getMillis(a.createdAt)
-);
-
-renderCategories();
-renderListings();
-renderMyOffers();
-renderCalculator();
-renderAdminOffers();
-
-},error=>{
-
-console.error(
-"Listings realtime:",
-error
-);
-
-E("listingGrid").innerHTML=
-'<div class="card empty">تعذر تحميل العروض من Firebase.</div>';
-
-});
-
+  renderCategories();
+  renderListings();
+  renderMyOffers();
+  renderCalculator();
+}
 
 /* =====================================================
    التشغيل
@@ -3533,10 +3594,19 @@ setupFishTypes();
 applyTexts();
 applyPriceSettings();
 
-renderCategories();
-renderListings();
-renderMyOffers();
-renderCalculator();
+renderAll();
+
+/*
+  التحديثات المباشرة:
+  أي عرض جديد يظهر لجميع المستخدمين.
+  وأي تعديل من الأدمن يظهر للجميع.
+*/
+
+startSiteSettingsListener();
+startFishTypesListener();
+startCitiesListener();
+startFishImagesListener();
+startListingsListener();
 
 </script>
 
